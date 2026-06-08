@@ -48,7 +48,7 @@ $$
 ### 3. Einfaches Beispiel
 
 Wenn man einen Würfel wirft, können sechs mögliche Ergebnisse eintreten: 1,2,3,4,5 oder 6. Wie groß ist die Wahrscheinlichkeit eines dieser Ergebnisse? Wir betrachten eins von sechs möglichen Ergebnissen. Für die Wahrscheinlichkeit eines dieser Ergebnisse gilt: 
-$$\frac{1}{6} \approx 0.1667 \approx16,67\% $$
+$$\frac{1}{6} \approx 0,1667 \approx16,67\% $$
 
 
 
@@ -57,8 +57,7 @@ $$\frac{1}{6} \approx 0.1667 \approx16,67\% $$
 
 Drücke den Button, um Dein Glück zu versuchen!
 
-```{r simulation-ui}
-# Phần hiển thị nút bấm
+```{r simulation-ui-dice}
 actionButton("roll_btn", "würfeln!", icon = icon("dice"), class = "btn-primary")
 uiOutput("dice_result_display")
 
@@ -148,11 +147,57 @@ quiz( caption = "Übung",
 ```
 
 
-## Kapital 2: Frequentistische & subjektive Wahrscheinlichkeit
+
+## Kapital 2: Frequentistische & Subjektive Wahrscheinlichkeit
+*Hier lernst Du, was frequentistische und subjektive Wahrscheinlichkeit bedeuten und wie Du beide Begriffe im Alltag unterscheiden kannst.*
+### 1. Definition
+|Kriterium|Frequentistische Wahrscheinlichkeit| Subjektive Wahrscheinlichkeit|
+|:---|:---|:---|
+|Begriff|Die Wahrscheinlichkeiten, die auf Basis statistischer Beobachtungen gebildet werden |Die Wahrscheinlichkeit ist der Grad der persönlichen Überzeugung, dass ein Ereignis eintritt. Sie basiert auf individuelle Erfahrung, Wissen oder Intuition |
+|Wie stellt man sie fest?|Führe das Experiment mehrmals durch und zähle, wie oft das Ereignis eintritt.|Durch Nachdenken und Schätzen jedes einzelnen|
+|Kurz gesagt|Frequentistisch = wiederholte Versuche|Subjektiv = Einschätzung, nicht Messung|
+
+
+
+### 2. Das Gesetz der großen Zahlen <br>
+
+Die frequentistische Wahrscheinlichkeit basiert auf empirischen Daten und hat deswegen eine enge Beziehung mit dem *Gesetz der großen Zahlen*: 
+Je öfter ein Zufallsexperiment durchgeführt wird, desto näher nähert sich die relative Häufigkeit ($\frac{k}{n}$) eines Ereignisses der theoretischen Wahrscheinlichkeit ($P(A)$) an.
+
+**Warum das Gesetz der großen Zahlen wichtig ist?** <br>
+In der Datenwissenschaft verwenden wir oft Daten, um Modelle zu trainieren. Aber wenn der Datensatz zu klein ist, können ein paar ungewöhnliche Werte die Ergebnisse verfälschen. Das Gesetz der großen Zahlen besagt, dass sich zufällige Schwankungen ausgleichen, je mehr Daten wir sammeln, und dass das Durchschnittsergebnis zuverlässiger wird. Deshalb liefern große Datensätze bessere Vorhersagen und Erkenntnisse. *<small>datacamp.com*
+
+
+### 3. Teste Dein Wissen!
+```{r quiz-kap2,echo=FALSE}
+quiz(
+  question("Wenn ein Ereignis als 'unmögliches Ereignis' bezeichnet wird (Symbol: $\\emptyset$), wie hoch ist dann seine Wahrscheinlichkeit?",
+  answer("0", correct = TRUE),
+  answer("1"),
+  answer("-1"),
+  allow_retry = TRUE),
+  
+  question("Welche Aussage beschreibt das Wesen der subjektiven Wahrscheinlichkeit am besten?",
+  answer("Sie ist für alle Personen immer absolut identisch und objektiv messbar."),
+  answer("Sie basiert auf persönlicher Einschätzung, Erfahrung, Wissen oder Intuition und nicht auf empirischen Messungen.", correct = TRUE),
+  answer("Sie wird durch die sehr häufige Wiederholung eines Experiments unter identischen Bedingungen ermittelt."),
+  allow_retry = TRUE
+  ),
+  
+  question("Ruslan wirft eine Münze 10-mal und stellt fest, dass 3-mal 'Kopf' erscheint. Er schlussfolgert, dass die Wahrscheinlichkeit für 'Kopf' 0.3 beträgt. Welchen Wahrscheinlichkeitsansatz wendet Ruslan an?",
+  answer("Unmögliches Ereignis"),
+  answer("Klassische (Laplacescher) Wahrscheinlichkeit"),
+  answer("Frequentistische Wahrscheinlichkeit", correct = TRUE),
+  answer("Subjektive Wahrscheinlichkeit"),
+  allow_retry = TRUE)
+)
+```
+
+
+
 ## Kapital 3: Mengenlehre
 
 ### 1. Definition
-
 ### 2. Formel
 ### 3. Einfaches Beispiel
 ### 4. Teste Dein Wissen!
@@ -167,9 +212,10 @@ quiz( caption = "Übung",
 ## Zusammenfassung
 
 ## Quellen
+###Kap 1
 | Literaturverzeichnis / Quellen | Author |
 | :--- | :--- |
-| **Giáo trình Lý thuyết Xác suất** <br><small>Văn bản và bài tập gốc</small> | Prof. Dr. [Tên Cô] <br>Học phần: *Wahrscheinlichkeitstheorie und Statistik* <br>Trường: HTW Berlin, Khoa 2. |
-| **Slide Bài giảng Stochastik** <br><small>Hệ thống định nghĩa và Thống kê</small> | Prof. Dr. Spott <br>Học phần: *Quantitative Methoden / Stochastische Induktion* <br>Trường: HTW Berlin, Khoa 4. |
+| **Giáo trình Lý thuyết Xác suất** <br><small>Văn bản và bài tập gốc</small> | Prof. Dr. [Tên Cô] <br>Modul: *Wahrscheinlichkeitstheorie 1* <br>HTW Berlin, Fachbereich 4. |
+| **Slide Bài giảng Stochastik** <br><small>Hệ thống định nghĩa và Thống kê</small> | Prof. Dr. Spott Martin <br>Modul: *Stochastik und Induktive Statistik * <br>HTW Berlin, Fachbereich 4. |
 | **R Packages & Learnr Framework** <br><small>Nền tảng xây dựng ứng dụng</small> | Schloerke, B., Allaire, J., & Borges, C. (2025). <br>*learnr: Interactive Tutorials for R*. <br>URL: https://rstudio.github.io/learnr/ |
 
