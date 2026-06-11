@@ -7,7 +7,10 @@ runtime: shiny_prerendered
 ```{r setup, include=FALSE}
 library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = "D:/Gin/HTW/Bachelor_Arbeit/Learning-App")
 ```
+
+
 
 ## Start
 
@@ -150,14 +153,19 @@ quiz( caption = "Übung",
 
 ## Kapital 2: Frequentistische & Subjektive Wahrscheinlichkeit
 *Hier lernst Du, was frequentistische und subjektive Wahrscheinlichkeit bedeuten und wie Du beide Begriffe im Alltag unterscheiden kannst.*
+
 ### 1. Definition
+
 |Kriterium|Frequentistische Wahrscheinlichkeit| Subjektive Wahrscheinlichkeit|
 |:---|:---|:---|
 |Begriff|Die Wahrscheinlichkeiten, die auf Basis statistischer Beobachtungen gebildet werden |Die Wahrscheinlichkeit ist der Grad der persönlichen Überzeugung, dass ein Ereignis eintritt. Sie basiert auf individuelle Erfahrung, Wissen oder Intuition |
 |Wie stellt man sie fest?|Führe das Experiment mehrmals durch und zähle, wie oft das Ereignis eintritt.|Durch Nachdenken und Schätzen jedes einzelnen|
-|Kurz gesagt|Frequentistisch = wiederholte Versuche|Subjektiv = Einschätzung, nicht Messung|
+|Kurz gesagt|Frequentistisch = wiederholte Versuche|Subjektiv = Einschätzung, nicht Messung| |
 
-
+<br>
+```{r echo=FALSE}
+htmltools::img(src = "www/kap2.png", width = "750px")
+```
 
 ### 2. Das Gesetz der großen Zahlen <br>
 
@@ -195,12 +203,82 @@ quiz(
 
 
 
+
 ## Kapital 3: Mengenlehre
 
 ### 1. Definition
-### 2. Formel
-### 3. Einfaches Beispiel
-### 4. Teste Dein Wissen!
+Eine Menge ist eine Gruppe von Objekten, welche Elemente der Menge genannt werden.<br>
+Mengen werden mit *Großbuchstaben* bezeichnet <br>
+Elemente werden mit *Kleinbuchstaben* bezeichnet 
+
+### 2. Beispiel
+$A=$ {2,4,6,8} <br>
+$F=$ {rot,gelb,blau} <br>
+Würfel: $W=$ {1,2,3,4,5,6} <br>
+Münze: $M=$ {Kopf,Zahl} <br>
+Tierheim: $T=${Katze, Hund, Vogel}
+
+### 3. Mächtigkeit 
+
+Die Mächtigkeit einer Menge ist die **Anzahl** der Elemente.
+
+|Menge |Mächtigkeit |
+|:---|:---|
+|$A=$ {2,4,6,8}|$|A|=5$|
+|$F=$ {rot,gelb,blau}|$|F|= 3$|
+|$M=$ {Kopf, Zahl}|$|W|=2$|
+|$W=$ {1,2,3,4,5,6}|$|W|= 6$ |
+|$T=$ {Katze, Hund, Vogel}|$|T|= 3$|
+
+### 4. Mengenlehre
+
+**Teilmenge**  $$A \subset B$$
+$A=$ {1,2,3}<br>
+$B=$ {4} <br>
+$B\subset A$ => $A$ = {1,2,3,4} <br>
+A ist Obermenge von B <br>
+B ist Teilmenge von A
+
+```{r echo=FALSE}
+htmltools::img(src = "www/Teilmenge.png", width = "500px")
+```
+
+**Schnittmenge** $$A \cap B$$
+$A=$ {1,2,3} <br>
+$B=$ {3,4,5} <br>
+$A \cap B =$ {3}
+
+```{r echo=FALSE}
+htmltools::img(src="www/Schnittmenge.png", width ="500px")
+```
+
+**Vereinigungsmenge** $$A \cup B$$
+$A=$ {1,2,3} <br>
+$B=$ {3,4,5} <br>
+$A \cup B =$ {1,2,3,4,5}
+
+```{r echo=FALSE}
+htmltools::img(src="www/Vereinigungsmenge.png", width = "500px")
+```
+
+**Differenzmenge** $$A \setminus B$$
+$A =$ {1,2,3} <br>
+$B=${3,4,5} <br>
+$A \setminus B=$ {1,2}
+
+```{r echo=FALSE}
+htmltools::img(src="www/Differenzmenge.png", width ="500px")
+```
+
+**Komplementärmenge** $$\bar A = \Omega \setminus A $$
+$\Omega =$ {1,2,3,4} <br>
+$A=$ {1,2} <br>
+$\bar A = ${3,4}
+
+```{r echo=FALSE}
+htmltools::img(src="www/Komplementärmenge.png", width ="500px")
+```
+ 
 
 
 ## Kapital 4: Kombinatorik
