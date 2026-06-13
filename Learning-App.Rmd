@@ -204,12 +204,28 @@ quiz(
 
 
 
-## Kapital 3: Mengenlehre
+## Kapital 3: Mengenlehrer
 
 ### 1. Definition
 Eine Menge ist eine Gruppe von Objekten, welche Elemente der Menge genannt werden.<br>
 Mengen werden mit *Großbuchstaben* bezeichnet <br>
 Elemente werden mit *Kleinbuchstaben* bezeichnet 
+
+**Typische Zahlenmengen:**
+
+|Symbol| Bedeutung|Beispiel|Erklärung|
+|:---|:---|:---|:---|
+|$\mathbb{N}$|Natürliche Zahlen|$\mathbb{N} = \{1,2,3,4\}$|alle positiven ganzen Zahlen ohne Null|
+|$\mathbb{N_0}$|Natürliche Zahlen mit 0|$\mathbb{N_0}=\{0,1,2,3,4,5\}$| alle positiven ganzen Zahlen mit Null|
+|$\mathbb{Z}$|Ganze Zahlen|$\mathbb{Z}= \{...,-3,-2,-1,0,1,2,3,...\}$|alle ganzen Zahlen: negative, positive und Null|
+|$\mathbb{Q}$|Rationale Zahlen|$\mathbb{Q=} \{...,-2, \frac{1}{2}, 0,1\}$|alle ganzen Zahlen und alle Brüche aus ganzen Zahlen|
+|$\mathbb{R}$|Reelle Zahlen|$\mathbb{R=} \{{...,-2, \frac{7}{8}},0,1,\sqrt{2}, \mathbb{e}, \pi,...\}$|rtgrteg|
+|$\mathbb{C}$|Komplexe Zahlen|$\mathbb{C} = \{-5+2i\}$|alle Zahlen der Form: a + bi <br> a: reelle Zahl <br> b: reelle Zahl <br> i: imaginäre Einheit|
+
+```{r echo=FALSE}
+htmltools::img(src="www/Menge.png",width = "600px")
+```
+
 
 ### 2. Beispiel
 $A=$ {2,4,6,8} <br>
@@ -279,9 +295,146 @@ $\bar A = ${3,4}
 htmltools::img(src="www/Komplementärmenge.png", width ="500px")
 ```
  
+### 5. Teste Dein Wissen!
+
+```{r quiz-kap3, echo=FALSE}
+quiz(    
+    question("$A=$ {1,2,3,4,5,6,0}. Was ist die Mächtigkeit?",
+    answer("6"),
+    answer("7", correct = TRUE),
+    answer("10,5"),
+    allow_retry = TRUE),
+    
+    question("Eine Würfel: $W =$ {Zahl, Wappen}. Was ist die Mächtigkeit?",
+    answer("4"),
+    answer("1"),
+    answer("2", correct = TRUE),
+    allow_retry = TRUE),
+    
+    question("Wie ist diese Menge genannt? **$$A\\cap B$$**" ,
+    answer("Vereinigungsmenge"),
+    answer("Schnittmenge", correct = TRUE),
+    answer("Differenzmenge"),
+    allow_retry = TRUE),
+    
+    question("Grundraum $\\Omega$= {1,2,3,4,5,6,7,8,9,10} <br> $A=${2,4,6,8,10} <br> $B=$ {1,2,3,4,5}. <br> Bestimmen die Mengen $A \\cap B$",
+    type = "learnr_text",
+    answer("2,4", correct = TRUE)             )
+)
+
+```
+
+
+
+
+
+## Kapital 3.1: Rechenregeln für Mengen (Mengenlehrer Erweiterung)
+
+### 1. Das Kommutativgesetz
+$$A \cap B = B \cap A$$
+$$A \cup B = B \cup A$$
+
+### 2. Das Assoziativgesetz
+
+$$(A \cap B) \cap C = A \cap (B \cap C )$$
+$$(A \cup B) \cup C = A \cup (B \cup C)$$
+
+### 3. Das Distributivgesetz
+$$(A \cup B) \cap C = (A \cap C) \cup (B \cap C)$$ 
+$$(A \cap B) \cup C = (A \cup C) \cap (B \cup C)$$
+
+### 4. de Morgansche Regeln
+$$\overline {(A \cup B)} = \bar A \cap \bar B$$
+$$\overline {(A \cap B)} = \bar A \cup \bar B$$
+
+### 5. askdjsa
+$$A \subset B => \bar B \subset \bar A $$
+
+### 6. sjkdhf
+$$A \setminus B = A \cap \bar B$$
 
 
 ## Kapital 4: Kombinatorik
+
+*Du möchtest dein Smartphone mit einem vierstelligen PIN-Code sperren. Wie viele verschiedene Kombinationen könntest du theoretisch wählen? Oder denkst du an einen Spieleabend mit Freunden: Auf wie viele verschiedene Weisen könnt ihr euch um den Tisch setzen? Und warum ist die Chance, den Jackpot im Lotto zu knacken, eigentlich so verschwindend gering?* <br>
+Die Kombinatorik anwort die Frage: **Wie viele Möglichkeiten gibt es eigentlich?**
+
+
+Die Kombinatorik ist ein Teilgebiet der Mathematik und Stochastik, die auf die Weise der Elementen zählen, anordnen, auswählen. Einfacher zu sagen, dass es darum geht, wie viele Möglichkeiten hat man, um etwas zu machen. <br>
+- Wie viele Möglichkeiten gibt es, um 3 Menschen in einem Verein 10 Menschen? <br>
+- Wie viele 8-stellige Kontonummern gibt es, die nicht mit der Null beginnen?
+
+```{r echo=FALSE}
+htmltools::img(src="www/Kombinatorik.png",width=750,height=550)
+```
+
+
+### 1. Permutation
+eine Menge mit $n$ Elementen. Jede Anordnung dieser Elemente in einer bestimmten Reihenfolge heißt **Permutation** dieser Elemente. Bei Permuatation unterscheidet man 2 Fälle: Sind alle $n$ Elemente unterscheidbar (z.B: 3 Bücher (A, B, C) legen in einem Buchregal, jedes Buch ist einzigartig, das ist **Permutationen ohne Wiederholung**. Sind einige Elemente gleich (z.B 100 HTW-Studierende werden in 2 Gruppen aufgeteilt: Bachelor und Master, egal was ihre Namen oder Geschlechte sind, solange bleiben die Studierenden innerhalb der Master-Gruppe, die sind gleich, das ist **Permutationen mit Wiederholung**
+
+#### 1.1 Permutation ohne Wiederholung
+alle Elemente sind verschieden/unterscheidbar, dann es gibt $$n!$$ verschiedene Anordnungen <br>
+$n!$ heißt *n* Fakutät mit $n\geq 0$
+
+$1! = 1$ <br>
+$2!= 2.1 =2$ <br>
+$3!=3.2.1=6$<br>
+$4!=4.3.2.1=24$
+
+**Beispiel**<br>
+Du hast 5 verschiedene Bücher und möchtest wissen, wie viele Arten kannst Du diese in einem Regal anordnen <br>
+Anzahl der Bücher: 5 <br>
+$n =5$ <br>
+$n! = 5! =120$ 
+Es gibt 120 Möglichkeiten. <br>
+
+Acht verschiedene Personen sollen sich beliebig auf acht Stühle verteilen. Wie viele Möglichkeiten zur Anordnung der Personen gibt es? <br>
+Anzahl der Personen: 8 <br>
+$n=5$ <br>
+$n! = 8! = 40320$
+Es gibt 40320 Möglichkeiten. <br>
+
+3 Kinder (A,B,C) stellen sich an einem Eisstand an. Wie viele Möglichkeiten des Anstehens? <br>
+Anzahl der Kindern: 3 <br>
+$n=3$ <br>
+$n!=3!=6$ <br>
+Es gibt 6 Möglichkeiten. 
+
+**Zyklische Permutation**
+
+Es gibt $$(n-1)!$$ Möglichkeiten, unterscheidbare Objekte in einem Kreis anzuordnen.<br>
+In einer Urne befinden sich 5 verschiedenfarbige Kugeln. Wie viele Möglichkeiten gibt es, die Kugeln *in einer Reihe* anzuordnen? <br>
+$n!=5!=120$ <br>
+
+In einer Urne befinden sich fünf verschiedenfarbige Kugeln. Wie viele Möglichkeiten gibt es, die Kugeln *in einem Kreis* anzuordnen? <br>
+$(n-1)! =(5-1)!=4!= 24$
+
+
+
+
+#### 1.2 Permutation mit Wiederholung
+Eine Permutation mit Wiederholung ist eine Anordnung von $n$ Objekten, von denen manche nicht unterscheidbar sind.
+$$\frac{n!}{k_1!.k_2!...k_m!}$$
+
+$n$: Gesamtzahl der Objekten <br>
+$k$: Gesamtzahl der identischen Objekten
+
+**Beispiel**
+Ein Korb enthält 3 Äpfel und 2 Bananen, wie viele Möglichkeiten gibt es, diese Obst in einer Reihe anzuordnen
+$n=5$ (3 Äpfel + 2 Bananen)<br>
+$k_1 = 3$ (Anzahl der identischen Gruppe 1-Apfel)<br>
+$k_2 = 2$ (Anzahl der identischen Gruppe 2-Banane)
+$$\frac{5!}{3!.2!} =10$$
+Es gibt 10 Möglichkeiten.
+
+Du möchtest die Buchstaben des Wortes "BANANA" anordnen, wie viele Möglichkeiten gibt es?<br>
+$n!=6$ <br>
+$k_1 = 1$ <br>
+$k_2 = 3$ (Anzahl der Buchstaben "A") <br>
+$k_3 = 2$ (Anzahl der Buchstaben "N")
+
+$$\frac{6!}{1!.2!.3!} = 60$$
+
 
 ## Kapital 5: Baumdiagramme
 
