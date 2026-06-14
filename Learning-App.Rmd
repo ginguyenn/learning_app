@@ -30,7 +30,7 @@ Anleitung:
 -   Jedes Modul enthält theoretische Grundlagen, Beispiele und interaktive Quizfragen, um Dein Wissen direkt zu überprüfen.
 -   Klicke auf "Nächste Seite", um mit Kapital 1 zu beginnen.
 
-## Kapital 1: Wahrscheinlichkeit
+## Kapitel 1: Wahrscheinlichkeit
 
 *Wenn Du eine Münze wirfst, wie sicher bist du, dass sie auf "Kopf" landet? Warum sagen wir, die Chance liegt bei 50%?*
 
@@ -151,7 +151,7 @@ quiz( caption = "Übung",
 
 
 
-## Kapital 2: Frequentistische & Subjektive Wahrscheinlichkeit
+## Kapitel 2: Frequentistische & Subjektive Wahrscheinlichkeit
 *Hier lernst Du, was frequentistische und subjektive Wahrscheinlichkeit bedeuten und wie Du beide Begriffe im Alltag unterscheiden kannst.*
 
 ### 1. Definition
@@ -204,7 +204,7 @@ quiz(
 
 
 
-## Kapital 3: Mengenlehrer
+## Kapitel 3: Mengenlehrer
 
 ### 1. Definition
 Eine Menge ist eine Gruppe von Objekten, welche Elemente der Menge genannt werden.<br>
@@ -328,7 +328,7 @@ quiz(
 
 
 
-## Kapital 3.1: Rechenregeln für Mengen (Mengenlehrer Erweiterung)
+## Kapitel 3.1: Rechenregeln für Mengen (Mengenlehrer Erweiterung)
 
 ### 1. Das Kommutativgesetz
 $$A \cap B = B \cap A$$
@@ -354,14 +354,14 @@ $$A \subset B => \bar B \subset \bar A $$
 $$A \setminus B = A \cap \bar B$$
 
 
-## Kapital 4: Kombinatorik
+## Kapitel 4: Kombinatorik
 
 *Du möchtest dein Smartphone mit einem vierstelligen PIN-Code sperren. Wie viele verschiedene Kombinationen könntest du theoretisch wählen? Oder denkst du an einen Spieleabend mit Freunden: Auf wie viele verschiedene Weisen könnt ihr euch um den Tisch setzen? Und warum ist die Chance, den Jackpot im Lotto zu knacken, eigentlich so verschwindend gering?* <br>
 Die Kombinatorik anwort die Frage: **Wie viele Möglichkeiten gibt es eigentlich?**
 
 
 Die Kombinatorik ist ein Teilgebiet der Mathematik und Stochastik, die auf die Weise der Elementen zählen, anordnen, auswählen. Einfacher zu sagen, dass es darum geht, wie viele Möglichkeiten hat man, um etwas zu machen. <br>
-- Wie viele Möglichkeiten gibt es, um 3 Menschen in einem Verein 10 Menschen? <br>
+- Wie viele Möglichkeiten gibt es, um 3 Menschen in einem Sportverein 10 Menschen zu wählen? <br>
 - Wie viele 8-stellige Kontonummern gibt es, die nicht mit der Null beginnen?
 
 ```{r echo=FALSE}
@@ -369,7 +369,7 @@ htmltools::img(src="www/Kombinatorik.png",width=750,height=550)
 ```
 
 
-### 1. Permutation
+### **1. Permutation**
 eine Menge mit $n$ Elementen. Jede Anordnung dieser Elemente in einer bestimmten Reihenfolge heißt **Permutation** dieser Elemente. Bei Permuatation unterscheidet man 2 Fälle: Sind alle $n$ Elemente unterscheidbar (z.B: 3 Bücher (A, B, C) legen in einem Buchregal, jedes Buch ist einzigartig, das ist **Permutationen ohne Wiederholung**. Sind einige Elemente gleich (z.B 100 HTW-Studierende werden in 2 Gruppen aufgeteilt: Bachelor und Master, egal was ihre Namen oder Geschlechte sind, solange bleiben die Studierenden innerhalb der Master-Gruppe, die sind gleich, das ist **Permutationen mit Wiederholung**
 
 #### 1.1 Permutation ohne Wiederholung
@@ -435,10 +435,96 @@ $k_3 = 2$ (Anzahl der Buchstaben "N")
 
 $$\frac{6!}{1!.2!.3!} = 60$$
 
+### **2. Variation**
+Die Variation handelt sich um eine Auswahl von $k$ Elementen, bzw. ein Teil einer Grundmenge von $n$ Elementen, bei der die Reihenfolge eine Rolle spielt. <br>
+Warum ist **die Reihefolge** bei der Variation wichtig? <br>
+Stell dir vor, 4-stellige Passwort-Nummer (in 10 Nummer von 0 bis 9) werden ausgewählt <br>
+- "1234" eingegeben -> Das Handy ist entsperrt.<br>
+- "4321" eingegeben -> Eine Warnung auftaucht. <br>
+Offensichlicht führt die Änderung der Reihefolge der 4-stellige Nummer zu einem neuen Ergebnis. Die Reihefolge spielt daher eine große Bedeutung bei der Variation. <br>
 
-## Kapital 5: Baumdiagramme
+*Identifizierungstipp*: Jede Aufgabe, die Rangfolge (Erster, Zweiter, Dritter), Rollenzuweisung (Bachelor, Master) oder Identifikationsnummer (PIN-Code, ID-Nummer, Handynummer) beinhaltet, ist eine Variationsaufgabe. <br>
 
-## Kapital 6: Statistische Ereignisse
+Der Unterschied zwischen mit und ohne Wiederholung liegt auf eine Aktion: ob die ausgewählte Elemente im nächsten Zug erneut ausgewählt werden oder nicht
+
+
+#### 2.1 Variation mit Wiederholung
+Bei der Variation mit Wiederholung werden $k$ Elemente - mit Berücksichtigung der Reihenfolge - aus einer Menge von $n$ Elementen ausgewählt. Die Elemente dürfen wieder verwendet werden und die Elemente im Ergebnis können exakt  gleich sein.
+$$n^k$$
+
+**Beispiel**
+Ein Smartphone-PIN besteht aus 4-stelligen Nummerkombination. Für jede Stelle kann 1 Ziffer von 0 bis 9 gewählt werden. Wie viele verschiedene PINs können erschafft werden?
+$n=10$ <br>
+$k=4$ <br>
+$n^k = 10^4 =10.000$ Möglichkeiten. <br>
+
+#### 2.2 Variation ohne Wiederholung
+Bei der Variation ohne Wiederholung, die auszogene Elemente werden nicht zurück gelegt (ohne Wiederholung). Die Elemente im Ergebnis daher sind nicht exakt gleich.
+
+$$\frac{n!}{(n-k)!}$$
+
+**Beispiel**
+In einem Pferdrennen hat 20 Pferde. 3 Pferde wird voraus genommen, die als Erstes, Zweites und Drittes kommen. <br>
+$n=20$ <br>
+$k=3$ <br>
+$\frac{n!}{(n-k)!} = \frac{20!}{(20-3)!} = 6840$ Möglichkeiten.
+
+
+
+### **3. Kombination**
+Die Kombination handelt sich um eine Auswahl von $k$ Elementen, bzw. ein Teil einer Grundmenge von $n$ Elementen, bei der die Reihenfolge *keine* Rolle spielt. Z.B du gehst in den Supermarkt und hast Orange, Apfel, Mango gekauft. Es spielt keine Rolle, ob Du zuerst die Orange oder die Mango in den Korb legst, soweit enthält der Korb sowieso alle 3 Früchte. Die Menge $F=\{Orange, Mango, Apfel\}$ und $F=\{Apfel, Orange, Mango\}$ sind gleich. <br>
+
+*Identifizierungstipp*: Jede Aufgabe, bei der es nur um eine Auswahl oder Gruppenbildung geht (z.B. Lotto, Teambildung, Obstkorb...), ohne dass die Positionen der Elemente eine Rolle spielen, ist eine Kombinationsaufgabe.
+
+#### 3.1 Kombination ohne Wiederholung
+Bei der Kombination ohne Wiederholung, die auszogene Elemente werden nicht zurück gelegt (ohne Wiederholung). Die Elemente im Ergebnis daher sind nicht exakt gleich. Der einzige Unterschied zwischen einer Variation ohne Wiederholung und einer Kombination ohne Wiederholung ist die Tatsache, dass bei der Kombination – im Gegensatz zur Variation – die Reihenfolge der Objekte keine Rolle spielt.
+
+$$\binom{n}{k} = \frac{n!}{k!(n-k)!}$$
+
+*Beispiel*
+Die Ziehung von Lotto "6 aus 49" ist eine Kombination 6. Wie viele Möglichkeiten gibt es? 
+$n=49$ <br>
+$k=6$ <br>
+$\frac{49!}{6!(49-6)!} = \binom{49}{6} = 13.983.816$ Möglichkeiten.
+
+#### 3.2 Kombination mit Wiederholung
+Bei der Kombination mit Wiederholung werden $k$ Elemente - ohne Berücksichtigung der Reihenfolge - aus einer Menge von $n$ Elementen ausgewählt. Die Elemente dürfen wieder verwendet werden.
+
+$$\binom{n+k-1}{k}=\frac{(n+k-1)!}{(n-1)!\cdot k!}$$
+
+**Beispiel**
+Timmy hat 4 kleine (nicht unterscheidbare) Welpen. Wenn sie aufgeschreckt werden, sucht sich jeder einen Platz unter einem der sechs Esszimmerstühle. Wie viele unterschiedliche Möglichkeiten der vier Welpen kann Timmy beobachten?
+
+$n=6$ <br>
+$k=4$ <br>
+$\frac{(n+k-1)!}{(n-1)!\cdot k!} = \frac{(6+4-1)!}{(6-1)! \cdot 4!} = 126$ Möglichkeiten.
+
+
+
+
+
+### 4. Teste Dein Wissen!
+```{r quiz-kap4, echo=FALSE}
+quiz(
+  question("Was ist der Unterschied zwischen Variation und Permutation?",
+  answer("Bei der Variation geht es im Gegensatz zur Permutation nicht um eine Auswahl von Objekten, sondern um die Gesamtmenge."),
+  answer("Die Variation beschäftigt sich im Gegensatz zur Permutation mit den Wahrscheinlichkeiten der einzelnen Kombinationsmöglichkeiten."),
+  answer("Bei der Permutation geht es im Gegensatz zur Variation nicht um eine Auswahl von Objekten, sondern um die Gesamtmenge.", correct = TRUE),
+  allow_retry = TRUE),
+     
+question("Wie lautet die Formel für die Berechnung der Variation ohne Wiederholung?",
+answer("$n^k$"),
+answer("$\\frac{n!}{(n-k)!}$", correct = TRUE),
+answer("$\\binom{n}{k}$"),
+allow_retry = TRUE)
+)
+
+```
+
+
+## Kapitel 5: Baumdiagramme
+
+## Kapitel 6: Statistische Ereignisse
 
 ## Zusammenfassung
 
