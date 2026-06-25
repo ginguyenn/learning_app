@@ -6,6 +6,9 @@ runtime: shiny_prerendered
 
 ```{r setup, include=FALSE}
 library(learnr)
+library(shiny)
+library(ggplot2)
+library(shinythemes)
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_knit$set(root.dir = "D:/Gin/HTW/Bachelor_Arbeit/Learning-App")
 ```
@@ -60,13 +63,13 @@ $$\frac{1}{6} \approx 0,1667 \approx16,67\% $$
 
 Drücke den Button, um Dein Glück zu versuchen!
 
-```{r simulation-ui-dice}
+```{r sim-ui-dice, context="render", echo=FALSE}
 actionButton("roll_btn", "würfeln!", icon = icon("dice"), class = "btn-primary")
 uiOutput("dice_result_display")
 
 ```
 
-```{r simulation-server, context="server"}
+```{r sim-server-dice, context="server", echo=FALSE}
 # Phần xử lý logic (Server)
 output$dice_result_display <- renderUI({
   # press button
@@ -105,17 +108,6 @@ output$dice_result_display <- renderUI({
 })
 ```
 
-### Symbolstabelle
-
-| Begriff | Symbole | Erklärung | Beispiel
-| :--- | :--- | :---| :---|
-|**Zufallsexperiment**||Versuche oder Experimente, die bei Wiederholungen unter gleichen Bedingungen zu verschiedenen Ergebnissen führen können, heißen zufällig|- Werfen eines Würfels <br> - Werfen einer Münze <br>- Zufälliges Abfeuern eines Schusses  |
-| **zufälliges Ergebnis** | $\omega$ | |  |
-| **Grundraum/Ergebnisraum** |$\Omega$| Der Ergebnisraum oder Grundraum $\Omega$ ist die Menge aller Elementarereignisse | Wurf eines Würfels -> $\Omega$={1,2,3,4,5,6}|
-|**zufälliges Ereignis**| $A$ <br> $A$ $\subset$ $\Omega$| zufälliges Ereignis ist eine Menge von Ergebnissen | Wurf eines Würfels $A_1$ = {1} oder $A_2$={3,5} oder $A_3$ ={2,4,6}| |
-|**Elementarereignis**| {$\omega$} |Ereignisse, die **nur** aus der einelementigen Menge {$\omega_i$} |Münzwurf -> 2 Elementarereignisse <br> $\Omega$ = {Wappen, Zahl}<br>$\omega_1$ ={Zahl} <br> $\omega_2$ = {Wappen} |
-|**unmögliches Ereignis**|$\emptyset$| unmögliche Ereignis $\emptyset$ ist das Ereignis, das keine Elementarereignisse enthält| |
-|**Komplementärereignis**|$A^c$ <br> $A^c$ = $\Omega$ $\setminus$ $A$ | $A^c$ ist das Ereignis, das genau dann eintritt, wenn A nicht eintritt.| $\Omega$ = {Hunde, Katze, Vögel, Eule, Hai} <br> $A=$ {Hunde, Katze} <br> $A^c=$ {Vögel, Eule, Hai} 
 
 
 
@@ -175,6 +167,63 @@ Je öfter ein Zufallsexperiment durchgeführt wird, desto näher nähert sich di
 **Warum das Gesetz der großen Zahlen wichtig ist?** <br>
 In der Datenwissenschaft verwenden wir oft Daten, um Modelle zu trainieren. Aber wenn der Datensatz zu klein ist, können ein paar ungewöhnliche Werte die Ergebnisse verfälschen. Das Gesetz der großen Zahlen besagt, dass sich zufällige Schwankungen ausgleichen, je mehr Daten wir sammeln, und dass das Durchschnittsergebnis zuverlässiger wird. Deshalb liefern große Datensätze bessere Vorhersagen und Erkenntnisse. *<small>datacamp.com*
 
+```{r sim-ui-coin, context="render", echo=FALSE}
+wellPanel(
+  fluidRow(
+    column(4,
+      # Thanh trượt cho sinh viên chọn số lần tung đồng xu
+      sliderInput("num_inputs", 
+                  label = "Anzahl der Würfe (N):", 
+                  min = 10, 
+                  max = 5000, 
+                  value = 200, 
+                  step = 50),
+      
+      # Nút bấm để kích hoạt chạy lại mô phỏng ngẫu nhiên mới
+      actionButton("run_sim", 
+                   label = "Simulation starten", 
+                   icon = icon("play"),
+                   class = "btn-success")
+    ),
+    column(8,
+      # Nơi hiển thị đồ thị động đổ về từ Server
+      plotOutput("law_large_numbers_plot", height = "350px")
+    )
+  )
+)
+```
+
+
+
+```{r, context="server"}
+sim_data <- eventReactive(input$run_sim, {
+  n <- input$num_inputs
+  results <- sample(c(0, 1), size = n, replace = TRUE, prob = c(0.5, 0.5))
+  cum_sums <- cumsum(results)
+  trials <- 1:n
+  rel_frequencies <- cum_sums / trials
+  data.frame(Trials = trials, RelFreq = rel_frequencies)
+}, ignoreNULL = FALSE)
+
+output$law_large_numbers_plot <- renderPlot({
+  df <- sim_data()
+  ggplot(df, aes(x = Trials, y = RelFreq)) +
+    geom_line(color = "#2c3e50", size = 1) + 
+    geom_hline(yintercept = 0.5, linetype = "dashed", color = "#e74c3c", size = 1.2) + 
+    labs(
+      title = "Konvergenz der relativen Häufigkeit",
+      x = "Anzahl der Würfe (Wiederholungen)",
+      y = "Relative Häufigkeit (Kopf)"
+    ) +
+    xlim(0, input$num_inputs) +
+    ylim(0, 1) +
+    theme_minimal(base_size = 14) +
+    annotate("text", x = input$num_inputs * 0.8, y = 0.55, 
+             label = "Theoretischer Wert (0.5)", color = "#e74c3c", fontface = "bold")
+})
+```
+
+
 
 ### 3. Teste Dein Wissen!
 ```{r quiz-kap2,echo=FALSE}
@@ -219,7 +268,7 @@ Elemente werden mit *Kleinbuchstaben* bezeichnet
 |$\mathbb{N_0}$|Natürliche Zahlen mit 0|$\mathbb{N_0}=\{0,1,2,3,4,5\}$| alle positiven ganzen Zahlen mit Null|
 |$\mathbb{Z}$|Ganze Zahlen|$\mathbb{Z}= \{...,-3,-2,-1,0,1,2,3,...\}$|alle ganzen Zahlen: negative, positive und Null|
 |$\mathbb{Q}$|Rationale Zahlen|$\mathbb{Q=} \{...,-2, \frac{1}{2}, 0,1\}$|alle ganzen Zahlen und alle Brüche aus ganzen Zahlen|
-|$\mathbb{R}$|Reelle Zahlen|$\mathbb{R=} \{{...,-2, \frac{7}{8}},0,1,\sqrt{2}, \mathbb{e}, \pi,...\}$|rtgrteg|
+|$\mathbb{R}$|Reelle Zahlen|$\mathbb{R=} \{{...,-2, \frac{7}{8}},0,1,\sqrt{2}, \mathbb{e}, \pi,...\}$||
 |$\mathbb{C}$|Komplexe Zahlen|$\mathbb{C} = \{-5+2i\}$|alle Zahlen der Form: a + bi <br> a: reelle Zahl <br> b: reelle Zahl <br> i: imaginäre Einheit|
 
 ```{r echo=FALSE}
@@ -522,17 +571,485 @@ allow_retry = TRUE)
 ```
 
 
-## Kapitel 5: Baumdiagramme
+## Kapitel 5: Statistische Ereignisse
 
-## Kapitel 6: Statistische Ereignisse
+### 1. Ergebnis & Ergebnisraum
+**Zufallsexperiment**: Versuche oder Experimente, die bei Wiederholungen unter gleichen Bedingungen zu verschiedenen Ergebnissen führen können. <br>
+**Ergebnis $\omega$**: ist Ausgang des Zufallsexperiments <br>
+**Ergebnisraum (Grundraum) $\Omega$**: enthält alle Ergebnisse und kann je nach Bedarf unterschiedlich angegeben werden.
+
+|Zufallsexperiment|Ergebnisraum $\Omega$|Ergebnis $\omega$|
+|:---|:---|:---|
+|Werfen einer Münze|$\Omega=\{Kopf, Zahl\}$ | $\omega_1 = \{Kopf\}$ oder <br> $\omega_2 = \{Zahl\}$|
+|Werfen eines Würfels|$\Omega_1 = \{gerade, ungerade\}$ oder <br> $\Omega_2 = \{1,2,3,4,5,6\}$|$\omega_1 = \{2\}$ <br> $\omega_2= \{4\}$ <br> $\omega_3 = \{6\}$|
+
+### 2. Ereignis & Ereignisraum
+
+**Ereignis**: ist eine Gruppe der Ergebnisse mit einer bestimmten Bedingung. Ereignisse ist ein Teilmenge von Grundraum $\Omega$ und werden mit großen Buchstaben $A,B,C,...$ oder $A_1,A_2, A_3,...$ <br>
+
+```{r, echo=FALSE}
+
+shiny::fluidRow(
+  # left column
+  shiny::column(width = 5,
+    htmltools::img(src = "www/kap5.png", width = "100%", style = "max-width: 400px;")
+  ),
+  
+  # right column
+  shiny::column(width = 7,
+    htmltools::tags$div(
+      htmltools::tags$h4("Ziehe der Kügel:"),
+      htmltools::tags$p("A: 'Nur Blau' ->  A={2}"),
+      htmltools::tags$p("B: 'Die Farbe nicht Orange' -> B={1,2,3}"),
+      htmltools::tags$p("C: Grün und Orange -> C = {1,4}")
+    )
+  )
+)
+
+```
+
+
+<br>
+**Unmögliches Ereignis $\emptyset$**: enthält kein Element. Z.B: D = die schwarzen Kügel ={} <br>
+**Elementarereignis**: enthält nur 1 Element. z.B: E= die Farbe 'Grün' = {1} <br>
+**Ereignisraum**: enthält alle Ereignisse <br>
+**sicheres Ereignis $\Omega$**: tritt auf jeden Fall ein, mit 100% Wahrscheinlichkeit.<br>
+**Komplementärereignis $A^c$**:
+
+
+### Zusammenfassung
+| Begriff | Symbole | 
+| :--- | :--- |
+| **Ergebnis** | $\omega$ | 
+| **Grundraum/Ergebnisraum** |$\Omega$| 
+|**Sicheres Ereignis**|$\Omega$|
+|**Ereignis**| $A$ <br> $A$ $\subset$ $\Omega$|
+|**Elementarereignis**| {$\omega$} |
+|**unmögliches Ereignis**|$\emptyset$| 
+|**Komplementärereignis**|$A^c$ <br> $A^c$ = $\Omega$ $\setminus$ $A$ | 
+
+
+```{r quiz-kap5, echo=FALSE}
+quiz(
+  question("Ausgang eines zufallsexperiments ist...",
+           answer("$\\omega$", correct=TRUE),
+           answer("$\\Omega$"),
+           answer("$\\emptyset$"),
+           allow_retry = TRUE)
+)
+```
+
+
+
+## Kapitel 6: Wahrscheinlichkeiten von mehreren Ereignissen
+
+Erinnerst Du dich noch an die **Rechenregeln für Mengen** aus Kapitel 3.1? Die Kommutativ-, Assoziativ- und Distributivgesetze sowie *de Morganschen Regeln* haben uns gezeigt, wie logische Mengen miteinander interagieren. Wir erwecken diese trockenen Mengenformeln zum Leben! In diesem Kapitel betrachten wir Mengen nicht mehr nur als rein mathematische Objekte, sondern als **Zufallsereignisse**. Wir packen das Maß der Wahrscheinlichkeit $P(...)$ um unsere bekannten Mengenstrukturen herum. 
+
+### 1. Die Wahrscheinlichkeit der Mengenlehre
+
+| Gesetz / Regel | Mathematische Formel | Erklärung |
+|:---|:---:|:---|
+|Das Kommutativgesetz|$P(A \cap B) = P(B \cap A)$ <br> $P(A \cup B) = P(B \cup A)$
+|de Morgansche Regeln|$P \overline {(A \cup B)} = P(\overline A \cap \overline B)$|A und B treten nicht ein|
+||$P \overline {(A \cap B)} = P (\overline A \cup \overline B)$ |A und B treten nicht gleichzeitig ein|
+||$P(A \setminus B) = P(A)-P(A \cap B)$|A tritt ein, aber B nicht|
+
+### 2. Der Additionssatz
+
+Du möchtest $P(A \cup B)$ berechnen. Wenn Du $P(A) + P(B)$ nimmst, dann wird die Schnittmenge doppelt gezählt. Wir berechnen deswegen:
+
+```{r}
+shiny::fluidRow(
+  shiny::column(
+    width = 6,
+    htmltools::img(src ="www/Schnittmenge.png", width ="100%", style ="max-width: 500px")
+  ),
+  shiny::column(
+    width =6,          
+    htmltools::HTML("$$P(A \\cup B) = P(A) + P(B)- P(A \\cap B)$$")
+  )
+)
+```
+
+
+
+
+### 5. Teste Dein Wissen!
+
+```{r quiz-kap6,echo=FALSE}
+quiz(
+  question("Welche Ereignisse sind bei 2 Durchläufen stochastisch unabhängig voneinander? (Es können mehrere Antworten richtig sein)",
+           answer("Münze werfen", correct = TRUE),
+           answer("Kugel ziehen ohne Zurücklegen"),
+           answer("Kugel ziehen mit Zurücklegen", correct = TRUE),
+           type = "multiple",
+           allow_retry = TRUE)
+)
+```
+
+
+
+## Kapitel 7: Baumdiagramm
+Baumdiagramm darstellt die Beziehung zwischen Ereignissen
+
+### 1. Grundlagen
+**Knoten**: <br>
+**Äste**: eine Linie verbindet die Knoten, auf der die Wahrscheinlichkeit aufgeschrieben wurden müssen.<br>
+**Pfad**: <br>
+**Mit Zurücklegen**: nach die Ziehe wird das Objekt zurückgelegt. Die Wahrscheinlichkeit der nächsten Stufe bleibt unversehrt. <br>
+**Ohne Zurücklegen**: nach der Ziehe wird das Objekt nicht mehr zurückgelegt. Das führt zu der Verringerung der Gesamtzahl. <br>
+
+### 2. Pfadregeln
+**Produktregel**: Das Produkt der Wahrscheinlichkeit entlang eines Pfades von links nach rechts, wenn Du ein bestimmtes Ergebnis wissen willst (z.B "erst rot **UND** dann blau") <br>
+**Summenregel**: Die Summe der Wahrscheinlichkeit durch mehrere verschiedene Pfade, wenn dessen Ereignisse auf dem Baum erfüllt werden können. (z.B "2 Kugeln mit unterschiedlichen Farben": Rot-Blau **ODER** Blau-Rot") <br>
+
+### 3. Zufallsexperiment „Mit Zurücklegen“
+
+In einer Obstschale befinden sich 7 Äpfel und 3 Birnen. Du nimmst 2 Obst heraus mit Zurücklegen
+
+
+```{r echo=FALSE}
+shiny::fluidRow(
+  shiny::column(
+    width = 6,
+    htmltools::img(src="www/kap7_mit.png", width="100%", style = "max-width: 500px")
+  ),
+  
+  shiny::column(
+    width = 6,
+    htmltools::tags$p(
+        htmltools::HTML("$$P(\\text{Apfel}) = \\frac{7}{10} = 0.7$$")
+    ),
+    htmltools::tags$p(
+      htmltools::HTML("$$P(\\text{Birne}) = \\frac{3}{10} = 0.3$$")
+    )
+  )
+  
+)
+
+```
+
+**Gesucht sei die Wahrscheinlichkeit für 2 Äpfel**
+
+```{r , echo = FALSE}
+shiny::fluidRow(
+  shiny::column(
+    width = 6,
+    htmltools::img(src="www/kap7_mit2.png", width ="100%", style = "max-width: 500px")
+  ),
+  shiny::column(
+    width = 6,
+    htmltools::tags$p("Für die gesuchte Wahrscheinlichkeit, müsst Du die Wahrscheinlichkeiten entlang des Pfades multiplizieren. Die Wahrscheinlichkeit 2 Äpfel:"),
+    htmltools::tags$p(htmltools::HTML("$$ P(Apfel,Apfel) = P(Apfel) \\cdot P(Apfel) = 0.49 = 49\\% $$"))
+  )
+)
+
+```
+
+
+
+**Gesucht die Wahrscheinlichkeit für 1 Apfel und 1 Birne**
+
+```{r , echo=FALSE}
+shiny::fluidRow(
+  shiny::column(
+    width = 6,
+    htmltools::img(src="www/kap7_mit2.png", width ="100%", style ="max-width: 500px")
+  ),
+  
+  shiny::column(
+    width = 6,
+    htmltools::tags$p("Die gesamte Wahrscheinlichkeit, 1 Apfel und 1 Birne zu ziehen, wird dann mit der Summenregel verwendet"),
+    htmltools::tags$p(htmltools::HTML("$$P(Apfel,Birne) + P(Birne, Apfel) = 0.7 . 0.3 + 0.3 . 0.7 = 0.42 = 42\\% $$"))
+  )
+)
+```
+
+
+
+
+### 4. Zufallsexperiment „Ohne Zurücklegen“
+In einer Obstschale befinden sich 7 Äpfel und 3 Birnen. Du nimmst 2 Obst heraus ohne Zurücklegen
+
+```{r, echo=FALSE}
+shiny::fluidRow(
+  shiny::column(
+    width = 6,
+    htmltools::img(src="www/kap7_ohne.png", width ="100%", style ="max-width: 500px")
+  ),
+  shiny::column(
+    width =6,
+    htmltools::tags$p(htmltools::HTML("Du ziehst 1 Obst raus, das heißt die Gesamtzahl um 1 verringert. Nach der esrten Ziehe befinden sich die Obstschale 9 Obst."))
+  )
+)
+```
+
+
+```{r, echo=FALSE}
+shiny::fluidRow(
+  shiny::column(
+    width = 6,
+    htmltools::img(src = "www/kap7_ohne1.png", width = "100%", style = "max-width: 500px")
+  ),
+  
+  shiny::column(
+    width = 6,
+    htmltools::tags$p("Die Wahrscheinlichkeit im zweiten Zug 1 Apfel zu ziehen, ändert sich von $\\frac{7}{10}$ auf"),
+    htmltools::tags$p(htmltools::HTML("$\\frac{6}{9} = \\frac{2}{3}$"))
+    )
+  )
+
+```
+
+
+### 5. Teste Dein Wissen!
+
+```{r quiz-kap7, echo=FALSE}
+quiz(
+  question("Was ist die Beziehung zwischen Baumdiagramm und Kombinatorik",
+           answer("Baumdiagramm ersetzt die Kombinatorik vollständig"),
+           answer("Baumdiagramm hift dabei, die Ergebnisse in der Kombinatorik darzustellen", correct = TRUE),
+           answer("Baumdiagramm und Kombinatorik sind eigenständig und gibt es keine Verbindung."),
+           allow_retry = TRUE),
+  question("Wenn die Zieheanzahl und Objektanzahl zu groß sind, warum nutzt man KEINE Baumdiagramm",
+           answer("Da Baumdiagramm bei großen Datenmengen nicht mehr genau ist"),
+           answer("Da Baumdiagramm zu riesig und komplex wird. Es führt zur visuellen Überforderung", correct = TRUE),
+           answer("Da Produktregel nicht an Box mehr als 50 Objekte verwenden kann."),
+           allow_retry = TRUE),
+  question("Welche Kombinatorikmodell entspricht mit einem Baumdiagramm, auf der hat jede Etage gleichen Knoten, gleichen Äste und die Wahrscheinlichkeit jeder Ästen bleibt konstanz.",
+           answer("Kombination ohne Widerholung"),
+           answer("Permutation ohne Widerholung"),
+           answer("Ein Urnemodell mit Zurücklegen", correct = TRUE),
+           allow_retry = TRUE)
+)
+```
+
+
+## Kapitel 8: Bedingte und unbedingte Wahrscheinlichkeit
+
+### 1. Unbedingte Wahrscheinlichkeit
+
+Die unbedingte Wahrscheinlichkeit ist die Wahrscheinlichkeit eines Ereignisses ohne zusätzliche Information oder Bedingungen
+$$P(A)$$
+
+### 2. Bedingte Wahrscheinlichkeit
+Die Wahrscheinlichkeit eines Ereignisses $A$, unter der Bedingung, dass ein anderes Ereignis $B$ bereits eingetreten ist.
+
+```{r, echo=FALSE}
+shiny::div(
+  style = "display: flex; align-items: center; gap: 15px; padding: 10px 0;",
+  shiny::div(
+    htmltools::HTML("$$P(A|B) = \\frac{P(A \\cap B)}{P(B)}$$")
+  ),
+  shiny::div(
+    style = "color: #555555; font-style: italic;",
+    "➔ die bedingte Wahrscheinlichkeit von A unter der Bedingung B"
+  )
+)
+```
+
+Zum Beispiel: Es gibt eine Gruppe von Studierenden, die R lernen und einige, die Python lernen. Wie hoch die Wahrscheinlichkeit ist, dass jemand R lernt, wenn er bereits Python beherrscht hat. Mit Hilfe von Venn-Diagramm darstellt die Beziehung zwischen Ereignisse am besten
+
+```{r}
+shiny::fluidRow(
+  shiny::column(
+    width = 6,
+    htmltools::img(src="www/kap8.png", width ="100%", style ="max-width :500px")
+  ),
+  shiny::column(
+    width = 6,
+    htmltools::tags$p("Bei der Schnittmenge, wo beide Kreise überlappen, sind die die beide lernen:"),
+    htmltools::HTML("$$ P(R | Python) = \\frac {P(R \\cap Python)}{P(Python)}$$")
+  )
+)
+```
+
+### 3. Vierfeldertafel
+
+
+
+### 4. Teste Dein Wissen!
+
+
+
+## Kapitel 9: Stochastische Unabhängigkeit und Abhängigkeit 
+### 1. Stochastische Unabhängigkeit
+
+Die stochastische Unabhängigkeit passiert, wenn das Eintreter von Ereignis A keine Wirkung auf das Eintreter von Ereignis B (und umgekehrt). Dann nennt man diese Ereignisse stochastisch unabhängig. Zum Beispiel hängt die Wahrscheinlichkeit, dass jemand rothaarig ist, nicht mit der Wahrscheinlichkeit zusammen, dass diese Person die Klausur besteht. Im Wesentlichen ist sie **Ziehen mit Zurücklegen**
+$$P(A|B) = P(A)$$ oder$$P(B|A) = P(B)$$
+$$P(A \cap B) = P(A) \cdot P(B)$$
+
+### 2. Stochastische Abhängigkeit
+
+Im Gegenteil von stochastischen Unabhängigkeit, die stochastische Abhängigkeit tritt ein, wenn das Eintreter des Ereignis A eine Wirkung auf das Eintreter das Ereignis B. Das nennt man diese Ereignisse stochastisch abhägig. Zum Beispiel: die Wahrscheinlichkeit der Klausur bestehen hängt davon, wie gut Deine Vorbereitung auf die Klausur ist. Anders zu sagen, dies ist **Ziehe ohne Zurücklegen**
+
+$$ P(A \cap B) \neq P(A)\cdot P(B) $$
+
+
+```{r}
+htmltools::img(src="www/Beziehung.png", width ="100%", style ="max-width:500px")
+```
+
+
+
+## Kapitel 10: Satz von Bayes (beidngte Wahrscheinlichkeit Erweiterung)
+
+### 1. Definition
+Bevor Satz von Bayes tiefer eintauchst, solltest Du in Zufallsexperiment, Ereignis und bedingte Wahrscheinlichkeit gut verstanden haben. Einfacher zu erklären, Satz von Bayes ist die Umgekehrform der klassischen bedingten Wahrscheinlichkeit. Satz von Bayes ist kein neuer Begriff, sondern eine erweiterte mathematische Form, die direkt auf der **bedingten Wahrscheinlichkeit** aufbaut. Der große Unterschied liegt vor im Verwendungszweck und Logikrichtung. <br>
+
+Der Satz von Bayes benutzt, wenn Du bereits bedingte Wahrscheinlichkeit $P(A|B)$ vorhanden bist und Du $P(B|A)$ berechnen möchtest.
+
+$$P(A|B) =  \frac {P(B|A) \cdot P(A)}{P(B)}$$
+
+### 2. Die Logikrichtung: Vorwärts vs. Rückwärts
+**Bedingte Wahrscheinlichkeit (Vorwärts)**: Du berechnest die Wahrscheinlichkeit eines Ergebnisses unter Berücksichtigung der Ursache, wenn Du die Ursache bereits kennst. <br>
+**Satz von Bayes (Rückwärts)**: Du berechnest die Wahrscheinlichkeit der Ursache, wenn Du das Ereignis bereits kennst. Du blickst von der Wirkung zurück auf die Ursache.
+
+```{r}
+htmltools::img(src="www/kap10.png", width ="100%", style ="max-width : 500px")
+```
+
+
 
 ## Zusammenfassung
 
 ## Quellen
-###Kap 1
-| Literaturverzeichnis / Quellen | Author |
-| :--- | :--- |
-| **Giáo trình Lý thuyết Xác suất** <br><small>Văn bản và bài tập gốc</small> | Prof. Dr. [Tên Cô] <br>Modul: *Wahrscheinlichkeitstheorie 1* <br>HTW Berlin, Fachbereich 4. |
-| **Slide Bài giảng Stochastik** <br><small>Hệ thống định nghĩa và Thống kê</small> | Prof. Dr. Spott Martin <br>Modul: *Stochastik und Induktive Statistik * <br>HTW Berlin, Fachbereich 4. |
-| **R Packages & Learnr Framework** <br><small>Nền tảng xây dựng ứng dụng</small> | Schloerke, B., Allaire, J., & Borges, C. (2025). <br>*learnr: Interactive Tutorials for R*. <br>URL: https://rstudio.github.io/learnr/ |
+
+
+## UI template Sammlung
+
+
+
+### Navlist Panel (Hệ thống Tab dọc bên cạnh)
+
+```{r}
+shiny::navlistPanel(
+  
+  widths = c(3, 9), # Cột danh mục chiếm 3 phần, nội dung chiếm 9 phần
+  
+  shiny::tabPanel("Beispiel 1: Münzwurf", 
+    shiny::h4("Zweimaliges Werfen einer Münze"),
+    shiny::p("Das Ergebnis des ersten Wurfs hat keinen Einfluss auf den zweiten Wurf...")
+  ),
+  shiny::tabPanel("Beispiel 2: Urnenmodell", 
+    shiny::h4("Ziehen mit Zurücklegen"),
+    shiny::p("Da die Kugel zurückgelegt wird, bleibt die Wahrscheinlichkeit gleich...")
+  ),
+  shiny::tabPanel("Beispiel 3: Klausur bestehen", 
+    shiny::h4("Abhängige Ereignisse im Alltag"),
+    shiny::p("Die Vorbereitung beeinflusst die Wahrscheinlichkeit des Bestehens...")
+  )
+)
+```
+
+
+### Well Panel (Hộp bọc định nghĩa / công thức quan trọng)
+```{r}
+shiny::wellPanel(
+  style = "background-color: #f8f9fa; border: 1px solid #dee2e6;",
+  shiny::h4("💡 Mathematische Definition", style = "color: #2c3e50; font-weight: bold;"),
+  shiny::HTML("Zwei Ereignisse $A$ und $B$ heißen <b>stochastisch unabhängig</b>, wenn gilt:"),
+  shiny::HTML("$$P(A \\cap B) = P(A) \\cdot P(B)$$")
+)
+```
+
+
+### Conditional Panel Dropdown
+```{r}
+# Giả sử trò có một nút chọn tên là "zug_art" (Loại rút bi)
+shiny::selectInput("zug_art", "Wählen Sie die Ziehungsart:", 
+                   choices = c("Bitte wählen..." = "none", 
+                               "Mit Zurücklegen" = "mit", 
+                               "Ohne Zurücklegen" = "ohne"))
+
+# Khối này chỉ hiện ra NẾU sinh viên chọn "Mit Zurücklegen"
+shiny::conditionalPanel(
+  condition = "input.zug_art == 'mit'",
+  shiny::wellPanel(
+    style = "border-left: 5px solid green;", # Tạo viền màu xanh lá bên cạnh
+    shiny::h5("🟢 Stochastisch Unabhängig", style = "color: green; font-weight: bold;"),
+    shiny::p("Das System bleibt unverändert. Die Produktformel gilt!")
+  )
+)
+
+# Khối này chỉ hiện ra NẾU sinh viên chọn "Ohne Zurücklegen"
+shiny::conditionalPanel(
+  condition = "input.zug_art == 'ohne'",
+  shiny::wellPanel(
+    style = "border-left: 5px solid red;", # Tạo viền màu đỏ bên cạnh
+    shiny::h5("🔴 Stochastisch Abhängig", style = "color: red; font-weight: bold;"),
+    shiny::p("Die Wahrscheinlichkeit ändert sich im zweiten Durchlauf.")
+  )
+)
+```
+
+
+### click là info tự đổ xuống
+<details style="background-color: #e9ecef; padding: 15px; border-radius: 5px; margin-top: 10px;">
+  <summary style="font-weight: bold; cursor: pointer; color: #007bff;">
+    🔍 Klicken Sie hier für den detaillierten Rechenweg (Lösung)
+  </summary>
+  <p style="margin-top: 10px;">
+    <b>Schritt 1:</b> Gegeben sind $P(A) = 0.4$ und $P(B) = 0.3$.<br>
+    <b>Schritt 2:</b> Da die Ereignisse unabhängig sind, nutzen wir die Produktformel:<br>
+    $P(A \cap B) = 0.4 \cdot 0.3 = 0.12$.
+  </p>
+</details>
+
+### Tabset Panel (Tab ngang)
+```{r}
+# Đoạn code này trò đặt bên trong hàm fluidPage() của một Kapitel cụ thể
+shiny::tabsetPanel(
+  type = "tabs",
+  
+  shiny::tabPanel("📖 1. Theorie & Definition", 
+    shiny::br(), # Tạo khoảng trống dòng cho thoáng
+    shiny::h3("Mathematische Grundlagen zur Unabhängigkeit"),
+    shiny::p("Hier wird die Produktformel erklärt...")
+  ),
+  
+  shiny::tabPanel("📊 2. Interaktive Simulation", 
+    shiny::br(),
+    shiny::h3("Urnenmodell: Mit vs. Ohne Zurücklegen"),
+    shiny::p("Hier kommen die Slider und das Diagramm hin...")
+  ),
+  
+  shiny::tabPanel("📝 3. Wissensüberprüfung", 
+    shiny::br(),
+    shiny::h3("Teste dein Wissen!"),
+    shiny::p("Hier platzierst du die quiz() Funktionen von learnr...")
+  )
+)
+```
+
+
+
+
+
+### Slide bar with diagram in row
+
+```{r}
+shiny::sidebarLayout(
+  shiny::sidebarPanel(
+    shiny::h4("Parameter einstellen"),
+    shiny::sliderInput("sim_anzahl", "Anzahl der Simulationen (n):", 
+                       min = 10, max = 1000, value = 100, step = 10),
+    shiny::actionButton("start_sim", "Simulation starten", class = "btn-success")
+  ),
+  
+  shiny::mainPanel(
+    shiny::h4("Visualisierung der Ergebnisse"),
+    shiny::plotOutput("sim_plot") # Nơi chứa đồ thị vẽ bằng ggplot
+  )
+)
+```
+
+
+
+
+
+
+
+
+
 
