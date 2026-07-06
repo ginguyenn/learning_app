@@ -1,5 +1,5 @@
 ---
-title: "Stochastik"
+title: "Wahrscheinlichkeitsrechnung"
 output: learnr::tutorial
 runtime: shiny_prerendered
 resource_files:
@@ -78,7 +78,7 @@ Anleitung:
 
 ### 1. Definition
 
-Die Wahrscheinlichkeit gibt an, wie sehr etwas zutrifft oder nicht. Die Wahrscheinlichkeit liegt zwischen 0 und 1. Dabei wird die Wahrscheinlichkeit, dass ein Ereignis mit Sicherheit zutrifft mit 1 (bzw. 100%), und dass ein Ereignis nicht eintritt mit 0 (bzw. 0%) bezeichnet. Die Summe der Eintrittswahrscheinlichkeiten aller möglichen Ereignisse ist stets 1 (bzw. 100%).
+Die Wahrscheinlichkeit gibt an, wie sehr etwas zutrifft. Die Wahrscheinlichkeit liegt zwischen 0 und 1. Dabei wird die Wahrscheinlichkeit, dass ein Ereignis mit Sicherheit zutrifft mit 1 (bzw. 100%), und dass ein Ereignis nicht eintritt mit 0 (bzw. 0%) bezeichnet. Die Summe der Eintrittswahrscheinlichkeiten aller möglichen Ereignisse ist stets 1 (bzw. 100%).
 
 ### 2. Formel
 
@@ -92,7 +92,7 @@ $$
 
 ### 3. Laplace-Wahrscheinlichkeit (Klassische Wahrscheinlichkeit)
 
-Laplace-Experiment ist ein Zufallsexperiment, unter Bedingung, dass alle Ergebnisse die gleiche Chance/Wahrscheinlichkeit beträgen.
+Laplace-Experiment ist ein Zufallsexperiment, unter Bedingung, dass alle Ergebnisse die gleiche Chance/Wahrscheinlichkeit haben. Die Laplacesche Wahrscheinlichkeitsdefinition nimmt an, dass alle möglichen Ergebnisse gleich wahrscheinlich sind. Dadurch entsteht jedoch ein logisches Problem: Um die Wahrscheinlichkeit zu definieren, wird der Begriff „Wahrscheinlichkeit“ bereits vorausgesetzt. Die folgenden zwei Beispiele verdeutlichen den Unterschied zwischen der theoretischen Wahrscheinlichkeit (Laplace-Wahrscheinlichkeit) und der empirischen Wahrscheinlichkeit.
 
 
 ### 4. Einfaches Beispiel
@@ -100,7 +100,7 @@ Laplace-Experiment ist ein Zufallsexperiment, unter Bedingung, dass alle Ergebni
 Dies ist ein gutes Beispiel für Laplace-Wahrscheinlichkeit. Wenn man einen Würfel wirft, können sechs mögliche Ergebnisse eintreten: 1,2,3,4,5 oder 6. Wir betrachten eins von sechs möglichen Ergebnissen. Jede Seite der Würfel hat die gleiche Chance. Für die Wahrscheinlichkeit eines dieser Ergebnisse gilt: 
 $$\frac{1}{6} \approx 0,1667 \approx16,67\% $$
 
-Drücke den Button, um Dein Glück zu versuchen!
+*Drücke den Button, um Dein Glück zu versuchen!*
 
 ```{r sim-ui-1, context="render", echo=FALSE}
 actionButton("roll_btn", "würfeln!", icon = icon("dice"),
@@ -147,7 +147,7 @@ output$dice_result_display <- renderUI({
 
 
 ### 4.1 Praxisnahes Beispiel
-Du hast einen Coffee-Shop eröffnet und möchtest wissen, welche Kategorie im Shop die Kunden am liebsten bestellen bzw die Wahrscheinlichkeit der Getränke, damit Du den Umsatz optimierst. 
+Du hast einen Coffee-Shop eröffnet und möchtest herausfinden, welche Getränkekategorie deine Kundinnen und Kunden am häufigsten bestellen. Die folgenden Wahrscheinlichkeiten basieren auf einem realen Datensatz und beschreiben die tatsächliche Bestellhäufigkeit der einzelnen Kategorien. Im Gegensatz zur Laplace-Wahrscheinlichkeit stammen diese Werte nicht aus einer theoretischen Annahme, sondern aus beobachteten Daten.
 
 
 ```{r sim-ui-1.1, context ="render", echo= FALSE}
@@ -215,26 +215,48 @@ output$cate_result <- renderUI({
 
 ### 5. Teste Dein Wissen!
 
-```{r quiz}
-quiz( caption = "Übung",
+```{r quiz-kap1, echo=FALSE}
+quiz(
   question("Wie lassen sich Wahrscheinlichkeiten darstellen?(Es können mehrere Antworten richtig sein)",
       answer("Prozentangabe", correct = TRUE),
       answer("Bruch", correct = TRUE),
       answer("Dezimalzahl", correct = TRUE),
       allow_retry = TRUE
       ),
-  question ("Ein Würfel wird einmal geworfen. Wie hoch ist die Wahrscheinlichkeit, eine Zahl größer als 4 (5 oder 6) aufzutauchen",
+  question("$P(A) = \\frac{|A|}{...}$",
+                 answer("$A$"),
+                 answer("$\\omega$"),
+                 answer("$\\Omega$", correct=TRUE),
+                allow_retry = TRUE  ),
+  
+  question("Was beschreibt die Striche im Nenner der Formel $|\\Omega|$",
+           answer("Ein absoluten Betrag, um negative Wahrscheinlichkeit zu vermeiden."),
+           answer("Die absolute Anzahl aller Elemente, die im Graundraum enthalten sind.",correct = TRUE),
+           answer("Die Striche darstellen einen leeren Grundraum"),
+           allow_retry = TRUE),
+  
+  question ("Wie hoch ist die Wahrscheinlichkeit P, eine Zahl größer als 4 (5 oder 6) aufzutauchen",
             answer("$\\frac{1}{6}$"),
             answer("$\\frac{1}{3}$", correct = TRUE),
             answer("$\\frac{1}{2}$"),
             allow_retry = TRUE
             ),
-  question("$P(A) = \\frac{|A|}{...}$",
-                 answer("$A$"),
-                 answer("$\\omega$"),
-                 answer("$\\Omega$", correct=TRUE),
-                allow_retry = TRUE
-  ),
+  question("Wie hoch ist die Wahrscheinlichkeit P, eine Zahl kleiner als Drei zu würfeln? (Es können mehrere Antworten richtig sein)",
+           answer("$\\frac{1}{3}$", correct = TRUE),
+           answer("$\\frac{2}{6}$", correct = TRUE),
+           answer("$\\frac{1}{2}$")),
+  
+  question("Wie hoch ist die Wahrscheinlichkeit P, keine Drei zu würfeln.",
+           answer("$\\frac{5}{6}$", correct = TRUE),
+           answer("$\\frac{1}{6}$"),
+           answer("$\\frac{1}{3}$")),
+  
+  question("Wie hoch ist die Wahrscheinlichkeit P, eine gerade Zahl zu würfeln.",
+           answer("\\frac{1}{3}"),
+           answer("$\\frac{1}{2}$", correct = TRUE),
+           answer("$\\frac{1}{6}$")),
+  
+
   question("In der HTW Mensa verkäuft Cola, Pepsi, Kuchen, Suppe, Mittagsessen. <br> $A$= {Suppe, Cola}. <br> $A^c$ = ?",
            answer("Alle"),
            answer("Pepsi, Cola, Suppe"),
@@ -251,10 +273,7 @@ quiz( caption = "Übung",
            answer("$\\frac{1}{9}$"),
            answer("0%"),
            allow_retry = TRUE),
-  question("Was beschreibt die Striche im Nenner der Formel $|\\Omega|$",
-           answer("Ein absoluten Betrag, um negative Wahrscheinlichkeit zu vermeiden."),
-           answer("Die absolute Anzahl aller Elemente, die im Graundraum enthalten sind.",correct = TRUE),
-           answer("Die Striche darstellen einen leeren Grundraum")),
+
   question("Wie hoch ist die Wahrscheinlichkeit für den Kauf von Coffee am Wochenende?",
            answer("$\\frac{1}{9}$, weil jede Bestellung unabhängig ist.", correct = TRUE),
            answer("Höher als $\\frac{1}{9}$, weil Coffee am liebsten ist und am höchsten realen Wahrscheinlichkeit im Datensatz hat."),
@@ -284,11 +303,8 @@ htmltools::img(src = "www/kap2.png", width = "100%", style ="max-width: 750px")
 
 ### 2. Das Gesetz der großen Zahlen <br>
 
-Die frequentistische Wahrscheinlichkeit basiert auf empirischen Daten und hat deswegen eine enge Beziehung mit dem *Gesetz der großen Zahlen*: 
-Je öfter ein Zufallsexperiment durchgeführt wird, desto näher nähert sich die relative Häufigkeit ($\frac{k}{n}$) eines Ereignisses der theoretischen Wahrscheinlichkeit ($P(A)$) an.
+Die frequentistische Wahrscheinlichkeit basiert auf empirischen Daten und hat deswegen eine enge Beziehung mit dem *Gesetz der großen Zahlen*: Je öfter ein Zufallsexperiment durchgeführt wird, desto näher nähert sich die relative Häufigkeit ($\frac{k}{n}$) eines Ereignisses der theoretischen Wahrscheinlichkeit ($P(A)$) an.
 
-**Warum großer Datensatz mehr zuverlässiger ist?** <br>
-In der datenbezogenen Bereich verwenden wir oft Daten, um Modelle zu bauen. Allerdings wenn der Datensatz zu klein ist, können ein paar ungewöhnliche Werte die Ergebnisse verfälschen. Das Gesetz der großen Zahlen beweist, je mehr Daten wir sammeln, und dass das Durchschnittsergebnis zuverlässiger wird. Deshalb liefern große Datensätze bessere Vorhersagen.
 
 ### 3. Praxisnahes Beispiel
 
@@ -371,7 +387,7 @@ quiz(
 
 
 
-## Kapitel 3: Mengenlehrer
+## Kapitel 3: Mengenlehrer & Venn-Diagramm
 
 ### 1. Definition
 Eine Menge ist eine Gruppe von Objekten, welche Elemente der Menge genannt werden.<br>
@@ -412,86 +428,111 @@ Die Mächtigkeit einer Menge ist die **Anzahl** der Elemente.
 |$M=$ {Kopf, Zahl}|$|W|=2$|
 |$W=$ {1,2,3,4,5,6}|$|W|= 6$ |
 |$T=$ {Katze, Hund, Vogel}|$|T|= 3$|
+<br>
+Doppelte Zahlen zählen nicht doppelt! Jedes Element zählt in einer Menge nur einmal <br>
+$Tier$ ={Maus, Katze, Hund, Vogel, Katze} <br>
+$|Tier|$ = 4
 
 ### 4. Mengenlehre
 
+Element- & Teilmengen-Symbole <br>
+
+Die Element-Symbole $\in$ und $\notin$ stehen immet zwischen einem einzelnen Element und einer Menge.<br>
+Die Teilmengen-Symbole $\subset$, $\subseteq$ und $\not\subset$ ⊄ stehen immer zwischen zwei Mengen. 
+
 ```{r ,echo=FALSE}
+shiny::withMathJax(
 shiny::tabsetPanel(
   type = "tabs",
   
   shiny::tabPanel("Teilmenge", 
     shiny::br(), 
-    shiny::h3("Teilmenge"),
-    shiny::p("Hier wird die Produktformel erklärt...")
-  ),
+    shiny::h2("Teilmenge"),
+    shiny::h6("Wenn eine Menge in einer anderen Menge enthalten ist, nennt man Teilmenge"),
+    shiny::h4(shiny::HTML("$$B\\in A \\iff (x \\in B \\implies x \\in A)$$")),
+    shiny::fluidRow(
+    shiny::column(
+      width = 8,
+      shiny::img(src="www/Teilmenge.png", width="500px")
+    ),
+    shiny::column(
+      width = 4,
+      shiny::h6(shiny::HTML("$$ A= \\{1,2,3\\}$$")),
+      shiny::h6(shiny::HTML("$$B= \\{4\\}$$")),
+      shiny::h6(shiny::HTML("$$B\\subset A => A = \\{1,2,3,4\\}$$")),
+      shiny::h6("A ist Obermenge von B"),
+      shiny::h6("B ist Teilmenge von A")
+      ))),
   
   shiny::tabPanel("Schnittmenge", 
     shiny::br(),
-    shiny::h3("Schnittmenge"),
-    shiny::p("Hier kommen die Slider und das Diagramm hin...")
-  ),
+    shiny::h2("Schnittmenge"),
+    shiny::h6("Enthält alle Elemente, die sowohl in A als auch in B enthalten sind."),
+    shiny::h4(shiny::HTML("$$A \\cap B = \\{x \\mid x \\in A \\land x \\in B\\}$$")),
+    shiny::fluidRow(
+    shiny::column(
+      width = 8,
+      shiny::img(src="www/Schnittmenge.png", width = "500px")
+    ),
+    shiny::column(
+      width = 4,
+      shiny::h6(shiny::HTML("$$A= \\{1,2,3\\}$$")),
+      shiny::h6(shiny::HTML("$$B= \\{3,4,5\\}$$")),
+      shiny::h6(shiny::HTML("$$A \\cap B = \\{3\\}$$"))
+    ))),
   
   shiny::tabPanel("Vereinigungsmenge", 
     shiny::br(),
-    shiny::h3("Vereinigungsmenge"),
-    shiny::p("Hier platzierst du die quiz() Funktionen von learnr...")
-  ),
+    shiny::h2("Vereinigungsmenge"),
+    shiny::h6("Enthält alle Elemente, die in A oder in B (oder in beiden) enthalten sind."),
+    shiny::h4(shiny::HTML("$$A \\cup B= \\{x \\mid x \\in A \\lor x\\in B\\}$$")),
+    shiny::fluidRow(
+    shiny::column(
+      width = 8,
+      shiny::img(src="www/Vereinigungsmenge.png", width = "500px")
+    ),
+    shiny::column(
+      width=4,
+      shiny::h6(shiny::HTML("$$A= \\{1,2,3\\}$$")),
+      shiny::h6(shiny::HTML("$$B= \\{3,4,5\\}$$")),
+      shiny::h6(shiny::HTML("$$A \\cup B = \\{1,2,3,4,5\\}$$"))
+    )  )),
   shiny::tabPanel("Differenzmenge",
               shiny::br(),
-              shiny::h3("Differenzmenge")),
+              shiny::h2("Differenzmenge"),
+              shiny::h6("Enthält alle Elemente, die in A, aber nicht in B enthalten sind."),
+              shiny::h4(shiny::HTML("$$A \\setminus B =\\{x\\mid x\\in A \\land x\\notin B\\}$$")),
+              shiny::fluidRow(
+              shiny::column(
+                width = 8,
+                shiny::img(src="www/Differenzmenge.png", width="500px")),
+              shiny::column(
+                width = 4,
+                shiny::h6(shiny::HTML("$$A = \\{1,2,3\\}$$")),
+                shiny::h6(shiny::HTML("$$B=\\{3,4,5\\}$$")),
+                shiny::h6(shiny::HTML("$$A \\setminus B= {1,2}$$"))
+              ))),
   shiny::tabPanel("Komplementärmenge",
               shiny::br(),
-              shiny::h3("Komplementärmenge"))
-)
+              shiny::h2("Komplementärmenge"),
+              shiny::h6("Alle Elemente im Grundraum, die nicht zur Menge A gehören."),
+              shiny::h4(shiny::HTML("$$\\overline A =\\Omega \\setminus A$$")),
+              shiny::fluidRow(
+              shiny::column(
+                width = 8,
+                shiny::img(src="www/Komplementärmenge.png", width="500px")
+              ),
+              shiny::column(
+                width=4,
+                shiny::h6(shiny::HTML("$$\\Omega = \\{1,2,3,4\\}$$")),
+                shiny::h6(shiny::HTML("$$A= \\{1,2\\}$$")),
+                shiny::h6(shiny::HTML("$$\\bar A = \\{3,4\\}$$")),
+                shiny::br()
+              )))))
 
 ```
 
-**Teilmenge**  $$A \subset B$$
-$A=$ {1,2,3}<br>
-$B=$ {4} <br>
-$B\subset A$ => $A$ = {1,2,3,4} <br>
-A ist Obermenge von B <br>
-B ist Teilmenge von A
 
-```{r echo=FALSE}
-htmltools::img(src = "www/Teilmenge.png", width = "500px")
-```
-
-**Schnittmenge** $$A \cap B$$
-$A=$ {1,2,3} <br>
-$B=$ {3,4,5} <br>
-$A \cap B =$ {3}
-
-```{r echo=FALSE}
-htmltools::img(src="www/Schnittmenge.png", width ="500px")
-```
-
-**Vereinigungsmenge** $$A \cup B$$
-$A=$ {1,2,3} <br>
-$B=$ {3,4,5} <br>
-$A \cup B =$ {1,2,3,4,5}
-
-```{r echo=FALSE}
-htmltools::img(src="www/Vereinigungsmenge.png", width = "500px")
-```
-
-**Differenzmenge** $$A \setminus B$$
-$A =$ {1,2,3} <br>
-$B=${3,4,5} <br>
-$A \setminus B=$ {1,2}
-
-```{r echo=FALSE}
-htmltools::img(src="www/Differenzmenge.png", width ="500px")
-```
-
-**Komplementärmenge** $$\bar A = \Omega \setminus A $$
-$\Omega =$ {1,2,3,4} <br>
-$A=$ {1,2} <br>
-$\bar A = ${3,4}
-
-```{r echo=FALSE}
-htmltools::img(src="www/Komplementärmenge.png", width ="500px")
-```
  
 ### 5. Teste Dein Wissen!
 
@@ -517,16 +558,13 @@ quiz(
     
     question("Grundraum $\\Omega$= {1,2,3,4,5,6,7,8,9,10} <br> $A=${2,4,6,8,10} <br> $B=$ {1,2,3,4,5}. <br> Bestimmen die Mengen $A \\cap B$",
     type = "learnr_text",
-    answer("2,4", correct = TRUE)             )
+    answer("2,4", correct = TRUE))
 )
 
 ```
 
 
-
-
-
-## Kapitel 3.1: Rechenregeln für Mengen (Mengenlehrer Erweiterung)
+## Kapitel 3.1: Wichtige Gesetze für Mengen (Mengenlehrer Erweiterung)
 
 ### 1. Das Kommutativgesetz
 $$A \cap B = B \cap A$$
@@ -545,161 +583,162 @@ $$(A \cap B) \cup C = (A \cup C) \cap (B \cup C)$$
 $$\overline {(A \cup B)} = \bar A \cap \bar B$$
 $$\overline {(A \cap B)} = \bar A \cup \bar B$$
 
-### 5. askdjsa
+### 5. Das Gesetz der Kontraposition
+Wenn eine Menge komplett in einer anderen liegt, dreht sich dieses Verhältnis bei den Komplementen genau um
 $$A \subset B => \bar B \subset \bar A $$
 
-### 6. sjkdhf
+### 6. Die Schnittkomplement-Regel
 $$A \setminus B = A \cap \bar B$$
+<iframe src="www/test.html" width="100%" height="750px" style="border: 2px solid #e2e8f0; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow: hidden;"></iframe>
 
 
 ## Kapitel 4: Kombinatorik
 
 *Du möchtest dein Smartphone mit einem vierstelligen PIN-Code sperren. Wie viele verschiedene Kombinationen könntest du theoretisch wählen? Oder denkst du an einen Spieleabend mit Freunden: Auf wie viele verschiedene Weisen könnt ihr euch um den Tisch setzen? Und warum ist die Chance, den Jackpot im Lotto zu knacken, eigentlich so verschwindend gering?* <br>
-Die Kombinatorik anwort die Frage: **Wie viele Möglichkeiten gibt es eigentlich?**
+
+### 1. Definition
+
+Die Kombinatorik ist ein Teilgebiet der Mathematik und Stochastik, die auf die Weise der Elementen zählen, anordnen, auswählen. Die Kombinatorik anwort die Frage: **Wie viele Möglichkeiten gibt es eigentlich, um etwas zu machen?** <br>
 
 
-Die Kombinatorik ist ein Teilgebiet der Mathematik und Stochastik, die auf die Weise der Elementen zählen, anordnen, auswählen. Einfacher zu sagen, dass es darum geht, wie viele Möglichkeiten hat man, um etwas zu machen. <br>
-- Wie viele Möglichkeiten gibt es, um 3 Menschen in einem Sportverein 10 Menschen zu wählen? <br>
-- Wie viele 8-stellige Kontonummern gibt es, die nicht mit der Null beginnen?
+```{r, echo=FALSE}
+shiny::withMathJax(
+shiny::tabsetPanel(
+  type = "tabs",
+  
+  # --- TAB 1: PERMUTATION ---
+  shiny::tabPanel("Permutation",
+    shiny::br(),
+    shiny::h2("Permutation"),
+    shiny::p("Die Permutation beschäftigt sich mit der Anordnung aller Elemente einer Menge. Bei Permutation unterscheidet man zwei Fälle:"),
+    
+    htmltools::tags$ul(
+      htmltools::tags$li(shiny::strong("Permutationen ohne Wiederholung:"), " Sind alle Elemente unterscheidbar (3 Bücher (A, B, C) legen in einem Buchregal, jedes Buch ist einzigartig)."),
+      htmltools::tags$li(shiny::strong("Permutationen mit Wiederholung:"), " Sind einige Elemente gleich (100 HTW-Studierende werden in 2 Gruppen aufgeteilt: Bachelor und Master, egal was ihre Namen oder Geschlechte sind, solange bleiben die Studierenden innerhalb einer Master-Gruppe, die sind gleich).") ),
+    shiny::hr(),
+    shiny::h3("1.1 Permutation ohne Wiederholung"),
+    shiny::p(shiny::HTML("Alle Elemente sind verschieden/ unterscheidbar, dann gibt es \\(n!\\) verschiedene Anordnungen. \\(n!\\) heißt n Fakultät mit \\(n \\geq 0\\).")),
+    shiny::p("\\(1! =1\\)"),
+    shiny::p("\\(2! = 2 \\cdot 1 = 2\\)"),
+    shiny::p("\\(3! = 3 \\cdot 2 \\cdot 1  =6\\)"),
+    shiny::p("\\(4!=4 \\cdot 3 \\cdot 2 \\cdot 1 = 24\\)"),
+    shiny::h4("Beispiele:"),
+    htmltools::tags$ol(
+      htmltools::tags$li(
+        shiny::p("Du hast 5 verschiedene Bücher und möchtest wissen, wie viele Arten kannst Du diese in einem Regal anordnen:"),
+        shiny::p("Anzahl der Bücher: \\(n=5\\implies n! = 5! =120\\) Möglichkeiten.")
+      ),
+      htmltools::tags$li(
+        shiny::p("Acht verschiedene Personen sollen sich beliebig auf acht Stühle verteilen. Wie viele Möglichkeiten zur Anordnung der Personen gibt es?"),
+        shiny::p("Anzahl der Personen: \\(n=8 \\implies n! =8! =40.320\\) Möglichkeiten.")
+      ),
+      htmltools::tags$li(
+        shiny::p("Drei Kinder (A,B,C) stellen sich an einem Eisstand an. Wie viele Möglichkeiten des Anstehens?"),
+        shiny::p("Anzahl der Kinder: \\(n=3 \\implies n! =3! =6\\) Möglichkeiten.")
+      )
+    ),
+    
+    shiny::h4(shiny::strong("Zyklische Permutation")),
+    shiny::p("Es gibt \\((n-1)!\\) Möglichkeiten, unterscheidbare Objekte in einem Kreis anzuordnen."),
+    shiny::p("In einer Urne befinden sich 5 verschiedenfarbige Kugeln. Wie viele Möglichkeiten gibt es, die Kugeln ", shiny::em("in einer Reihe"), " anzuordnen?"),
+    shiny::p("\\(n!=5!=120\\)"),
+    shiny::p("Wie viele Möglichkeiten gibt es, die Kugeln ", shiny::em("in einem Kreis"), " anzuordnen?"),
+    shiny::p("\\((n-1)! = (5-1)! = 4! = 24\\)"),
+    
+    shiny::hr(),
+    shiny::h3("1.2 Permutation mit Wiederholung"),
+    shiny::p("Eine Permutation mit Wiederholung ist eine Anordnung von \\(n\\) Objekten, von denen manche nicht unterscheidbar sind."),
+    shiny::p("$$\\frac{n!}{k_1! \\cdot k_2! \\cdots k_m!}$$"),
+    shiny::p("\\(n\\): Gesamtzahl der Objekte"),
+    shiny::p("\\(k\\): Gesamtzahl der identischen Objekte"),
+    
+    shiny::h4("Beispiele:"),
+    htmltools::tags$ol(
+      htmltools::tags$li(
+        shiny::p("Ein Korb enthält 3 Äpfel und 2 Bananen, wie viele Möglichkeiten gibt es, diese Obst in einer Reihe anzuordnen?"),
+        shiny::p("\\(n=5\\) (3 Äpfel + 2 Bananen)"),
+        shiny::p("\\(k_1 =3\\) (Apfel)"),
+        shiny::p("\\(k_2 =2\\) (Banene)"),
+        shiny::p("$$\\frac{5!}{3! \\cdot 2!} = 10 \\text{ Möglichkeiten.}$$")
+      ),
+      htmltools::tags$li(
+        shiny::p("Du möchtest die Buchstaben des Wortes 'BANANA' anordnen, wie viele Möglichkeiten gibt es?"),
+        shiny::p("\\(n=6\\)"),
+        shiny::p("\\(k_1=1\\) (B)"),
+        shiny::p("\\(k_2=3\\) (A)"),
+        shiny::p("\\(k_3 =2\\) (N)"),
+        shiny::p("$$\\frac{6!}{1! \\cdot 2! \\cdot 3!} = 60 \\text{ Möglichkeiten.}$$")
+      )
+    )
+  ),
+  
+  # --- TAB 2: VARIATION ---
+  shiny::tabPanel("Variation",
+    shiny::br(),
+    shiny::h2("Variation"),
+    shiny::p("Die Variation beschäftigt sich mit der Auswahl und Anordnung von \\(k\\) Elementen aus einer Gesamtmenge von \\(n\\) Elementen, bei der die Reihenfolge eine Rolle spielt."),
+    shiny::strong("Warum ist die Reihenfolge bei der Variation wichtig?"),
+    shiny::p("Stell dir vor, 4-stellige Passwort-Nummer (in 10 Nummer von 0 bis 9) werden ausgewählt"),
+    shiny::p("- 1234 eingegeben -> Das Handy ist entsperrt."),
+    shiny::p("- 1432 eingegeben -> Eine Warnung auftaucht."),
+    shiny::p("Offensichlicht führt die Änderung der Reihefolge der 4-stellige Nummer zu einem neuen Ergebnis. Die Reihefolge spielt daher eine große Bedeutung bei der Variation."),
+    
+    shiny::p(shiny::strong("Identifizierungstipp:"), " Jede Aufgabe, die Rangfolge (Erster, Zweiter, Dritter), Rollenzuweisung (Bachelor, Master) oder Identifikationsnummer (PIN-Code, ID-Nummer, Handynummer) beinhaltet, ist eine Variationsaufgabe."),
+    shiny::p("Der Unterschied zwischen mit und ohne Wiederholung liegt auf eine Aktion: ob die ausgewählte Elemente im nächsten Zug erneut ausgewählt werden oder nicht."),
+    
+    shiny::hr(),
+    shiny::h3("2.1 Variation mit Wiederholung"),
+    shiny::p("Die Elemente dürfen wieder verwendet werden und die Elemente im Ergebnis können exakt gleich sein."),
+    shiny::p("$$n^k$$"),
+    shiny::h4("Beispiel:"),
+    shiny::p("Ein Smartphone-PIN besteht aus 4-stelligen Nummerkombination (Ziffern von 0 bis 9)."),
+    shiny::p("\\(n=10, k=4 \\implies n^k = 10^4= 10.000\\) Möglichkeiten."),
+    
+    shiny::hr(),
+    shiny::h3("2.2 Variation ohne Wiederholung"),
+    shiny::p("Bei der Variation ohne Wiederholung werden die gezogenen Elemente nicht zurückgelegt."),
+    shiny::p("$$\\frac{n!}{(n-k)!}$$"),
+    shiny::h4("Beispiel:"),
+    shiny::p("In einem Pferderennen hat 20 Pferde. 3 Pferde werden vorausgenommen, die als Erstes, Zweites und Drittes kommen."),
+    shiny::p("\\(n=20, k=3 \\implies \\frac{20!}{(20-3)!} = 6.840\\) Möglichkeiten.")
+  ),
+  
+  # --- TAB 3: KOMBINATION ---
+  shiny::tabPanel("Kombination",
+    shiny::br(),
+    shiny::h2("Kombination"),
+    shiny::p("Die Kombination handelt sich um eine Auswahl von \\(k\\) Elementen, bei der die Reihenfolge ", shiny::em("keine"), " Rolle spielt (z.B. Obstkorb mit Orange, Apfel, Mango)."),
+    
+    shiny::p(shiny::strong("Identifizierungstipp:"), " Jede Aufgabe, bei der es nur um eine Auswahl oder Gruppenbildung geht (z.B. Lotto, Teambildung...), ohne dass die Positionen der Elemente eine Rolle spielen."),
+    
+    shiny::hr(),
+    shiny::h3("3.1 Kombination ohne Wiederholung"),
+    shiny::p("Die gezogenen Elemente werden nicht zurückgelegt."),
+    shiny::p("$$\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$$"),
+    shiny::h4("Beispiel:"),
+    shiny::p("Die Ziehung von Lotto '6 aus 49'."),
+    shiny::p("\\(n=49, k=6 \\implies \\binom{49}{6}= 13.983.816\\) Möglichkeiten."),
+    
+    shiny::hr(),
+    shiny::h3("3.2 Kombination mit Wiederholung"),
+    shiny::p("Die Elemente dürfen wieder verwendet werden."),
+    shiny::p("$$\\binom{n+k-1}{k}=\\frac{(n+k-1)!}{(n-1)! \\cdot k!}$$"),
+    shiny::h4("Beispiel:"),
+    shiny::p("4 kleine Welpen suchen sich einen Platz unter einem der 6 Stühle."),
+    shiny::p("\\(n=6, k=4 \\implies \\frac{(6+4-1)!}{(6-1)\\cdot 4!} = 126\\) Möglichkeiten.")
+  ))
+)
+```
+
+### 2. Zusammenfassung
 
 ```{r echo=FALSE}
 htmltools::img(src="www/Kombinatorik.png",width=750,height=550)
 ```
 
+### 3. Praxisnahes Beispiel
 
-### **1. Permutation**
-eine Menge mit $n$ Elementen. Jede Anordnung dieser Elemente in einer bestimmten Reihenfolge heißt **Permutation** dieser Elemente. Bei Permuatation unterscheidet man 2 Fälle: Sind alle $n$ Elemente unterscheidbar (z.B: 3 Bücher (A, B, C) legen in einem Buchregal, jedes Buch ist einzigartig, das ist **Permutationen ohne Wiederholung**. Sind einige Elemente gleich (z.B 100 HTW-Studierende werden in 2 Gruppen aufgeteilt: Bachelor und Master, egal was ihre Namen oder Geschlechte sind, solange bleiben die Studierenden innerhalb der Master-Gruppe, die sind gleich, das ist **Permutationen mit Wiederholung**
-
-#### 1.1 Permutation ohne Wiederholung
-alle Elemente sind verschieden/unterscheidbar, dann es gibt $$n!$$ verschiedene Anordnungen <br>
-$n!$ heißt *n* Fakutät mit $n\geq 0$
-
-$1! = 1$ <br>
-$2!= 2.1 =2$ <br>
-$3!=3.2.1=6$<br>
-$4!=4.3.2.1=24$
-
-**Beispiel**<br>
-Du hast 5 verschiedene Bücher und möchtest wissen, wie viele Arten kannst Du diese in einem Regal anordnen <br>
-Anzahl der Bücher: 5 <br>
-$n =5$ <br>
-$n! = 5! =120$ 
-Es gibt 120 Möglichkeiten. <br>
-
-Acht verschiedene Personen sollen sich beliebig auf acht Stühle verteilen. Wie viele Möglichkeiten zur Anordnung der Personen gibt es? <br>
-Anzahl der Personen: 8 <br>
-$n=5$ <br>
-$n! = 8! = 40320$
-Es gibt 40320 Möglichkeiten. <br>
-
-3 Kinder (A,B,C) stellen sich an einem Eisstand an. Wie viele Möglichkeiten des Anstehens? <br>
-Anzahl der Kindern: 3 <br>
-$n=3$ <br>
-$n!=3!=6$ <br>
-Es gibt 6 Möglichkeiten. 
-
-**Zyklische Permutation**
-
-Es gibt $$(n-1)!$$ Möglichkeiten, unterscheidbare Objekte in einem Kreis anzuordnen.<br>
-In einer Urne befinden sich 5 verschiedenfarbige Kugeln. Wie viele Möglichkeiten gibt es, die Kugeln *in einer Reihe* anzuordnen? <br>
-$n!=5!=120$ <br>
-
-In einer Urne befinden sich fünf verschiedenfarbige Kugeln. Wie viele Möglichkeiten gibt es, die Kugeln *in einem Kreis* anzuordnen? <br>
-$(n-1)! =(5-1)!=4!= 24$
-
-
-
-
-#### 1.2 Permutation mit Wiederholung
-Eine Permutation mit Wiederholung ist eine Anordnung von $n$ Objekten, von denen manche nicht unterscheidbar sind.
-$$\frac{n!}{k_1!.k_2!...k_m!}$$
-
-$n$: Gesamtzahl der Objekten <br>
-$k$: Gesamtzahl der identischen Objekten
-
-**Beispiel**
-Ein Korb enthält 3 Äpfel und 2 Bananen, wie viele Möglichkeiten gibt es, diese Obst in einer Reihe anzuordnen
-$n=5$ (3 Äpfel + 2 Bananen)<br>
-$k_1 = 3$ (Anzahl der identischen Gruppe 1-Apfel)<br>
-$k_2 = 2$ (Anzahl der identischen Gruppe 2-Banane)
-$$\frac{5!}{3!.2!} =10$$
-Es gibt 10 Möglichkeiten.
-
-Du möchtest die Buchstaben des Wortes "BANANA" anordnen, wie viele Möglichkeiten gibt es?<br>
-$n!=6$ <br>
-$k_1 = 1$ <br>
-$k_2 = 3$ (Anzahl der Buchstaben "A") <br>
-$k_3 = 2$ (Anzahl der Buchstaben "N")
-
-$$\frac{6!}{1!.2!.3!} = 60$$
-
-### **2. Variation**
-Die Variation handelt sich um eine Auswahl von $k$ Elementen, bzw. ein Teil einer Grundmenge von $n$ Elementen, bei der die Reihenfolge eine Rolle spielt. <br>
-Warum ist **die Reihefolge** bei der Variation wichtig? <br>
-Stell dir vor, 4-stellige Passwort-Nummer (in 10 Nummer von 0 bis 9) werden ausgewählt <br>
-- "1234" eingegeben -> Das Handy ist entsperrt.<br>
-- "4321" eingegeben -> Eine Warnung auftaucht. <br>
-Offensichlicht führt die Änderung der Reihefolge der 4-stellige Nummer zu einem neuen Ergebnis. Die Reihefolge spielt daher eine große Bedeutung bei der Variation. <br>
-
-*Identifizierungstipp*: Jede Aufgabe, die Rangfolge (Erster, Zweiter, Dritter), Rollenzuweisung (Bachelor, Master) oder Identifikationsnummer (PIN-Code, ID-Nummer, Handynummer) beinhaltet, ist eine Variationsaufgabe. <br>
-
-Der Unterschied zwischen mit und ohne Wiederholung liegt auf eine Aktion: ob die ausgewählte Elemente im nächsten Zug erneut ausgewählt werden oder nicht
-
-
-#### 2.1 Variation mit Wiederholung
-Bei der Variation mit Wiederholung werden $k$ Elemente - mit Berücksichtigung der Reihenfolge - aus einer Menge von $n$ Elementen ausgewählt. Die Elemente dürfen wieder verwendet werden und die Elemente im Ergebnis können exakt  gleich sein.
-$$n^k$$
-
-**Beispiel**
-Ein Smartphone-PIN besteht aus 4-stelligen Nummerkombination. Für jede Stelle kann 1 Ziffer von 0 bis 9 gewählt werden. Wie viele verschiedene PINs können erschafft werden?
-$n=10$ <br>
-$k=4$ <br>
-$n^k = 10^4 =10.000$ Möglichkeiten. <br>
-
-#### 2.2 Variation ohne Wiederholung
-Bei der Variation ohne Wiederholung, die auszogene Elemente werden nicht zurück gelegt (ohne Wiederholung). Die Elemente im Ergebnis daher sind nicht exakt gleich.
-
-$$\frac{n!}{(n-k)!}$$
-
-**Beispiel**
-In einem Pferdrennen hat 20 Pferde. 3 Pferde wird voraus genommen, die als Erstes, Zweites und Drittes kommen. <br>
-$n=20$ <br>
-$k=3$ <br>
-$\frac{n!}{(n-k)!} = \frac{20!}{(20-3)!} = 6840$ Möglichkeiten.
-
-
-
-### **3. Kombination**
-Die Kombination handelt sich um eine Auswahl von $k$ Elementen, bzw. ein Teil einer Grundmenge von $n$ Elementen, bei der die Reihenfolge *keine* Rolle spielt. Z.B du gehst in den Supermarkt und hast Orange, Apfel, Mango gekauft. Es spielt keine Rolle, ob Du zuerst die Orange oder die Mango in den Korb legst, soweit enthält der Korb sowieso alle 3 Früchte. Die Menge $F=\{Orange, Mango, Apfel\}$ und $F=\{Apfel, Orange, Mango\}$ sind gleich. <br>
-
-*Identifizierungstipp*: Jede Aufgabe, bei der es nur um eine Auswahl oder Gruppenbildung geht (z.B. Lotto, Teambildung, Obstkorb...), ohne dass die Positionen der Elemente eine Rolle spielen, ist eine Kombinationsaufgabe.
-
-#### 3.1 Kombination ohne Wiederholung
-Bei der Kombination ohne Wiederholung, die auszogene Elemente werden nicht zurück gelegt (ohne Wiederholung). Die Elemente im Ergebnis daher sind nicht exakt gleich. Der einzige Unterschied zwischen einer Variation ohne Wiederholung und einer Kombination ohne Wiederholung ist die Tatsache, dass bei der Kombination – im Gegensatz zur Variation – die Reihenfolge der Objekte keine Rolle spielt.
-
-$$\binom{n}{k} = \frac{n!}{k!(n-k)!}$$
-
-*Beispiel*
-Die Ziehung von Lotto "6 aus 49" ist eine Kombination 6. Wie viele Möglichkeiten gibt es? 
-$n=49$ <br>
-$k=6$ <br>
-$\frac{49!}{6!(49-6)!} = \binom{49}{6} = 13.983.816$ Möglichkeiten.
-
-#### 3.2 Kombination mit Wiederholung
-Bei der Kombination mit Wiederholung werden $k$ Elemente - ohne Berücksichtigung der Reihenfolge - aus einer Menge von $n$ Elementen ausgewählt. Die Elemente dürfen wieder verwendet werden.
-
-$$\binom{n+k-1}{k}=\frac{(n+k-1)!}{(n-1)!\cdot k!}$$
-
-**Beispiel**
-Timmy hat 4 kleine (nicht unterscheidbare) Welpen. Wenn sie aufgeschreckt werden, sucht sich jeder einen Platz unter einem der sechs Esszimmerstühle. Wie viele unterschiedliche Möglichkeiten der vier Welpen kann Timmy beobachten?
-
-$n=6$ <br>
-$k=4$ <br>
-$\frac{(n+k-1)!}{(n-1)!\cdot k!} = \frac{(6+4-1)!}{(6-1)! \cdot 4!} = 126$ Möglichkeiten.
-
-
-
-
+<iframe src="www/kap4.html" width="100%" height="750px" style="border: 2px solid #e2e8f0; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow: hidden;"></iframe>
 
 ### 4. Teste Dein Wissen!
 ```{r quiz-kap4, echo=FALSE}
@@ -765,6 +804,9 @@ shiny::fluidRow(
 **sicheres Ereignis $\Omega$**: tritt auf jeden Fall ein, mit 100% Wahrscheinlichkeit.<br>
 **Komplementärereignis $A^c$**:
 
+### Praxisnahes Beisiel
+
+<iframe src="www/kap5.html" width="100%" height="750px" style="border: 2px solid #e2e8f0; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow: hidden;"></iframe>
 
 ### Zusammenfassung
 | Begriff | Symbole | 
@@ -807,7 +849,7 @@ Erinnerst Du dich noch an die **Rechenregeln für Mengen** aus Kapitel 3.1? Die 
 
 Du möchtest $P(A \cup B)$ berechnen. Wenn Du $P(A) + P(B)$ nimmst, dann wird die Schnittmenge doppelt gezählt. Wir berechnen deswegen:
 
-```{r}
+```{r echo=FALSE}
 shiny::fluidRow(
   shiny::column(
     width = 6,
@@ -823,35 +865,7 @@ shiny::fluidRow(
 
 ### 3. Praktisches Beispiel
 
-
-```{r}
-coffee_data <- read.csv2("data/coffee.csv")
-```
-
-
-```{r}
-N <- nrow(coffee_data)
-N
-```
-
-```{r}
-## Ereignis Coffee
-n_Coffee <- sum(coffee_data$product_category == "Coffee")
-n_Coffee
-p_Coffee <- n_Coffee/N
-p_Coffee
-## Ereignis Size Lg
-n_lg <- sum(grepl("Lg", coffee_data$product_detail)) ##contain "Lg" in String
-n_lg
-p_lg <- n_lg/N
-p_lg
-
-n_schnitt <- sum(grepl("Coffee", coffee_data$product_category) & grepl("Lg", coffee_data$product_detail))
-p_schnitt <- n_schnitt /N
-p_schnitt
-```
-
-$$P(Coffee \cap Large) =  \frac{}{}$$
+<iframe src="www/kap6.html" width="100%" height="750px" style="border: 2px solid #e2e8f0; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow: hidden;"></iframe>
 
 ## Kapitel 7: Baumdiagramm
 Baumdiagramm darstellt die Beziehung zwischen Ereignissen
@@ -1014,7 +1028,7 @@ shiny::div(
 
 Zum Beispiel: Es gibt eine Gruppe von Studierenden, die R lernen und einige, die Python lernen. Wie hoch die Wahrscheinlichkeit ist, dass jemand R lernt, wenn er bereits Python beherrscht hat. Mit Hilfe von Venn-Diagramm darstellt die Beziehung zwischen Ereignisse am besten
 
-```{r}
+```{r ,echo=FALSE}
 shiny::fluidRow(
   shiny::column(
     width = 6,
@@ -1032,7 +1046,7 @@ shiny::fluidRow(
 
 Neben Baumdiagramm, die Vierfeldertafel ist auch ein Hilfsmittel in der Stochastik, die beim Rechnen von 2 Ereignissen unterstützen. Die Randsumme zeigen die Wahrscheinlichkeit der einzelnen Ereignisse.
 
-```{r}
+```{r, echo=FALSE}
     htmltools::img(src="www/kap8_vierfelder.png", max= "100%", style ="max-width: 500px")
 ```
 <br>
@@ -1050,20 +1064,20 @@ $F$: Frauen/weiblich <br>
 $\overline K$: Männer/männlich
 
 
-```{r}
-htmltools::img(src="www/kap8_auf.png")
+```{r ,echo=FALSE}
+htmltools::img(src="www/kap8_auf.png", max= "100%", style ="max-width: 500px")
 ```
 
-```{r}
-htmltools::img(src="www/kap8_lösung.png")
+```{r ,echo=FALSE}
+htmltools::img(src="www/kap8_lösung.png", max= "100%", style ="max-width: 500px")
 ```
  
-```{r}
-htmltools::img(src="www/kap8_auf_rel.png")
+```{r ,echo=FALSE}
+htmltools::img(src="www/kap8_auf_rel.png", max= "100%", style ="max-width: 500px")
 ```
 
-```{r}
-htmltools::img(src="www/kap8_lösung_rel.png")
+```{r ,echo=FALSE}
+htmltools::img(src="www/kap8_lösung_rel.png", max= "100%", style ="max-width: 500px")
 ```
 
 
@@ -1139,7 +1153,7 @@ Im Gegenteil von stochastischen Unabhängigkeit, die stochastische Abhängigkeit
 $$ P(A \cap B) \neq P(A)\cdot P(B) $$
 
 
-```{r}
+```{r ,echo=FALSE}
 htmltools::img(src="www/Beziehung.png", width ="100%", style ="max-width:500px")
 ```
 
