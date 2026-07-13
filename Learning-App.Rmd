@@ -46,23 +46,33 @@ coffee_data <- read.csv2("data/coffee.csv")
 
 ### Willkommen zur Lernreise!!!
 
-*Hast Du Dich schon einmal für Glücksspiele wie Münzwürfe, Würfelspiele, Lotto oder Poker interessiert? Oder bist Du einfach eine Studentin bzw. ein Student, der gerade mit dem Thema Wahrscheinlichkeit und Statistik beginnt und die oft abstrakten Inhalte aus dem Lehrbuch besser verstehen möchte? Egal ob aus Neugier oder aus Lernzwecken -- Wahrscheinlichkeit begegnet Dir im Alltag viel häufiger, als Du vielleicht denkst.*
+*Hast Du Dich schon einmal gefragt, warum ein Würfelwurf zufällig ist? Oder warum eine Wettervorhersage eine bestimmte Regenwahrscheinlichkeit angibt? Vielleicht beschäftigst Du Dich gerade im Studium mit Wahrscheinlichkeit und Statistik und möchtest die oft abstrakten Inhalte aus Büchern besser verstehen.*
 
-*Jeden Tag treffen wir Entscheidungen unter Unsicherheit: Die Wettervorhersage sagt eine Regenwahrscheinlichkeit von 70 % voraus, Ärztinnen und Ärzte schätzen Krankheitsrisiken anhand von Tests ein, Banken bewerten das Kreditrisiko ihrer Kundinnen und Kunden, und Online-Shops versuchen vorherzusagen, welche Produkte Du als Nächstes kaufen könntest. All diese Anwendungen basieren auf den Grundlagen der Wahrscheinlichkeit und Statistik.*
+*Wahrscheinlichkeit begegnet uns jeden Tag. Wir treffen Entscheidungen, obwohl wir die Zukunft nicht genau kennen: Das Wetter kann sich ändern, Unternehmen analysieren Kundendaten, Banken bewerten Risiken und Online-Shops versuchen vorherzusagen, welche Produkte interessant für Dich sein könnten. Hinter vielen dieser Anwendungen stehen die Grundlagen der Wahrscheinlichkeit und Statistik.*
 
-*Mit dieser App kannst Du die wichtigsten Konzepte der Wahrscheinlichkeit auf eine anschauliche und leicht verständliche Weise entdecken. Statt nur Formeln auswendig zu lernen, kannst Du reale Situationen erkunden, Simulationen durchführen und beobachten, wie sich Zufallsgesetze in experimentellen Situationen zeigen. Wenn Du zum Beispiel eine Münze nur 10-mal wirfst, kann das Ergebnis stark schwanken. Wirfst Du sie jedoch tausende Male, nähert sich das Verhältnis von Kopf und Zahl immer mehr 50 % an -- ein anschauliches Beispiel für das Gesetz der großen Zahlen.*
+*Mit dieser Lern-App kannst Du wichtige Konzepte der Wahrscheinlichkeitsrechnung Schritt für Schritt entdecken. Statt nur Formeln auswendig zu lernen, wirst Du die Zusammenhänge durch Beispiele, Übungen und interaktive Elemente besser verstehen.*
 
-*Starte Deine Reise und entdecke, wie Mathematik uns hilft, Unsicherheit besser zu verstehen und zu beschreiben. Viel Spaß beim Lernen!*
+*Während Deiner gesamten Lernreise arbeitest Du mit einem realen Datensatz eines Coffee Shops. Du untersuchst verschiedene Situationen aus dem Alltag eines Cafés und lernst dabei, wie Wahrscheinlichkeiten und statistische Methoden in der Praxis verwendet werden können. Zum Beispiel kannst Du analysieren, welche Produkte häufig zusammen gekauft werden oder wie zufällige Ereignisse im Kundenverhalten auftreten.*
 
-Anleitung:
+*Durch Simulationen und praktische Beispiele kannst Du beobachten, wie mathematische Regeln in echten Situationen funktionieren. So wird aus einer abstrakten Formel ein verständliches Werkzeug, das Du auch in der Praxis anwenden kannst.*
 
--   Benutze das Menü auf der linken Seite, um zwischen den Modulen zu wechseln.
--   Jedes Modul enthält theoretische Grundlagen, Beispiele und interaktive Quizfragen, um Dein Wissen direkt zu überprüfen.
--   Klicke auf "Nächste Seite", um mit Kapital 1 zu beginnen.
+*Starte Deine Reise und entdecke, wie Mathematik hilft, Zufälle zu verstehen und Daten sinnvoll zu interpretieren. Viel Spaß beim Lernen!*
+
+**Anleitung**
+
+Benutze das Menü auf der linken Seite, um zwischen den verschiedenen Modulen zu wechseln.<br>
+
+Jedes Modul enthält: <br>
+- eine kurze Erklärung der wichtigsten Grundlagen <br>
+- praktische Beispiele mit dem Coffee-Shop-Datensatz <br>
+- interaktive Übungen und Quizfragen, um Dein Wissen direkt zu überprüfen.<br>
+Versuche zuerst die Beispiele selbst zu verstehen und nutze anschließend die Quizfragen, um Deinen Lernfortschritt zu überprüfen.<br>
+
+Klicke auf "Nächste Seite", um mit Kapital 1 zu beginnen.
 
 ## Kapitel 1: Die Wahrscheinlichkeit
 
-*Wenn Du eine Münze wirfst, wie sicher bist du, dass sie auf "Kopf" landet? Warum sagen wir, die Chance liegt bei 50%?*
+*Du wirfst eine Münze – Kopf oder Zahl? Oder du würfelst und hoffst auf eine Sechs. Aber wie sicher kannst du dir wirklich sein, dass ein bestimmtes Ergebnis kommt? Und warum sagen wir manchmal '50 % Chance' und manchmal 'wahrscheinlich'? Genau darum geht es hier!*
 
 ### 🟧 1. Definition
 
@@ -152,7 +162,7 @@ output$cate_result <- renderUI({
   total <- nrow(coffee_data)
   cate_list <- c("Coffee", "Tea", "Drinking Chocolate", "Bakery", "Coffee beans", "Branded", "Flavours", "Packaged Chocolate", "Loose Tea")
   
-  # 3. Lọc dữ liệu và ép kiểu về dạng vector chữ phẳng để bốc ngẫu nhiên
+  # 3. random pick
   real_sub <- coffee_data$product_category[coffee_data$product_category %in% cate_list]
   real_sub_vector <- as.character(real_sub)
   
@@ -179,7 +189,7 @@ output$cate_result <- renderUI({
   display_text <- icon_mapping[selected_item]
   
 
-  div(style = "margin-top: 20px; padding: 18px; background-color: #FFF5EE; 
+  div(style = "margin-top: 20px; padding: 18px; 
        border-radius: 6px; box-shadow: 0 4px 12px rgba(230, 92, 0, 0.08); max-width: 550px;",
       
       p(style = "font-size: 18px; color: #E65C00; margin-bottom: 15px;", 
@@ -293,7 +303,7 @@ Die frequentistische Wahrscheinlichkeit basiert auf empirischen Daten und hat de
 
 ### 🟧 3. Praxisnahes Beispiel
 
-In einem Coffee-Shop Grundraum, jeder Kunde ist ein zufälliger Münzwurf. Für den Besitzer bedeutet das: Man kann nie vorhersagen, ob der nächste Kunde einen Eiskaffee bestellt oder gleich wieder geht. Die Wahrscheinlichkeit für den Kauf eines Kaffee liegt immer bei 39,1 % (Kapitel 1). Doch es geschieht ein kleines Wunder, wenn das Café seinen 1.000. und dann seinen 5.000. Kunden begrüßt. Die individuelle Wahrscheinlichkeit bleibt zwar gleich, aber das Gesetz der großen Zahlen hilft Ihnen, mit nahezu perfekter Genauigkeit vorherzusagen, welcher Prozentsatz der gesamten Kundschaft Kaffee bestellt. Versuchen, Slider zu bewegen, um zu sehen, wie die Macht der Big Data die chaotischen Schwankungen auswirkt.
+In einem Coffee-Shop Grundraum, jeder Kunde ist ein zufälliger Münzwurf. Für den Besitzer bedeutet das: Man kann nie vorhersagen, ob der nächste Kunde einen Kaffee bestellt oder gleich wieder geht. Die Wahrscheinlichkeit für den Kauf eines Kaffee liegt bei 39,1 % (Kapitel 1). Doch es geschieht ein kleines Wunder, wenn Coffee-Shop seinen 1.000 und dann 5.000 Kunden begrüßt. Die individuelle Wahrscheinlichkeit bleibt zwar gleich, aber das Gesetz der großen Zahlen hilft Ihnen, mit nahezu perfekter Genauigkeit vorherzusagen, welcher Prozentsatz der gesamten Kundschaft Kaffee bestellt. Versuchen, Slider zu bewegen, um zu sehen, wie die Macht der Big Data die chaotischen Schwankungen auswirkt.
 
 
 ```{r sim-ui-2, context="render", echo=FALSE}
@@ -374,18 +384,20 @@ quiz(
 
 ## Kapitel 3: Mengenlehrer & Venn-Diagramm
 
+*Du hast eine riesige Musiksammlung auf deinem Handy: Rock, Pop, Klassik, Jazz. Wie kannst du sie ordnen, sodass du schnell findest, was du suchst? Und wie findest du heraus, welche Songs in zwei Kategorien gleichzeitig passen? Die Mengenlehre hilft dir beim Strukturieren!*
+
 ### 🟧 1. Definition
-<br>
+
 ```{r ,echo=FALSE}
 fluidRow(
   shiny::column(
-    width = 5,
+    width = 6,
     shiny::p("Eine Menge ist eine Gruppe von Objekten, welche Elemente der Menge genannt werden."),
-    shiny::p("Mengen werden mit *Großbuchstaben* bezeichnet (z.B. $\\A$, $\\B$, $\\Omega$)."),
-    shiny::p("Elemente werden mit *Kleinbuchstaben* bezeichnet (z.B. a,b,x).")
+    shiny::p(shiny::HTML("Mengen werden mit Großbuchstaben bezeichnet (z.B. A, B, \\(\\Omega\\)).")),
+    shiny::p("Elemente werden mit Kleinbuchstaben bezeichnet (z.B. a,b,x).")
   ),
   shiny::column(
-    width = 7,
+    width = 6,
     shiny::img(src="www/Menge.png",width = "100%", style ="max-width: 500px")
   )
 )
@@ -410,7 +422,7 @@ htmltools::img(src="www/kap3_menge.png", width="100%", style ="max-width:700px")
 ```
 
 
-### 🟧 2. Beispiele
+### 🟧 2. Einfaches Beispiel
 eine Menge umfasst nicht nur Zahlen, sondern auch die andere Dinge wie: Tiere, Menschen, Farben,....<br>
 Sprache: $A=$ {deutsch, englisch, spanisch, japanisch} <br>
 Farbe: $F=$ {rot,gelb,blau} <br>
@@ -420,10 +432,9 @@ Tierheim: $T=${Katze, Hund, Vogel}
 
 ### 🟧 3. Mengenlehre
 
-Element- & Teilmengen-Symbole <br>
 
 Die Element-Symbole $\in$ und $\notin$ stehen immet zwischen einem einzelnen Element und einer Menge.<br>
-Die Teilmengen-Symbole $\subset$, $\subseteq$ und $\not\subset$ stehen immer zwischen zwei Mengen. 
+Die Teilmengen-Symbole $\subset$, $\subseteq$ und $\not\subset$ stehen immer zwischen zwei Mengen. <br>
 
 ```{r ,echo=FALSE}
 shiny::withMathJax(
@@ -589,14 +600,14 @@ Die Mächtigkeit einer Menge ist die **Anzahl** der Elemente.
 |$W=$ {1,2,3,4,5,6}|$|W|= 6$ |
 |$T=$ {Katze, Hund, Vogel}|$|T|= 3$|
 <br>
-Doppelte Zahlen zählen nicht doppelt! Jedes Element zählt in einer Menge nur einmal <br>
+🔸 Doppelte Zahlen zählen nicht doppelt! Jedes Element zählt in einer Menge nur einmal <br>
 $Tier$ ={Maus, Katze, Hund, Vogel, Katze} <br>
 $\Rightarrow |\text{Tier}| = 4$
 
-🔸Mächtigkeit der Potenzmenge
+🔸 Mächtigkeit der Potenzmenge
 Die Mächtigkeit einer Potenzmenge $\mathcal{P}(A)$ lässt sich mithilfe der folgenden mathematischen Formel berechnen:
 $$|\mathcal{P}(A)|= 2^{|A|}$$
-**Beispiel:**
+🔸 **Beispiel:**
 Gegeben die Menge $A = \{1,2,3\}$ <br>
 $\rightarrow |A| = 3$ <br>
 Die Anzahl der Elemente in der Potenzmenge beträgt:
@@ -649,7 +660,7 @@ $$A \cup B = B \cup A$$
 **Erklärung**: Ob Du die gemeinsamen Kunden von Kaffee und Gebäck suchen oder von Gebäck und Kaffee, das Ergebnis bleibt identisch.
 
 ### 🟧 2. Das Assoziativgesetz
-Bei reinen Schnitt- oder reinen Vereinigungsoperationen ist Klammersetzung irrelevant. Wenn drei Mengen miteinander vereinigt oder geschnitten werden, spielt es keine Rolle, welche zwei Mengen Sie zuerst zusammenfassen.
+Bei Schnitt- oder reinen Vereinigungsoperationen ist Klammersetzung unwichtig. Wenn drei Mengen miteinander vereinigt oder geschnitten werden, spielt es keine Rolle, welche zwei Mengen Sie zuerst zusammenfassen.
 
 $$(A \cap B) \cap C = A \cap (B \cap C )$$
 $$(A \cup B) \cup C = A \cup (B \cup C)$$
@@ -777,7 +788,7 @@ shiny::tabsetPanel(
       htmltools::tags$li(shiny::strong("Permutationen ohne Wiederholung:"), " Sind alle Elemente unterscheidbar (3 Bücher (A, B, C) legen in einem Buchregal, jedes Buch ist einzigartig)."),
       htmltools::tags$li(shiny::strong("Permutationen mit Wiederholung:"), " Sind einige Elemente gleich (100 HTW-Studierende werden in 2 Gruppen aufgeteilt: Bachelor und Master, egal was ihre Namen oder Geschlechte sind, solange bleiben die Studierenden innerhalb einer Master-Gruppe, die sind gleich).") ),
     shiny::hr(),
-    shiny::h3("1.1 Permutation ohne Wiederholung"),
+    shiny::h3("🔸 Permutation ohne Wiederholung"),
     shiny::p(shiny::HTML("Alle Elemente sind verschieden/ unterscheidbar, dann gibt es \\(n!\\) verschiedene Anordnungen. \\(n!\\) heißt n Fakultät mit \\(n \\geq 0\\).")),
     shiny::p("\\(1! =1\\)"),
     shiny::p("\\(2! = 2 \\cdot 1 = 2\\)"),
@@ -807,7 +818,7 @@ shiny::tabsetPanel(
     shiny::p("\\((n-1)! = (5-1)! = 4! = 24\\)"),
     
     shiny::hr(),
-    shiny::h3("1.2 Permutation mit Wiederholung"),
+    shiny::h3("🔸 Permutation mit Wiederholung"),
     shiny::p("Eine Permutation mit Wiederholung ist eine Anordnung von \\(n\\) Objekten, von denen manche nicht unterscheidbar sind."),
     shiny::p("$$\\frac{n!}{k_1! \\cdot k_2! \\cdots k_m!}$$"),
     shiny::p("\\(n\\): Gesamtzahl der Objekte"),
@@ -848,7 +859,7 @@ shiny::tabsetPanel(
     shiny::p("Der Unterschied zwischen mit und ohne Wiederholung liegt auf eine Aktion: ob die ausgewählte Elemente im nächsten Zug erneut ausgewählt werden oder nicht."),
     
     shiny::hr(),
-    shiny::h3("2.1 Variation mit Wiederholung"),
+    shiny::h3("🔸 Variation mit Wiederholung"),
     shiny::p("Die Elemente dürfen wieder verwendet werden und die Elemente im Ergebnis können exakt gleich sein."),
     shiny::p("$$n^k$$"),
     shiny::h4("Beispiel:"),
@@ -856,7 +867,7 @@ shiny::tabsetPanel(
     shiny::p("\\(n=10, k=4 \\implies n^k = 10^4= 10.000\\) Möglichkeiten."),
     
     shiny::hr(),
-    shiny::h3("2.2 Variation ohne Wiederholung"),
+    shiny::h3("🔸 Variation ohne Wiederholung"),
     shiny::p("Bei der Variation ohne Wiederholung werden die gezogenen Elemente nicht zurückgelegt."),
     shiny::p("$$\\frac{n!}{(n-k)!}$$"),
     shiny::h4("Beispiel:"),
@@ -873,7 +884,7 @@ shiny::tabsetPanel(
     shiny::p(shiny::strong("Identifizierungstipp:"), " Jede Aufgabe, bei der es nur um eine Auswahl oder Gruppenbildung geht (z.B. Lotto, Teambildung...), ohne dass die Positionen der Elemente eine Rolle spielen."),
     
     shiny::hr(),
-    shiny::h3("3.1 Kombination ohne Wiederholung"),
+    shiny::h3("🔸 Kombination ohne Wiederholung"),
     shiny::p("Die gezogenen Elemente werden nicht zurückgelegt."),
     shiny::p("$$\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$$"),
     shiny::h4("Beispiel:"),
@@ -881,7 +892,7 @@ shiny::tabsetPanel(
     shiny::p("\\(n=49, k=6 \\implies \\binom{49}{6}= 13.983.816\\) Möglichkeiten."),
     
     shiny::hr(),
-    shiny::h3("3.2 Kombination mit Wiederholung"),
+    shiny::h3("🔸 Kombination mit Wiederholung"),
     shiny::p("Die Elemente dürfen wieder verwendet werden."),
     shiny::p("$$\\binom{n+k-1}{k}=\\frac{(n+k-1)!}{(n-1)! \\cdot k!}$$"),
     shiny::h4("Beispiel:"),
@@ -891,9 +902,248 @@ shiny::tabsetPanel(
 )
 ```
 
+<br>
+
 ### 🟧 2. Praxisnahes Beispiel
 
-<iframe src="www/kap4.html" width="100%" height="750px" style="border: none; overflow: hidden;"></iframe>
+
+```{r sim-ui-kap4, context = "render", echo = FALSE}
+
+fluidPage(
+  theme = NULL,
+  
+  div(style = "border-bottom: 1px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 20px;",
+      h3("Kombinatorik-Simulator", style = "font-weight: 700; color: #111827; margin: 0;")
+  ),
+  
+  fluidRow(
+    # LEFT PANEL: Configuration
+    column(5,
+      # 1. Product selection
+      div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px; margin-bottom: 15px;",
+          p(strong("1. Verfügbare Produkte (Menge n)"), style = "font-size: 12px; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em;"),
+          uiOutput("pool_checkboxes"),
+          div(style = "margin-top: 10px; font-size: 13px; color: #6b7280;",
+              "Ausgewählt: ", strong(textOutput("pool_n_text", inline = TRUE), style = "color: #ea580c;")
+          )
+      ),
+      
+      # 2. Model selection
+      div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px; margin-bottom: 15px;",
+          p(strong("2. Kombinatorisches Modell"), style = "font-size: 12px; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em;"),
+          selectInput("model_select", label = NULL, 
+                      choices = c("Permutation ohne Wiederholung" = "perm_ohne",
+                                  "Permutation mit Wiederholung" = "perm_mit",
+                                  "Variation ohne Wiederholung" = "var_ohne",
+                                  "Variation mit Wiederholung" = "var_mit",
+                                  "Kombination ohne Wiederholung" = "kom_ohne",
+                                  "Kombination mit Wiederholung" = "kom_mit"),
+                      selected = "perm_ohne", width = "100%")
+      ),
+      
+      # 3. Dynamic input controls (k-slider or frequency inputs)
+      uiOutput("dynamic_inputs_ui")
+    ),
+    
+    # RIGHT PANEL: Results
+    column(7,
+      uiOutput("formula_box"),
+      
+      div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px;",
+          div(style = "display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 10px;",
+              span("Mögliche Anordnungen", style = "font-weight: 600; font-size: 14px; color: #111827;"),
+              span(style = "font-size: 13px; background: #ffedd5; padding: 4px 10px; border-radius: 6px; color: #c2410c; font-weight: 600;",
+                   "Anzahl: ", strong(textOutput("total_possibilities", inline = TRUE), style = "color: #ea580c;"))
+          ),
+          uiOutput("outcomes_display")
+      )
+    )
+  )
+)
+```
+
+```{r ,context="server", echo=FALSE}
+available_products <- unique(as.character(coffee_data$product_category))
+
+output$pool_checkboxes <- renderUI({
+  default_select <- head(available_products, 5)
+  checkboxGroupInput("selected_products", label = NULL, choices = available_products, selected = default_select, inline = TRUE)
+})
+
+output$pool_n_text <- renderText({ length(input$selected_products) })
+
+# DYNAMIC CONTROL: Render slider for k OR frequency inputs for multi-sets
+output$dynamic_inputs_ui <- renderUI({
+  model <- input$model_select
+  items <- input$selected_products
+  n <- length(items)
+  
+  if (n == 0) return(NULL)
+  
+  if (model == "perm_ohne") {
+    return(NULL)
+    
+  } else if (model == "perm_mit") {
+    # Frequency inputs for Permutation mit Wiederholung
+    input_list <- lapply(items, function(item) {
+      div(style = "display: flex; justify-content: space-between; align-items: center; background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 5px 10px; margin-bottom: 5px; font-size: 13px;",
+          span(item),
+          numericInput(paste0("freq_", gsub(" ", "_", item)), label = NULL, value = 1, min = 1, max = 4, width = "70px")
+      )
+    })
+    div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px;",
+        p(strong("Häufigkeit pro Produkt (k_i)"), style = "font-size: 12px; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em;"),
+        do.call(tagList, input_list)
+    )
+    
+  } else {
+    # Slider for Variation and Kombination models
+    div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px;",
+        p(strong("3. Auswahlgröße (k)"), style = "font-size: 12px; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em;"),
+        sliderInput("slider_k", label = NULL, min = 1, max = max(n + 2, 5), value = min(3, max(n, 1)), step = 1, width = "100%"),
+        p("Bei Modellen ohne Wiederholung muss k ≤ n sein.", style = "font-size: 12px; color: #6b7280; margin-top: 5px;")
+    )
+  }
+})
+
+fact <- function(n) {
+  if (n < 0) return(0)
+  if (n == 0 || n == 1) return(1)
+  return(prod(1:n))
+}
+
+# Formula UI block
+output$formula_box <- renderUI({
+  model <- input$model_select
+  items <- input$selected_products
+  n <- length(items)
+  
+  badge <- ""; title <- ""; desc <- ""; formula_text <- ""
+  
+  if (model == "perm_ohne") {
+      formula_text <- "n!"
+  } else if (model == "perm_mit") {
+    formula_text <- "n! / (k_1! * k_2! * ...)"
+  } else if (model == "var_ohne") {
+    formula_text <- "n! / (n - k)!"
+  } else if (model == "var_mit") {
+    formula_text <- "n^k"
+  } else if (model == "kom_ohne") {
+    formula_text <- "n! / (k! * (n-k)!)"
+  } else if (model == "kom_mit") {
+    formula_text <- "(n + k - 1)! / (k! * (n - 1)!)"
+  }
+  
+  div(style = "background: #fff7ed; border: 1px solid #ffedd5; border-radius: 12px; padding: 15px; display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 15px;",
+      div(style = "flex: 1;",
+          span(badge, style = "font-size: 10px; font-weight: 700; text-transform: uppercase; color: #ea580c; background: #ffedd5; padding: 3px 8px; border-radius: 4px; display: inline-block;"),
+          h4(title, style = "font-size: 16px; font-weight: 700; margin: 5px 0 2px 0; color: #111827;"),
+          p(desc, style = "font-size: 13px; color: #4b5563; margin: 0;")
+      ),
+      div(formula_text, style = "background: white; border: 1px solid #ffedd5; border-radius: 8px; padding: 8px 15px; text-align: center; font-weight: 600; color: #ea580c; font-size: 16px; font-family: monospace; flex-shrink: 0;")
+  )
+})
+
+# Calculate total configuration count
+output$total_possibilities <- renderText({
+  n <- length(input$selected_products)
+  model <- input$model_select
+  
+  if (n == 0) return("0")
+  
+  total <- 0
+  if (model == "perm_ohne") {
+    total <- fact(n)
+  } else if (model == "perm_mit") {
+    freqs <- sapply(input$selected_products, function(item) {
+      val <- input[[paste0("freq_", gsub(" ", "_", item))]]
+      if (is.null(val) || is.na(val) || val < 1) 1 else val
+    })
+    total_n <- sum(freqs)
+    denom <- prod(sapply(freqs, fact))
+    total <- fact(total_n) / denom
+  } else {
+    k <- input$slider_k
+    if (is.null(k)) return("0")
+    if (model == "var_ohne") {
+      if (k > n) return("0")
+      total <- fact(n) / fact(n - k)
+    } else if (model == "var_mit") {
+      total <- n^k
+    } else if (model == "kom_ohne") {
+      if (k > n) return("0")
+      total <- fact(n) / (fact(k) * fact(n - k))
+    } else if (model == "kom_mit") {
+      total <- fact(n + k - 1) / (fact(k) * fact(n - 1))
+    }
+  }
+  return(format(round(total), big.mark = "."))
+})
+
+# Generate display outcomes
+output$outcomes_display <- renderUI({
+  items <- input$selected_products
+  n <- length(items)
+  model <- input$model_select
+  
+  if (n == 0) return(div("Bitte wählen Sie mindestens ein Produkt aus.", style = "text-align:center; color:#6b7280; padding:10px;"))
+  
+  outcomes_matrix <- matrix(nrow = 0, ncol = 0)
+  
+  if (model == "perm_ohne") {
+    if(n <= 7) outcomes_matrix <- gtools::permutations(n, n, items, repeats.allowed = FALSE)
+    
+  } else if (model == "perm_mit") {
+    expanded_items <- c()
+    for (item in items) {
+      val <- input[[paste0("freq_", gsub(" ", "_", item))]]
+      f <- if (is.null(val) || is.na(val) || val < 1) 1 else val
+      expanded_items <- c(expanded_items, rep(item, f))
+    }
+    total_len <- length(expanded_items)
+    if (total_len <= 8) {
+      raw_perms <- gtools::permutations(total_len, total_len, expanded_items, set = FALSE, repeats.allowed = FALSE)
+      outcomes_matrix <- unique(raw_perms)
+    }
+    
+  } else {
+    k <- input$slider_k
+    if (is.null(k)) return(NULL)
+    if ((model == "var_ohne" || model == "kom_ohne") && k > n) {
+      return(div(paste0("Ungültige Konfiguration: k (", k, ") darf nicht größer als n (", n, ") sein bei Modellen ohne Wiederholung."), 
+                 style = "padding:12px; background:#fff7ed; border-radius:8px; text-align:center; font-size:13px; color:#c2410c; font-weight:500;"))
+    }
+    if (model == "var_ohne") {
+      outcomes_matrix <- gtools::permutations(n, k, items, repeats.allowed = FALSE)
+    } else if (model == "var_mit") {
+      outcomes_matrix <- gtools::permutations(n, k, items, repeats.allowed = TRUE)
+    } else if (model == "kom_ohne") {
+      outcomes_matrix <- t(utils::combn(items, k))
+    } else if (model == "kom_mit") {
+      outcomes_matrix <- gtools::combinations(n, k, items, repeats.allowed = TRUE)
+    }
+  }
+  
+  total_rows <- nrow(outcomes_matrix)
+  if (is.null(total_rows) || total_rows == 0) return(div("Zu viele Möglichkeiten zum Generieren.", style = "text-align:center; color:#6b7280; padding:10px;"))
+  
+  display_rows <- min(total_rows, 50)
+  list_items <- lapply(1:display_rows, function(i) {
+    row_data <- outcomes_matrix[i, ]
+    chips <- lapply(row_data, function(item_name) {
+      span(item_name, style = "background: #f3f4f6; border: 1px solid #e5e7eb; border-radius: 4px; padding: 2px 6px; font-size: 12px; color: #374151; margin-right: 4px; display: inline-block; margin-bottom: 2px;")
+    })
+    div(style = "background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 6px; display: flex; align-items: center; gap: 10px; margin-bottom: 6px;",
+        span(i, style = "font-weight: 700; color: #9ca3af; font-size: 12px; min-width: 25px; text-align: center;"),
+        div(style = "display: flex; flex-wrap: wrap;", chips)
+    )
+  })
+  
+  warning_element <- if (total_rows > 50) div("Hinweis: Es werden nur die ersten 50 Kombinationen angezeigt.", style = "font-size: 12px; color: #c2410c; font-weight: 500; margin-top: 10px;") else NULL
+  div(div(style = "max-height: 350px; overflow-y: auto; padding-right: 5px;", list_items), warning_element)
+})
+```
+
 
 ### 🟧 3. Zusammenfassung
 
@@ -902,7 +1152,7 @@ htmltools::img(src="www/Kombinatorik.png",width=750,height=450)
 ```
 
 
-### 4. Teste Dein Wissen!
+### 🟧 4. Teste Dein Wissen!
 ```{r quiz-kap4, echo=FALSE}
 quiz(
   question("Was ist der Unterschied zwischen Variation und Permutation?",
@@ -922,6 +1172,7 @@ allow_retry = TRUE)
 
 
 ## Kapitel 5: Statistische Ereignisse
+*Du beobachtest Deinen Coffee-Shop einen Tag lang. Es kommen viele verschiedene Kunden, jeder mit einer anderen Bestellung. Wie kannst Du diese vielen verschiedenen Möglichkeiten mathematisch beschreiben und strukturieren? Das ist die Frage, die wir in diesem Kapitel klären!*
 
 ### 🟧 1. Ergebnis & Ergebnisraum
 **Zufallsexperiment**: Versuche oder Experimente, die bei Wiederholungen unter gleichen Bedingungen zu verschiedenen Ergebnissen führen können. <br>
@@ -966,13 +1217,355 @@ shiny::fluidRow(
 **sicheres Ereignis $\Omega$**: tritt auf jeden Fall ein, mit 100% Wahrscheinlichkeit.<br>
 **Komplementärereignis $A^c$**:
 
-### 🟧 Praxisnahes Beisiel
+### 🟧 3. Praxisnahes Beisiel
 
-<iframe src="www/kap5.html" width="100%" height="550px" style="border: 2px solid #e2e8f0; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow: hidden;"></iframe>
+```{r sim-ui-kap5,context="render", echo=FALSE}
+fluidPage(
+  theme = NULL,
+  div(style = "border-bottom: 1px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 20px;",
+      h3("Ergebnisraum-Simulator", style = "font-weight: 700; color: #111827; margin: 0;")
+  ),
+  p(style = "font-size: 13px; color: #6b7280; mb-4", "Mach Du die Änderung bei der Bestellung aus der Produktliste, um Ergebnisse (ω), den Ergebnisraum (Ω) und Ereignisse visuell zu verstehen."),
+  fluidRow(
+    column(5,
+           div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px; margin-bottom: 15px;",
+               actionButton("add_c", "Coffee (C)   + 1", style = "background-color: #fff7ed; border: 1px solid #ffedd5; color: #c2410c; width: 100%; text-align: left; padding: 10px; margin-bottom: 6px; border-radius: 8px; font-weight: 500;"),
+               actionButton("add_t", "Tea (T)      + 1", style = "background-color: #f0fdf4; border: 1px solid #dcfce7; color: #15803d; width: 100%; text-align: left; padding: 10px; margin-bottom: 6px; border-radius: 8px; font-weight: 500;"),
+               actionButton("add_b", "Bakery (B)   + 1", style = "background-color: #fef3c7; border: 1px solid #fde68a; color: #b45309; width: 100%; text-align: left; padding: 10px; margin-bottom: 6px; border-radius: 8px; font-weight: 500;"),
+               br(), br(),
+               radioButtons("c5_cond", "Bedingung für Ereignis A wählen:",
+                            choices = list("Sicheres Ereignis (Alle Produkte)" = "all",
+                                           "Nur Coffee" = "Coffee",
+                                           "Nur Tea" = "Tea",
+                                           "Kein Bakery" = "not_Bakery",
+                                           "Unmögliches Ereignis" = "none"),
+                            selected = "all")
+           )
+    ),
+    column(7,
+           div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px;",
+               uiOutput("pool_display"),
+               hr(style = "border-top: 1px solid #e5e7eb; margin: 15px 0;"),
+               span("Mathematische Notation", style = "display: block; font-size: 11px; font-weight: 700; color: #ea580c; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;"),
+               
+               fluidRow(
+                 column(6, p("Ergebnisraum (Ω)", style = "font-size: 13px; font-weight: 600; margin: 0;")), 
+                 column(6, uiOutput("math_omega"))
+               ),
+               div(style = "margin: 10px 0;"),
+               fluidRow(
+                 column(6, div(p("Ereignis (A)", style = "font-size: 13px; font-weight: 600; margin: 0;"), uiOutput("event_type_text"))), 
+                 column(6, uiOutput("math_a"))
+               ),
+               div(style = "margin: 10px 0;"),
+               fluidRow(
+                 column(6, p("Komplementärereignis (Aᶜ)", style = "font-size: 13px; font-weight: 600; margin: 0;")), 
+                 column(6, uiOutput("math_ac"))
+               )
+           )
+    )
+  )
+)
+```
 
-### 🟧 Zusammenfassung
+```{r , context="server", echo=FALSE}
+pool_data <- reactiveVal(
+  data.frame(
+    id = 1:3,
+    category = c("Coffee", "Tea", "Bakery"),
+    name = c("Coffee", "Tea", "Bakery"),
+    code = c("C", "T", "B"),
+    bg = c("#ea580c", "#15803d", "#b45309"),
+    stringsAsFactors = FALSE
+  )
+)
+
+next_id <- reactiveVal(4)
+
+
+# Add Coffee
+observeEvent(input$add_c, {
+  if(nrow(pool_data()) >= 12) return()
+  nid <- next_id()
+
+  new <- data.frame(
+    id = nid,
+    category = "Coffee",
+    name = "Coffee",
+    code = paste0("C", nid),
+    bg = "#ea580c",
+    stringsAsFactors = FALSE
+  )
+
+  pool_data(rbind(pool_data(), new))
+  next_id(nid + 1)
+})
+
+
+# Add Tea
+observeEvent(input$add_t, {
+  if(nrow(pool_data()) >= 12) return()
+  nid <- next_id()
+
+  new <- data.frame(
+    id = nid,
+    category = "Tea",
+    name = "Tea",
+    code = paste0("T", nid),
+    bg = "#15803d",
+    stringsAsFactors = FALSE
+  )
+
+  pool_data(rbind(pool_data(), new))
+  next_id(nid + 1)
+})
+
+
+# Add Bakery
+observeEvent(input$add_b, {
+  if(nrow(pool_data()) >= 12) return()
+  nid <- next_id()
+
+  new <- data.frame(
+    id = nid,
+    category = "Bakery",
+    name = "Bakery",
+    code = paste0("B", nid),
+    bg = "#b45309",
+    stringsAsFactors = FALSE
+  )
+
+  pool_data(rbind(pool_data(), new))
+  next_id(nid + 1)
+})
+
+
+# Remove product
+observeEvent(input$remove_item_id, {
+  df <- pool_data()
+
+  if(nrow(df) <= 3) return()
+
+  pool_data(
+    df[df$id != as.numeric(input$remove_item_id), ]
+  )
+})
+
+
+# Display omega
+output$pool_display <- renderUI({
+
+  df <- pool_data()
+
+  items <- lapply(seq_len(nrow(df)), function(i){
+
+    tags$div(
+      style = paste0(
+        "display:inline-block;
+         padding:6px 12px;
+         margin:4px;
+         font-weight:600;
+         font-size:12px;
+         border-radius:8px;
+         color:white;
+         cursor:pointer;
+         background-color:",
+        df$bg[i],
+        ";"
+      ),
+
+      onclick = paste0(
+        "Shiny.setInputValue('remove_item_id',",
+        df$id[i],
+        ",{priority:'event'})"
+      ),
+
+      HTML(
+        paste0(
+          df$name[i],
+          " <sub>",
+          df$id[i],
+          "</sub>"
+        )
+      )
+    )
+  })
+
+
+  do.call(
+    tags$div,
+    c(
+      list(
+        style =
+          "display:flex;
+           flex-wrap:wrap;
+           gap:4px;
+           padding:15px;
+           background:#ffffff;
+           border:1px solid #e5e7eb;
+           border-radius:8px;"
+      ),
+      items
+    )
+  )
+})
+
+
+
+# Calculate event
+c5_calc <- reactive({
+
+  df <- pool_data()
+
+  omega <- df$code
+
+  cond <- input$c5_cond
+
+
+  a <- switch(
+    cond,
+    "all" = omega,
+    "Coffee" = df$code[df$category == "Coffee"],
+    "Tea" = df$code[df$category == "Tea"],
+    "not_Bakery" = df$code[df$category != "Bakery"],
+    "none" = character(0)
+  )
+
+
+  type <- if(cond == "all"){
+    "Sicheres Ereignis (A = Ω)"
+  } else if(cond == "none"){
+    "Unmögliches Ereignis (A = ∅)"
+  } else {
+    "Ereignis (Teilmenge)"
+  }
+
+
+  list(
+    omega = omega,
+    a = a,
+    ac = setdiff(omega, a),
+    type = type
+  )
+})
+
+
+
+# Event description
+output$event_type_text <- renderUI({
+
+  p(
+    c5_calc()$type,
+    style =
+      "font-size:11px;
+       font-weight:500;
+       color:#ea580c;
+       margin:0;"
+  )
+
+})
+
+
+
+# Omega
+output$math_omega <- renderUI({
+
+  div(
+    paste0(
+      "Ω = { ",
+      paste(c5_calc()$omega, collapse=", "),
+      " }"
+    ),
+
+    style =
+      "background:#ffffff;
+       padding:10px;
+       border:1px solid #e5e7eb;
+       border-radius:8px;
+       font-family:monospace;
+       font-size:13px;
+       font-weight:600;"
+  )
+
+})
+
+
+
+# Event A
+output$math_a <- renderUI({
+
+  value <- if(length(c5_calc()$a) > 0){
+
+    paste0(
+      "A = { ",
+      paste(c5_calc()$a, collapse=", "),
+      " }"
+    )
+
+  } else {
+
+    "A = ∅"
+
+  }
+
+
+  div(
+    value,
+
+    style =
+      "background:#ffffff;
+       padding:10px;
+       border:1px solid #ffedd5;
+       border-radius:8px;
+       font-family:monospace;
+       font-size:13px;
+       font-weight:600;
+       color:#ea580c;"
+  )
+
+})
+
+
+
+# Complement
+output$math_ac <- renderUI({
+
+  value <- if(length(c5_calc()$ac) > 0){
+
+    paste0(
+      "Aᶜ = { ",
+      paste(c5_calc()$ac, collapse=", "),
+      " }"
+    )
+
+  } else {
+
+    "Aᶜ = ∅"
+
+  }
+
+
+  div(
+    value,
+
+    style =
+      "background:#ffffff;
+       padding:10px;
+       border:1px solid #e5e7eb;
+       border-radius:8px;
+       font-family:monospace;
+       font-size:13px;
+       font-weight:600;
+       color:#6b7280;"
+  )
+
+})
+```
+
+
+### 🟧 4. Zusammenfassung
 | Begriff | Symbole | 
-| :--- | :--------------------: |
+| :--- | :--- |
 | **Ergebnis** | $\omega$ | 
 | **Grundraum/Ergebnisraum** |$\Omega$| 
 |**Sicheres Ereignis**|$\Omega$|
@@ -981,7 +1574,7 @@ shiny::fluidRow(
 |**unmögliches Ereignis**|$\emptyset$| 
 |**Komplementärereignis**|$A^c$ <br> $A^c$ = $\Omega$ $\setminus$ $A$ | 
 
-### 🟧 Teste Dein Wissen!
+### 🟧 5. Teste Dein Wissen!
 ```{r quiz-kap5, echo=FALSE}
 quiz(
     question(
@@ -1066,6 +1659,7 @@ shiny::fluidRow(
 ```
 
 
+
 ### 🟧 4. Teste Dein Wissen!
 ```{r quiz-kap6, echo=FALSE}
 quiz(
@@ -1111,10 +1705,11 @@ quiz(
 
 
 ## Kapitel 7: Baumdiagramm
-Baumdiagramm darstellt die Beziehung zwischen Ereignissen. Ein Baumdiagramm ist ein Hilfsmittel, die Ergebnisse eines Zufallsexperiments übersichtlich aufzuzeichnen. Mit den Pfadregeln kannst Du dann ganz einfach die Wahrscheinlichkeiten ausrechnen.
-
+*Du spielst ein Brettspiel, bei dem du zweimal hintereinander würfeln musst. Wie viele verschiedene Ergebnisse gibt es? Und wie kannst du alle Pfade übersichtlich darstellen, ohne den Überblick zu verlieren? Ein Baumdiagramm macht es leicht!*
 
 ### 🟧 1. Definition
+Baumdiagramm darstellt die Beziehung zwischen Ereignissen. Ein Baumdiagramm ist ein Hilfsmittel, die Ergebnisse eines Zufallsexperiments übersichtlich aufzuzeichnen. Mit den Pfadregeln kannst Du dann ganz einfach die Wahrscheinlichkeiten ausrechnen.
+
 **Knoten**: Die Punkte, an denen sich die Äste teilen. <br>
 **Äste**: eine Linie verbindet die Knoten, auf der die Wahrscheinlichkeit aufgeschrieben wurden müssen.<br>
 **Pfad**:  Ein durchgehender Weg von der Wurzel bis zu einem Endpunkt.<br>
@@ -1239,6 +1834,7 @@ quiz(
 ## Kapitel 8: Bedingte und unbedingte Wahrscheinlichkeit
 
 ### 🟧 1. Unbedingte Wahrscheinlichkeit
+*Du gehst zum Arzt, weil du Husten hast. Der Arzt macht einen Test, der bei 90 % der Kranken anschlägt, aber auch bei 5 % der Gesunden. Wie hoch ist die Wahrscheinlichkeit, dass du wirklich krank bist, wenn der Test positiv ist? Das ist die berühmte bedingte Wahrscheinlichkeit!*
 
 Die unbedingte Wahrscheinlichkeit ist die Wahrscheinlichkeit eines Ereignisses ohne zusätzliche Information oder Bedingungen
 $$P(A)$$
@@ -1330,12 +1926,268 @@ $$P(K|F) = \frac {P(K \cap F)}{P(F)} = \frac{0,24}{0,6} = 0,4 = 40\%$$
 Wenn eine Person besitzt eine Katze, wie hoch ist die Wahrscheinlichkeit, dass diese Person männlich ist?
 
 $$P(\overline F |K) = \frac{P(\overline F \cap K)}{P(K)} = \frac{0,08}{0,32} = 0,25 =25\%$$
-### 🟧 4. 
 
-<iframe src="www/kap8.html" 
-width="100%" 
-height="550px" 
-style="border:none; overflow: hidden;"></iframe>
+### 🟧 4. Praxisnahes Beispiel 
+
+```{r sim-ui-kap8, context="render", echo=FALSE}
+fluidPage(
+  theme = NULL,
+  
+  # Thêm CSS tùy biến để đồng bộ với giao diện và hỗ trợ hiệu ứng highlight khi click
+  tags$head(
+    tags$style(HTML("
+      body { font-family: 'Inter', sans-serif; background: #fafaf8; color: #1e1e1e; }
+      .cell-highlight { background-color: #fff7ed !important; border-color: #ea580c !important; color: #ea580c !important; }
+      .result-box { background: #f6f6f4; border: 1px solid #e5e5e3; border-radius: 12px; padding: 0.75rem 1.25rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+      .result-box .label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #8a8a8a; }
+      .result-box .value { font-size: 1.1rem; font-weight: 700; color: #ea580c; font-family: 'Courier New', monospace; }
+      .toggle-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+      .custom-table th, .custom-table td { text-align: center; vertical-align: middle; }
+      .formula-text {font-size: 0.85rem; color: #ea580c; font-family: 'Courier New', monospace; font-weight: bold;}
+      .result-header { font-size: 0.8rem; font-weight: 800; color: #4338ca; text-transform: uppercase; margin-bottom: 5px; }
+      .rechnung-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 15px; }
+      .value-highlight { font-size: 1.4rem; font-weight: 800; color: #ea580c; }
+      .formula-text { font-size: 1rem; color: #666; font-family: 'Courier New', monospace; }
+    "))
+  ),
+  
+  # Header chương
+  div(style = "border-bottom: 1px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 20px;",
+      h3("Wahrscheinlichkeit – Coffee-Shop", style = "font-weight: 700; color: #111827; margin: 0;"),
+      p("Wähl einer der Bedigunen, um der Unterschied zwischen bedingten und unbedingten Wahrscheinlichkeit zu sehen.", style = "font-size: 13px; color: #6b7280; margin-top: 4px;")
+  ),
+  
+  # Main Layout Grid Workspace
+  fluidRow(
+    # LEFT PANEL: Vierfeldertafel & Bộ chuyển đổi hiển thị
+    column(7,
+           div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px;",
+               div(class = "toggle-container",
+                   span("Vierfeldertafel", style = "font-size: 10px; font-weight: bold; color: #9ca3af; text-transform: uppercase; tracking-wider;"),
+                   # Sử dụng radioGroupButtons hoặc chọn lựa đơn giản để toggle View mẫu
+                   radioButtons("view_toggle", label = NULL, 
+                                choices = c("Absolut" = "abs", "Relativ" = "rel"), 
+                                selected = "abs", inline = TRUE)
+               ),
+               
+               # Khung bảng Vierfeldertafel tương tác trực tiếp
+               uiOutput("contingency_table_ui")
+           )
+    ),
+    
+    # RIGHT PANEL: Bộ chọn điều kiện toán học & Hiển thị kết quả Real-time
+    column(5,
+           div(style = "display: flex; flex-direction: column; gap: 15px;",
+               
+               # Condition Select
+               div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px;",
+                   span("Bedingung wählen", style = "block; font-size: 10px; font-weight: bold; color: #9ca3af; text-transform: uppercase; tracking-wider; display: block; margin-bottom: 8px;"),
+                   selectInput("cond_select", label = NULL,
+                               choices = c("P(A | B) — Coffee unter der Bedingung Large" = "p-a-b",
+                                           "P(B | A) — Large unter der Bedingung Coffee" = "p-b-a",
+                                           "P(A | ¬B) — Coffee, nicht Large" = "p-a-nb",
+                                           "P(¬A | B) — kein Coffee, Large" = "p-na-b",
+                                           "P(B | ¬A) — Large, kein Coffee" = "p-b-na",
+                                           "P(¬A | ¬B) — kein Coffee, nicht Large" = "p-na-nb"),
+                               selected = "p-a-b", width = "100%")
+               ),
+               
+               # Result Box
+               div(style = "background: #fff7ed; border: 1px solid #ffedd5; border-radius: 12px; padding: 15px; display: flex; flex-direction: column; gap: 10px;",
+              div(class = "result-header", "Bedingte Wahrscheinlichkeit"),
+                  div(class = "rechnung-row",
+                      uiOutput("cond_formula", inline = TRUE) 
+                  ),
+              div(class = "result-header", "Unbedingte Wahrscheinlichkeit"),
+                  div(class = "rechnung-row",
+                      uiOutput("uncond_formula", inline = TRUE) 
+                  ),
+                   #Explain text
+                   div(style = "font-size: 12px; color: #6b7280; margin-top: 4px; line-height: 1.4;",
+                       htmlOutput("interpretation_text")                  )
+               )
+           )
+    )
+  )
+)
+```
+
+```{r , context="server",echo=FALSE}
+ABS_DATA <- list(
+  a_b = 16590,
+  a_nb = 41826,
+  na_b = 28295,
+  na_nb = 62405,
+  total = 149116
+)
+
+# sum
+sum_A  <- ABS_DATA$a_b + ABS_DATA$a_nb
+sum_B  <- ABS_DATA$a_b + ABS_DATA$na_b
+sum_NA <- ABS_DATA$na_b + ABS_DATA$na_nb
+sum_NB <- ABS_DATA$a_nb + ABS_DATA$na_nb
+
+# Sử dụng một reactiveVal để lưu vết ô nào vừa được click trên bảng nhằm đồng bộ với ô chọn điều kiện
+selected_cell <- reactiveVal("cell-a-b")
+
+# Lắng nghe sự kiện click từ các ô cụ thể thông qua Shiny Input tùy biến từ UI truyền về
+observeEvent(input$clicked_cell, {
+  req(input$clicked_cell)
+  selected_cell(input$clicked_cell)
+  
+  # Ánh xạ từ ID ô sang ID của bộ chọn selectInput điều kiện
+  mapping <- list(
+    "cell-a-b"   = "p-a-b",
+    "cell-a-nb"  = "p-a-nb",
+    "cell-na-b"  = "p-na-b",
+    "cell-na-nb" = "p-na-nb"
+  )
+  
+  if (input$clicked_cell %in% names(mapping)) {
+    updateSelectInput(session, "cond_select", selected = mapping[[input$clicked_cell]])
+  }
+})
+
+# Đồng bộ ngược: Khi người dùng thay đổi bộ chọn điều kiện, cập nhật lại highlight cho ô tương ứng
+observeEvent(input$cond_select, {
+  req(input$cond_select)
+  rev_mapping <- list(
+    "p-a-b"   = "cell-a-b",
+    "p-a-nb"  = "cell-a-nb",
+    "p-na-b"  = "cell-na-b",
+    "p-na-nb" = "cell-na-nb"
+  )
+  if (input$cond_select %in% names(rev_mapping)) {
+    selected_cell(rev_mapping[[input$cond_select]])
+  } else {
+    selected_cell("") # Xóa highlight nếu chọn cái khác không nằm trong 4 ô lõi
+  }
+})
+
+# math core
+calculated_results <- reactive({
+  sel <- input$cond_select
+  
+  numerator <- 0; denominator <- 0; uncond_prob <- 0; interpret <- ""
+  
+  if (sel == "p-a-b") {
+    numerator <- ABS_DATA$a_b
+    denominator <- sum_B
+    uncond_prob <- sum_A / ABS_DATA$total
+    interpret <- paste0("Kaffee wird insgesamt zu <b>", round(uncond_prob * 100, 2), "%</b> bestellt – unter der Bedingung 'Large' beträgt die Wahrscheinlichkeit ")
+  } else if (sel == "p-b-a") {
+    numerator <- ABS_DATA$a_b
+    denominator <- sum_A
+    uncond_prob <- sum_B / ABS_DATA$total
+    interpret <- paste0("Large wird insgesamt zu <b>", round(uncond_prob * 100, 2), "%</b> bestellt – unter der Bedingung 'Kaffee' beträgt die Wahrscheinlichkeit ")
+  } else if (sel == "p-a-nb") {
+    numerator <- ABS_DATA$a_nb
+    denominator <- sum_NB
+    uncond_prob <- sum_A / ABS_DATA$total
+    interpret <- paste0("Kaffee wird insgesamt zu <b>", round(uncond_prob * 100, 2), "%</b> bestellt – unter der Bedingung 'nicht Large' beträgt die Wahrscheinlichkeit ")
+  } else if (sel == "p-na-b") {
+    numerator <- ABS_DATA$na_b
+    denominator <- sum_B
+    uncond_prob <- sum_NA / ABS_DATA$total
+    interpret <- paste0("Kein Kaffee wird insgesamt zu <b>", round(uncond_prob * 100, 2), "%</b> bestellt – unter der Bedingung 'Large' beträgt die Wahrscheinlichkeit ")
+  } else if (sel == "p-b-na") {
+    numerator <- ABS_DATA$na_b
+    denominator <- sum_NA
+    uncond_prob <- sum_B / ABS_DATA$total
+    interpret <- paste0("Large wird insgesamt zu <b>", round(uncond_prob * 100, 2), "%</b> bestellt – unter der Bedingung 'kein Kaffee' beträgt die Wahrscheinlichkeit ")
+  } else if (sel == "p-na-nb") {
+    numerator <- ABS_DATA$na_nb
+    denominator <- sum_NB
+    uncond_prob <- sum_NA / ABS_DATA$total
+    interpret <- paste0("Kein Kaffee wird insgesamt zu <b>", round(uncond_prob * 100, 2), "%</b> bestellt – unter der Bedingung 'nicht Large' beträgt die Wahrscheinlichkeit ")
+  }
+  
+  cond_prob <- if(denominator > 0) numerator / denominator else 0
+  
+  list(cond = cond_prob, uncond = uncond_prob, text = interpret)
+  
+  # show rechnungsweg
+cond_f   <- paste0(format(numerator, big.mark="."), " / ", format(denominator, big.mark="."))
+uncond_f <- paste0(format(sum_A, big.mark="."), " / ", format(ABS_DATA$total, big.mark="."))
+  # return rechnungsweg
+  list(cond = cond_prob, uncond = uncond_prob, text = interpret, cond_f = cond_f, uncond_f = uncond_f)
+})
+
+# ui math core
+output$cond_prob_val   <- renderText({ paste0(round(calculated_results()$cond * 100, 2), "%") })
+output$uncond_prob_val <- renderText({ paste0(round(calculated_results()$uncond * 100, 2), "%") })
+output$interpretation_text <- renderUI({ 
+  HTML(paste0(calculated_results()$text, "<b>", round(calculated_results()$cond * 100, 2), "%</b>.")) 
+})
+output$cond_formula <- renderUI({ 
+  span(class = "formula-text", paste0("(", calculated_results()$cond_f, ") * 100 = ", round(calculated_results()$cond * 100, 2), "%")) 
+})
+
+output$uncond_formula <- renderUI({ 
+  span(class = "formula-text", paste0("(", calculated_results()$uncond_f, ") * 100 = ", round(calculated_results()$uncond * 100, 2), "%")) 
+})
+
+# Khối xử lý UI động tạo bảng Thống kê dữ liệu dạng lưới 4 ô có gán mã JavaScript Click chuyển giao tiếp về Shiny
+output$contingency_table_ui <- renderUI({
+  view <- input$view_toggle
+  t_total <- ABS_DATA$total
+  curr_sel <- selected_cell()
+  
+  # Hàm nội bộ định dạng kiểu chuỗi hiển thị theo tùy chọn view (Absolut/Relativ)
+  get_val <- function(val, type = "cell") {
+    if (view == "abs") {
+      if (is.numeric(val)) return(format(val, big.mark = ".", decimal.mark = ","))
+      return(as.character(val))
+    } else {
+      if (type == "total") return("100%")
+      return(paste0(round(val / t_total * 100, 2), "%"))
+    }
+  }
+  
+  # Hàm tạo chuỗi class cấu trúc css và đính kèm hàm bắt sự kiện click cho Shiny
+  cell_attr <- function(id) {
+    base_class <- "p-2 border border-gray-200 text-center font-mono font-bold text-gray-800 cursor-pointer hover:bg-orange-50 transition-colors"
+    if (id == curr_sel) {
+      base_class <- paste(base_class, "cell-highlight")
+    }
+    # Tạo mã Javascript onclick kích hoạt cập nhật biến input$clicked_cell cho máy chủ Shiny
+    paste0("class='", base_class, "' onclick='Shiny.setInputValue(\"clicked_cell\", \"", id, "\", {priority: \"event\"})'")
+  }
+  
+  HTML(paste0(
+    "<table class='w-full border-collapse text-sm custom-table'>",
+    "  <thead>",
+    "    <tr>",
+    "      <th class='p-1 border border-gray-200 bg-gray-100 text-left font-semibold text-gray-500 text-xs w-16'></th>",
+    "      <th class='p-1 border border-gray-200 bg-gray-100 text-center font-semibold text-gray-500 text-xs'>B (Large)</th>",
+    "      <th class='p-1 border border-gray-200 bg-gray-100 text-center font-semibold text-gray-500 text-xs'>¬B (nicht Large)</th>",
+    "      <th class='p-1 border border-gray-200 bg-gray-100 text-center font-semibold text-gray-500 text-xs'>Summe</th>",
+    "    </tr>",
+    "  </thead>",
+    "  <tbody>",
+    "    <tr>",
+    "      <td class='p-1 border border-gray-200 bg-gray-100 font-semibold text-gray-500 text-xs'>A (Coffee)</td>",
+    "      <td id='cell-a-b' ", cell_attr("cell-a-b"), ">", get_val(ABS_DATA$a_b), "</td>",
+    "      <td id='cell-a-nb' ", cell_attr("cell-a-nb"), ">", get_val(ABS_DATA$a_nb), "</td>",
+    "      <td id='cell-a-sum' class='p-2 border border-gray-200 text-center font-mono font-bold text-gray-800 bg-gray-100'>", get_val(sum_A), "</td>",
+    "    </tr>",
+    "    <tr>",
+    "      <td class='p-1 border border-gray-200 bg-gray-100 font-semibold text-gray-500 text-xs'>¬A (kein Coffee)</td>",
+    "      <td id='cell-na-b' ", cell_attr("cell-na-b"), ">", get_val(ABS_DATA$na_b), "</td>",
+    "      <td id='cell-na-nb' ", cell_attr("cell-na-nb"), ">", get_val(ABS_DATA$na_nb), "</td>",
+    "      <td id='cell-na-sum' class='p-2 border border-gray-200 text-center font-mono font-bold text-gray-800 bg-gray-100'>", get_val(sum_NA), "</td>",
+    "    </tr>",
+    "    <tr>",
+    "      <td class='p-1 border border-gray-200 bg-gray-100 font-semibold text-gray-500 text-xs'>Summe</td>",
+    "      <td id='cell-b-sum' class='p-2 border border-gray-200 text-center font-mono font-bold text-gray-800 bg-gray-100'>", get_val(sum_B), "</td>",
+    "      <td id='cell-nb-sum' class='p-2 border border-gray-200 text-center font-mono font-bold text-gray-800 bg-gray-100'>", get_val(sum_NB), "</td>",
+    "      <td id='cell-total' class='p-2 border border-gray-200 text-center font-mono font-bold text-gray-800 bg-gray-100'>", get_val(t_total, "total"), "</td>",
+    "    </tr>",
+    "  </tbody>",
+    "</table>"
+  ))
+})
+```
 
 ### 🟧 5. Teste Dein Wissen!
 
@@ -1398,9 +2250,9 @@ question_text("c) Welchen Wert hat $P(\\overline{A})$?",
 ```
 
 ## Kapitel 9: Stochastische Unabhängigkeit und Abhängigkeit 
-*In Kapitel 7 hast Du gelernt, dass beim Ziehen mit Zurücklegen die Wahrscheinlichkeiten gleich bleiben, während sie sich beim Ziehen ohne Zurücklegen verändern. In Kapitel 8 hast Du die bedingte Wahrscheinlichkeit kennengelernt, die den Einfluss einer Bedingung auf eine Wahrscheinlichkeit beschreibt.*
 
-*Jetzt fragst du dich vielleicht: Wann genau hat eine Bedingung keinen Einfluss? Genau das ist der Kern dieses Kapitels! Wir werden untersuchen, wann Ereignisse unabhängig voneinander sind – und wann sie abhängig sind. Und das Beste: Du wirst sehen, dass das Ziehen mit Zurücklegen aus Kapitel 7 nichts anderes ist als ein perfektes Beispiel für stochastische Unabhängigkeit!*
+*Hängt die Lieblingsfarbe deiner Freunde mit ihrem Lieblingstier zusammen? Oder sind diese beiden Dinge völlig unabhängig? Genau das prüfst du mit der stochastischen Unabhängigkeit – ein Konzept, das in der Statistik ständig vorkommt.*
+
 
 ### 🟧 1. Wiederholung
 🔸Rückblick: Mit vs. Ohne Zurücklegen (Kapitel 7)
@@ -1420,13 +2272,13 @@ $$P(A|B) = P(A)$$
 Wenn du die Formel für bedingte Wahrscheinlichkeit umstellst, erhältst du die Produktformel für unabhängige Ereignisse. Das bedeutet: Wenn zwei Ereignisse unabhängig sind, ist die Wahrscheinlichkeit, dass beide eintreten, einfach das Produkt ihrer Einzelwahrscheinlichkeiten:
 $$P(A \cap B) = P(A) \cdot P(B)$$
 
-### 🟧 2. Stochastische Abhängigkeit
+### 🟧 3. Stochastische Abhängigkeit
 
 Im Gegenteil von stochastischen Unabhängigkeit, die stochastische Abhängigkeit tritt ein, wenn das Eintreter des Ereignis A eine Wirkung auf das Eintreter das Ereignis B. Das nennt man diese Ereignisse stochastisch abhägig. Zum Beispiel: die Wahrscheinlichkeit der Klausur bestehen hängt davon, wie gut Deine Vorbereitung auf die Klausur ist. Im Wesentlichen bedeutet: **Ziehe ohne Zurücklegen**
 
 $$ P(A \cap B) \neq P(A)\cdot P(B) $$
 
-### 🟧 3. Teste Dein Wissen!
+### 🟧 4. Teste Dein Wissen!
 ```{r quiz-kap9, echo=FALSE}
 quiz(
   question("Zwei Ereignisse A und B sind stochastisch unabhängig, wenn:",
@@ -1452,35 +2304,223 @@ quiz(
 )
 ```
 
-### 4. 
-
-<iframe src="www/kap9.html" 
-width="100%" 
-height="750px" 
-style="border: none; overflow: hidden;"></iframe>
 
 ## Kapitel 10: Satz von Bayes (bedingte Wahrscheinlichkeit Erweiterung)
+*Du bereitest dich auf eine schwere Klausur vor. Laut der Statistik bestehen 80 % der Studierenden, die viel lernen, die Prüfung. Aber wie hoch ist die Wahrscheinlichkeit, dass jemand viel gelernt hat, wenn er die Prüfung bestanden hat? Auch hier drehst du die Logik um – mit dem Satz von Bayes!*
 
 ### 🟧 1. Definition
-Bevor Satz von Bayes tiefer eintauchst, solltest Du in Zufallsexperiment, Ereignis und bedingte Wahrscheinlichkeit gut verstanden haben. Einfacher zu erklären, Satz von Bayes ist die Umgekehrform der klassischen bedingten Wahrscheinlichkeit. Satz von Bayes ist kein neuer Begriff, sondern eine erweiterte mathematische Form, die direkt auf der **bedingten Wahrscheinlichkeit** aufbaut. Der große Unterschied liegt vor im Verwendungszweck und Logikrichtung. <br>
+Einfacher zu erklären, Satz von Bayes ist die Umgekehrform der klassischen bedingten Wahrscheinlichkeit. Satz von Bayes ist kein neuer Begriff, sondern eine erweiterte mathematische Form, die direkt auf der **bedingten Wahrscheinlichkeit** aufbaut. Der große Unterschied liegt vor im Verwendungszweck und Logikrichtung. <br>
 
-Der Satz von Bayes benutzt, wenn Du bereits bedingte Wahrscheinlichkeit $P(A|B)$ vorhanden bist und Du $P(B|A)$ berechnen möchtest.
+Der Satz von Bayes wird verwendet, wenn Du die bedingte Wahrscheinlichkeit $P(A|B)$ berechnen möchtest, aber nur Informationen über $P(B\vert{}A)$ vorliegen.
 
 $$P(A|B) =  \frac {P(B|A) \cdot P(A)}{P(B)}$$
 
 ### 🟧 2. Die Logikrichtung: Vorwärts vs. Rückwärts
-🔸**Bedingte Wahrscheinlichkeit (Vorwärts)**: Du berechnest die Wahrscheinlichkeit eines Ergebnisses unter Berücksichtigung der Ursache, wenn Du die Ursache bereits kennst. <br>
-🔸**Satz von Bayes (Rückwärts)**: Du berechnest die Wahrscheinlichkeit der Ursache, wenn Du das Ereignis bereits kennst. Du blickst von der Wirkung zurück auf die Ursache.
+🔸**Bedingte Wahrscheinlichkeit (Vorwärts)**: Du berechnest die Wahrscheinlichkeit eines Ergebnisses unter Berücksichtigung der Ursache, wenn Du die Ursache bereits kennst (Ursache -> Wirkung). <br>
+🔸**Satz von Bayes (Rückwärts)**: Du berechnest die Wahrscheinlichkeit der Ursache, wenn Du das Ereignis bereits kennst. Du blickst von der Wirkung zurück auf die Ursache (Wirkung -> Ursache).
 
 ```{r ,echo=FALSE}
 htmltools::img(src="www/kap10.png", width ="100%", style ="max-width : 500px")
 ```
 
+### 🟧 3. Praxisnahes Beispiel
+Damit Du die Formel leicht verstehst, zerlegen wir sie in ihre vier Einzelteile anhand des Coffee-Shop-Beispiels($A = \text{Coffee}$, $B = \text{Bakery}$)
+
+🔸$P(A\vert{}B)$:  Die A-posteriori-Wahrscheinlichkeit (Gesuchtes Ergebnis) <br>
+- Bedeutung: Die aktualisierte Wahrscheinlichkeit der Ursache $A$, nachdem das Ereignis $B$ bereits eingetreten ist. <br>
+- In der Fallstudie: Wie hoch ist die Wahrscheinlichkeit, dass ein Kunde Coffee ($A$) bestellt hat, wenn Du bereits wisst, dass er ein bakery ($B$) in der Hand hält? <br>
+
+🔸$P(B\vert{}A)$: Die Vorwärts-Wahrscheinlichkeit<br>
+- Bedeutung: Die Wahrscheinlichkeit, dass das Ereignis $B$ eintritt, wenn die Ursache $A$ schon vorliegt. <br>
+- In der Fallstudie: Wie hoch ist die Wahrscheinlichkeit käuft der Kaffeetrinker noch ein Gebäck? (Slider 2) <br>
+
+🔸$P(A)$: Die A-priori-Wahrscheinlichkeit (Vorwissen) <br>
+- Bedeutung: Die allgemeine Grundwahrscheinlichkeit des Ereignisses $A$, noch bevor wir irgendeine neue Information über $B$ haben.<br>
+- In der Fallstudie: Wie hoch ist die Wahrscheinlichkeit den Kauf eines Coffee, ganz egal ob die Kunde Gebäck nehmen oder nicht? (Slider 1)
+
+🔸$P(B)$: Die totale Wahrscheinlichkeit (Der Nenner) <br>
+- Bedeutung: Die Gesamtwahrscheinlichkeit, dass das Ereignis $B$ überhaupt eintritt – unabhängig davon, ob $A$ passiert oder nicht.<br>
+- Mathematische Rechenweg:  Da Kunden mit Kaffee ($A$) ODER Kunden ohne Kaffee ($\neg A$) Gebäck kaufen können, setzt sich der Nenner aus zwei Pfaden zusammen
+$$P(B) = P(B\vert{}A) \cdot P(A) + P(B\vert{}\neg A) \cdot P(\neg A)$$
+- In der Fallstudie: Der Nenner ist das Ergebnis auf die Realität des gesamten Shops normiert wird (Slider 3)
+
+```{r sim-ui-kap10,context="render",echo=FALSE}
+fluidPage(
+  theme = NULL,
+  
+  #title
+  div(style = "border-bottom: 1px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 20px;",
+      h3("Satz von Bayes: Die Rückwärts-Logik", style = "font-weight: 700; color: #111827; margin: 0;")),
+  
+
+  fluidRow(
+    # LEFT PANEL: Cấu hình các tham số đầu vào (Slider)
+column(5,
+           # 1. Bảng giá trị xác suất tiên nghiệm P(Kaffee)
+           div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px; margin-bottom: 15px;",
+               div(style = "display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;",
+                   span("1. P(Coffee)", style = "font-size: 11px; font-weight: bold; color: #9ca3af; text-transform: uppercase; tracking-wider;")
+               ),
+               # SỬA: Thay step = 5 thành step = 0.1 và đặt giá trị mặc định chính xác là 49.8
+               sliderInput("slider_prior", label = NULL, min = 0, max = 99, value = 49.8, step = 0.1, width = "100%")
+           ),
+           
+           # 2. Xác suất có điều kiện thuận P(Bakery | Coffee)
+           div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px; margin-bottom: 15px;",
+               div(style = "display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;",
+                   span("2. P(Bakery | Coffee)", style = "font-size: 11px; font-weight: bold; color: #9ca3af; text-transform: uppercase; tracking-wider;"),               ),
+               # SỬA: Đặt giá trị mặc định chuẩn xác theo data là 18.2, step = 0.1
+               sliderInput("slider_cond", label = NULL, min = 0, max = 99, value = 18.2, step = 0.1, width = "100%")
+           ),
+           
+           # 3. Xác suất nghịch đối nghịch P(Bakery | Kein Coffee)
+           div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px;",
+               div(style = "display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;",
+                   span("3. P(Bakery | Kein Coffee)", style = "font-size: 11px; font-weight: bold; color: #9ca3af; text-transform: uppercase; tracking-wider;")
+               ),
+               # SỬA: Đặt giá trị mặc định chuẩn xác theo data là 20.1, step = 0.1
+               sliderInput("slider_cond_not", label = NULL, min = 0, max = 99, value = 20.1, step = 0.1, width = "100%")
+           )
+    ),
+    
+    # RIGHT PANEL:
+    column(7,
+           div(style = "display: flex; flex-direction: column; gap: 15px;",
+               
+               # result box after A posteriori
+               div(style = "background: #f6f6f4; border: 1px solid #e5e5e3; border-radius: 12px; padding: 25px; text-align: center;",
+                   div("P(Coffee | Bakery)", style = "font-size: 12px; font-family: monospace; font-weight: bold; color: #6b7280; margin-bottom: 8px;"),
+                   div(textOutput("result_box_val"), style = "font-size: 36px; font-weight: 700; color: #ea580c; font-family: monospace; tracking-tight;"),
+                   p("Die aktualisierte Wahrscheinlichkeit, dass der Kunde Kaffee bestellte, nachdem wir bereits wissen, dass er ein Gebäck gekauft hat.", 
+                     style = "font-size: 11px; color: #6b7280; max-w: 320px; margin: 8px auto 0 auto; font-weight: 500; line-height: 1.4;")
+               ),
+               
+               # Rechenweg
+               div(style = "background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);",
+                   div(style = "font-size: 10px; font-weight: bold; color: #9ca3af; text-transform: uppercase; tracking-wider; margin-bottom: 8px; border-bottom: 1px solid #f3f4f6; padding-bottom: 6px;",
+                       HTML("Rechenweg")
+                   ),
+                   uiOutput("formula_path_ui")
+               )
+           )
+    )
+  )
+)
+```
+
+```{r ,context="server",echo=FALSE}
+# Khối phản hồi xử lý toán học cốt lõi (Bayes Engine)
+bayes_core <- reactive({
+  # Quy đổi giá trị phần trăm từ Slider sang hệ số thập phân
+  p_A <- input$slider_prior / 100
+  p_B_given_A <- input$slider_cond / 100
+  p_B_given_notA <- input$slider_cond_not / 100
+  
+  p_notA <- 1 - p_A
+  
+  #  P(B)
+  p_B <- (p_B_given_A * p_A) + (p_B_given_notA * p_notA)
+  
+  #  P(A|B)
+  p_A_given_B <- if (p_B > 0) (p_B_given_A * p_A) / p_B else 0
+  
+  list(
+    p_A = p_A,
+    p_B_given_A = p_B_given_A,
+    p_B_given_notA = p_B_given_notA,
+    p_B = p_B,
+    p_A_given_B = p_A_given_B
+  )
+})
+
+# Đưa dữ liệu nhãn tỉ lệ phần trăm trực quan ra các ô text tương ứng trên UI
+output$label_prior    <- renderText({ paste0(round(bayes_core()$p_A * 100), "%") })
+output$label_cond     <- renderText({ paste0(round(bayes_core()$p_B_given_A * 100), "%") })
+output$label_cond_not <- renderText({ paste0(round(bayes_core()$p_B_given_notA * 100), "%") })
+
+# Kết xuất hộp hiển thị kết quả cuối cùng P(Kaffee | Gebäck) làm tròn 2 chữ số thập phân
+output$result_box_val <- renderText({
+  paste0(sprintf("%.2f", bayes_core()$p_A_given_B * 100), "%")
+})
+
+# Kết xuất UI chi tiết các dòng diễn giải thuật toán phép tính
+output$formula_path_ui <- renderUI({
+  res <- bayes_core()
+  
+  div(style = "font-family: monospace; font-size: 11px; color: #374151; display: flex; flex-direction: column; gap: 4px;",
+      div(paste0("1. Zähler P(B ∩ A) = P(B | A) • P(A) = ", 
+                 sprintf("%.2f", res$p_B_given_A), " • ", sprintf("%.2f", res$p_A), " = ", 
+                 sprintf("%.4f", res$p_B_given_A * res$p_A))),
+      
+      div(style = "border-bottom: 1px solid #f3f4f6; padding-bottom: 4px;",
+          paste0("2. Nenner P(B) = Gesamtwahrscheinlichkeit von Gebäck = ", sprintf("%.4f", res$p_B))),
+      
+      div(style = "padding-top: 4px; color: #ea580c; font-weight: bold;",
+          paste0("Ergebnis = ", sprintf("%.4f", res$p_B_given_A * res$p_A), " / ", 
+                 sprintf("%.4f", res$p_B), " = ", sprintf("%.4f", res$p_A_given_B)))
+  )
+})
+```
 
 
-<iframe src="www/kap10.html" 
-width="100%" 
-height="750px" 
-style="border: none; overflow: hidden;"></iframe>
+### 🟧 4. Teste Dein Wissen!
+```{r quiz-kap10,echo=FALSE}
+
+quiz(
+  question(
+    "Welche Wahrscheinlichkeit wird als 'A-posteriori-Wahrscheinlichkeit' bezeichnet?",
+    answer("$P(A)$"),
+    answer("$P(B | A)$"),
+    answer("$P(A | B)$", correct = TRUE),
+    answer("$P(B)$"),
+    allow_retry = TRUE
+  ),
+  question(
+    "Wie lautet die mathematische Formel für den Satz von Bayes zur Berechnung von $P(A | B)$?",
+    answer("$P(A | B) = \\frac{P(B | A) \\cdot P(A)}{P(B)}$", correct = TRUE),
+    answer("$P(A | B) = P(A) \\cdot P(B)$"),
+    answer("$P(A | B) = \\frac{P(B | A)}{P(A)}$"),
+    answer("$P(A | B) = P(A \\cap B) \\cdot P(B)$"),
+    allow_retry = TRUE
+  ),
+  question(
+    "Was steht im Nenner des Satzes von Bayes, wenn man die totale Wahrscheinlichkeit für $P(B)$ einsetzt?",
+    answer("$P(B | A) \\cdot P(A)$"),
+    answer("$P(B | A) \\cdot P(A) + P(B | \\neg A) \\cdot P(\\neg A)$", correct = TRUE),
+    answer("$P(A | B) + P(A | \\neg B)$"),
+    answer("$1 - P(B)$"),
+    allow_retry = TRUE
+  ),
+
+  question(
+    "Warum wird der Satz von Bayes oft auch als 'Rückwärts-Logik' bezeichnet?",
+    answer("Weil er mathematisch von hinten nach vorne aufgeschrieben wird."),
+    answer("Weil man von einer beobachteten Wirkung (B) rückwärts auf deren wahrscheinliche Ursache (A) schließt.", correct = TRUE),
+    answer("Weil das Ergebnis immer kleiner als die Ausgangswahrscheinlichkeit sein muss."),
+    answer("Weil er nur für negative Korrelationen angewendet werden darf."),
+    allow_retry = TRUE
+  ),
+  question(
+    "Was passiert mit $P(A | B)$, wenn die A-priori-Wahrscheinlichkeit $P(A)$ bei gleichbleibenden Bedingungen steigt?",
+    answer("P(A | B) sinkt."),
+    answer("P(A | B) bleibt exakt identisch."),
+    answer("P(A | B) steigt ebenfalls.", correct = TRUE),
+    answer("P(A | B) fällt sofort auf 0."),
+    allow_retry = TRUE
+  ),
+
+  question(
+    "Wenn $P(B | A)$ exakt gleich $P(B | \\neg A)$ ist, was lässt sich dann über $P(A | B)$ sagen?",
+    answer("P(A | B) ist unendlich groß."),
+    answer("P(A | B) ist genau gleich der A-priori-Wahrscheinlichkeit $P(A)$, da das Ereignis B keine neuen Informationen liefert.", correct = TRUE),
+    answer("P(A | B) ist immer 0."),
+    answer("Die Bayes-Formel ist in diesem Fall mathematisch nicht definiert."),
+    allow_retry = TRUE
+  )
+)
+```
+
+
+
 
 
