@@ -183,16 +183,17 @@ nutze anschließend die Quizfragen, um Deinen Lernfortschritt zu
 <div id="section-kapitel-1-die-wahrscheinlichkeit"
 class="section level2">
 <h2>Kapitel 1: Die Wahrscheinlichkeit</h2>
-<p><em>Wenn Du eine Münze wirfst, wie sicher bist du, dass sie auf
-“Kopf” landet? Warum sagen wir, die Chance liegt bei 50%?</em></p>
+<p><em>Du wirfst eine Münze – Kopf oder Zahl? Oder du würfelst und
+hoffst auf eine Sechs. Aber wie sicher kannst du dir wirklich sein, dass
+ein bestimmtes Ergebnis kommt? Und warum sagen wir manchmal ‘50 %
+Chance’ und manchmal ‘wahrscheinlich’? Genau darum geht es
+hier!</em></p>
 <div id="section-definition" class="section level3">
 <h3>🟧 1. Definition</h3>
 <p>Die Wahrscheinlichkeit gibt an, wie sehr etwas zutrifft. Die
-Wahrscheinlichkeit liegt zwischen 0 und 1. Dabei wird die
-Wahrscheinlichkeit, dass ein Ereignis mit Sicherheit zutrifft mit 1
-(bzw. 100%), und dass ein Ereignis nicht eintritt mit 0 (bzw. 0%)
-bezeichnet. Die Summe der Eintrittswahrscheinlichkeiten aller möglichen
-Ereignisse ist stets 1 (bzw. 100%).</p>
+Wahrscheinlichkeit liegt immer von 0 (bzw. 0%) bis 1 (bzw. 100%). Die
+Summe der Eintrittswahrscheinlichkeiten aller möglichen Ereignisse eines
+Zufallsexperiments ist stets 1 (bzw. 100%).</p>
 </div>
 <div
 id="section-laplace-wahrscheinlichkeit-klassische-wahrscheinlichkeit"
@@ -200,26 +201,20 @@ class="section level3">
 <h3>🟧 2. Laplace-Wahrscheinlichkeit (Klassische
 Wahrscheinlichkeit)</h3>
 <p>Laplace-Experiment ist ein Zufallsexperiment, unter Bedingung, dass
-alle Ergebnisse die gleiche Chance/Wahrscheinlichkeit haben. Die
-Laplacesche Wahrscheinlichkeitsdefinition nimmt an, dass alle möglichen
-Ergebnisse gleich wahrscheinlich sind. <br> Dadurch entsteht jedoch ein
-logisches Problem: Um die Wahrscheinlichkeit zu definieren, wird der
-Begriff „Wahrscheinlichkeit“ bereits vorausgesetzt. Die folgenden zwei
-Beispiele verdeutlichen den Unterschied zwischen der theoretischen
-Wahrscheinlichkeit (Laplace-Wahrscheinlichkeit) und der empirischen
-Wahrscheinlichkeit.</p>
-<p><span class="math display">\[
+alle Ergebnisse die gleiche Chance/Wahrscheinlichkeit haben. Dadurch
+entsteht jedoch ein logisches Problem: Um die Wahrscheinlichkeit zu
+definieren, wird der Begriff „Wahrscheinlichkeit“ bereits vorausgesetzt.
+<span class="math display">\[
 P(A) = \frac{\text{Anzahl der günstigen Ergebnisse}}{\text{Gesamtzahl
 der möglichen Ergebnisse}} = \frac{|A|}{|\Omega|}
-\]</span></p>
-<ul>
-<li><span class="math inline">\(P(A)\)</span>: die Wahrscheinlichkeit
-von <span class="math inline">\(A\)</span></li>
-<li><span class="math inline">\(|A|\)</span>: die Anzahl der günstigen
-Ergebnisse</li>
-<li><span class="math inline">\(|\Omega|\)</span>: der Grundraum (oder
-die Menge aller möglichen Ergebnisse)</li>
-</ul>
+\]</span> - <span class="math inline">\(P(A)\)</span>: die
+Wahrscheinlichkeit von <span class="math inline">\(A\)</span> - <span
+class="math inline">\(|A|\)</span>: die Anzahl der günstigen Ergebnisse
+- <span class="math inline">\(|\Omega|\)</span>: der Grundraum (oder die
+Menge aller möglichen Ergebnisse)</p>
+<p>Die folgenden zwei Beispiele verdeutlichen den Unterschied zwischen
+der theoretischen Wahrscheinlichkeit (Laplace-Wahrscheinlichkeit) und
+der empirischen Wahrscheinlichkeit.</p>
 </div>
 <div id="section-einfaches-beispiel" class="section level3">
 <h3>🟧 3. Einfaches Beispiel</h3>
@@ -400,18 +395,13 @@ class="math inline">\(P(A)\)</span>) an.</p>
 </div>
 <div id="section-praxisnahes-beispiel-1" class="section level3">
 <h3>🟧 3. Praxisnahes Beispiel</h3>
-<p>In einem Coffee-Shop Grundraum, jeder Kunde ist ein zufälliger
-Münzwurf. Für den Besitzer bedeutet das: Man kann nie vorhersagen, ob
-der nächste Kunde einen Kaffee bestellt oder gleich wieder geht. Die
-Wahrscheinlichkeit für den Kauf eines Kaffee liegt bei 39,1 % (Kapitel
-1). Doch es geschieht ein kleines Wunder, wenn Coffee-Shop seinen 1.000
-und dann 5.000 Kunden begrüßt. Die individuelle Wahrscheinlichkeit
-bleibt zwar gleich, aber das Gesetz der großen Zahlen hilft Ihnen, mit
-nahezu perfekter Genauigkeit vorherzusagen, welcher Prozentsatz der
-gesamten Kundschaft Kaffee bestellt. Versuchen, Slider zu bewegen, um zu
-sehen, wie die Macht der Big Data die chaotischen Schwankungen
-auswirkt.</p>
-<div class="well">
+<p>Jeder Kunde in Deinem Coffee-Shop entscheidet zufällig, ob er einen
+Kaffee kauft oder nicht, ähnlich wie ein Münzwurf. Die
+Wahrscheinlichkeit für einen Kaffeekauf liegt bei 39,1 % (das hast Du in
+Kapitel 1 gesehen). Bewege den Schieberegler, um zu sehen, wie die
+relative Häufigkeit mit wachsender Anzahl an Bestellungen immer genauer
+wird.</p>
+<div style="margin-top: 20px; padding: 18px;  border-radius: 6px; box-shadow: 0 4px 12px rgba(230, 92, 0, 0.08); max-width: 750px;">
 <div class="row">
 <div class="col-sm-4">
 <div class="form-group shiny-input-container">
@@ -420,10 +410,11 @@ auswirkt.</p>
 </div>
 </div>
 <div class="col-sm-8">
-<div class="shiny-plot-output html-fill-item" id="coffee_plot" style="width:100%;height:350px;"></div>
+<div class="shiny-plot-output html-fill-item" id="coffee_plot" style="width:100%;height:450px;"></div>
 </div>
 </div>
 </div>
+<p style="font-size: 12px; color: #7A6B61; font-style: italic; margin-top: 10px; line-height: 1.4;">Hinweis: Je mehr Bestellungen Du simulierst (N größer), desto mehr nähert sich die relative Häufigkeit dem theoretischen Wert von 39,1 % an –&gt; das ist das Gesetz der großen Zahlen</p>
 </div>
 <div id="section-teste-dein-wissen-1" class="section level3">
 <h3>🟧 4. Teste Dein Wissen!</h3>
@@ -449,6 +440,11 @@ auswirkt.</p>
 <div id="section-kapitel-3-mengenlehrer-venn-diagramm"
 class="section level2">
 <h2>Kapitel 3: Mengenlehrer &amp; Venn-Diagramm</h2>
+<p><em>Du hast eine riesige Musiksammlung auf deinem Handy: Rock, Pop,
+Klassik, Jazz. Wie kannst du sie ordnen, sodass du schnell findest, was
+du suchst? Und wie findest du heraus, welche Songs in zwei Kategorien
+gleichzeitig passen? Die Mengenlehre hilft dir beim
+Strukturieren!</em></p>
 <div id="section-definition-2" class="section level3">
 <h3>🟧 1. Definition</h3>
 <div class="row">
@@ -550,34 +546,34 @@ class="math inline">\(\subseteq\)</span> und <span
 class="math inline">\(\not\subset\)</span> stehen immer zwischen zwei
 Mengen. <br></p>
 <div class="tabbable">
-<ul class="nav nav-tabs" data-tabsetid="6980">
+<ul class="nav nav-tabs" data-tabsetid="3428">
 <li class="active">
-<a href="#tab-6980-1" data-toggle="tab" data-bs-toggle="tab" data-value="Teilmenge">Teilmenge</a>
+<a href="#tab-3428-1" data-toggle="tab" data-bs-toggle="tab" data-value="Teilmenge">Teilmenge</a>
 </li>
 <li>
-<a href="#tab-6980-2" data-toggle="tab" data-bs-toggle="tab" data-value="Schnittmenge">Schnittmenge</a>
+<a href="#tab-3428-2" data-toggle="tab" data-bs-toggle="tab" data-value="Schnittmenge">Schnittmenge</a>
 </li>
 <li>
-<a href="#tab-6980-3" data-toggle="tab" data-bs-toggle="tab" data-value="Vereinigungsmenge">Vereinigungsmenge</a>
+<a href="#tab-3428-3" data-toggle="tab" data-bs-toggle="tab" data-value="Vereinigungsmenge">Vereinigungsmenge</a>
 </li>
 <li>
-<a href="#tab-6980-4" data-toggle="tab" data-bs-toggle="tab" data-value="Differenzmenge">Differenzmenge</a>
+<a href="#tab-3428-4" data-toggle="tab" data-bs-toggle="tab" data-value="Differenzmenge">Differenzmenge</a>
 </li>
 <li>
-<a href="#tab-6980-5" data-toggle="tab" data-bs-toggle="tab" data-value="Komplementärmenge">Komplementärmenge</a>
+<a href="#tab-3428-5" data-toggle="tab" data-bs-toggle="tab" data-value="Komplementärmenge">Komplementärmenge</a>
 </li>
 <li>
-<a href="#tab-6980-6" data-toggle="tab" data-bs-toggle="tab" data-value="Leermenge">Leermenge</a>
+<a href="#tab-3428-6" data-toggle="tab" data-bs-toggle="tab" data-value="Leermenge">Leermenge</a>
 </li>
 <li>
-<a href="#tab-6980-7" data-toggle="tab" data-bs-toggle="tab" data-value="Potenzmenge">Potenzmenge</a>
+<a href="#tab-3428-7" data-toggle="tab" data-bs-toggle="tab" data-value="Potenzmenge">Potenzmenge</a>
 </li>
 <li>
-<a href="#tab-6980-8" data-toggle="tab" data-bs-toggle="tab" data-value="Disjunkte Mengen">Disjunkte Mengen</a>
+<a href="#tab-3428-8" data-toggle="tab" data-bs-toggle="tab" data-value="Disjunkte Mengen">Disjunkte Mengen</a>
 </li>
 </ul>
-<div class="tab-content" data-tabsetid="6980">
-<div class="tab-pane active" data-value="Teilmenge" id="tab-6980-1">
+<div class="tab-content" data-tabsetid="3428">
+<div class="tab-pane active" data-value="Teilmenge" id="tab-3428-1">
 <br/>
 <h2>Teilmenge</h2>
 <h6>Wenn eine Menge in einer anderen Menge enthalten ist, nennt man Teilmenge</h6>
@@ -595,7 +591,7 @@ Mengen. <br></p>
 </div>
 </div>
 </div>
-<div class="tab-pane" data-value="Schnittmenge" id="tab-6980-2">
+<div class="tab-pane" data-value="Schnittmenge" id="tab-3428-2">
 <br/>
 <h2>Schnittmenge</h2>
 <h6>Enthält alle Elemente, die sowohl in A als auch in B enthalten sind.</h6>
@@ -611,7 +607,7 @@ Mengen. <br></p>
 </div>
 </div>
 </div>
-<div class="tab-pane" data-value="Vereinigungsmenge" id="tab-6980-3">
+<div class="tab-pane" data-value="Vereinigungsmenge" id="tab-3428-3">
 <br/>
 <h2>Vereinigungsmenge</h2>
 <h6>Enthält alle Elemente, die in A oder in B (oder in beiden) enthalten sind.</h6>
@@ -627,7 +623,7 @@ Mengen. <br></p>
 </div>
 </div>
 </div>
-<div class="tab-pane" data-value="Differenzmenge" id="tab-6980-4">
+<div class="tab-pane" data-value="Differenzmenge" id="tab-3428-4">
 <br/>
 <h2>Differenzmenge</h2>
 <h6>Enthält alle Elemente, die in A, aber nicht in B enthalten sind.</h6>
@@ -643,7 +639,7 @@ Mengen. <br></p>
 </div>
 </div>
 </div>
-<div class="tab-pane" data-value="Komplementärmenge" id="tab-6980-5">
+<div class="tab-pane" data-value="Komplementärmenge" id="tab-3428-5">
 <br/>
 <h2>Komplementärmenge</h2>
 <h6>Alle Elemente im Grundraum, die nicht zur Menge A gehören.</h6>
@@ -660,7 +656,7 @@ Mengen. <br></p>
 </div>
 </div>
 </div>
-<div class="tab-pane" data-value="Leermenge" id="tab-6980-6">
+<div class="tab-pane" data-value="Leermenge" id="tab-3428-6">
 <br/>
 <h2>Leermenge</h2>
 <h6>Die leere Menge \(\emptyset\) enthält keine Elemente.</h6>
@@ -674,7 +670,7 @@ Mengen. <br></p>
 </div>
 </div>
 </div>
-<div class="tab-pane" data-value="Potenzmenge" id="tab-6980-7">
+<div class="tab-pane" data-value="Potenzmenge" id="tab-3428-7">
 <br/>
 <h2>Potenzmenge</h2>
 <h6>Die Potenzmenge \(\mathcal{P}(A)\) enthält alle Teilmengen von \(A\).</h6>
@@ -699,7 +695,7 @@ Mengen. <br></p>
 </div>
 </div>
 </div>
-<div class="tab-pane" data-value="Disjunkte Mengen" id="tab-6980-8">
+<div class="tab-pane" data-value="Disjunkte Mengen" id="tab-3428-8">
 <br/>
 <h2>Disjunkte Mengen</h2>
 <h6>Zwei Mengen sind disjunkt, wenn es keine gemeinsamen Elemente zwischen den Mengen gibt.</h6>
@@ -814,84 +810,394 @@ class="math display">\[|\mathcal{P}(A)| = 2^3 =8\]</span></p>
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="quiz-kap3-6" class="tutorial-question panel-body">
+<div id="quiz-kap3-6-answer_container" class="shiny-html-output"></div>
+<div id="quiz-kap3-6-message_container" class="shiny-html-output"></div>
+<div id="quiz-kap3-6-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="quiz-kap3-7" class="tutorial-question panel-body">
+<div id="quiz-kap3-7-answer_container" class="shiny-html-output"></div>
+<div id="quiz-kap3-7-message_container" class="shiny-html-output"></div>
+<div id="quiz-kap3-7-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="quiz-kap3-8" class="tutorial-question panel-body">
+<div id="quiz-kap3-8-answer_container" class="shiny-html-output"></div>
+<div id="quiz-kap3-8-message_container" class="shiny-html-output"></div>
+<div id="quiz-kap3-8-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
 </div>
 </div>
 <div
-id="section-kapitel-3.1-wichtige-gesetze-für-mengen-mengenlehrer-erweiterung"
+id="section-kapitel-3.1-wichtige-gesetze-für-mengen-mengenlehre-erweiterung"
 class="section level2">
-<h2>Kapitel 3.1: Wichtige Gesetze für Mengen (Mengenlehrer
+<h2>Kapitel 3.1: Wichtige Gesetze für Mengen (Mengenlehre
 Erweiterung)</h2>
 <p><em>Im vorherigen Kapitel hast Du die grundlegenden Mengenoperationen
 kennengelernt. Doch wie lassen sich komplexere Mengenausdrücke
-vereinfachen oder logisch umformen? Dafür gibt es wichtige
-Mengengesetze. Sie helfen Dir dabei, Zusammenhänge besser zu verstehen
-und Aufgaben systematisch zu lösen.</em></p>
-<div id="section-das-kommutativgesetz" class="section level3">
-<h3>🟧 1. Das Kommutativgesetz</h3>
-<p>Die Reihenfolge der Mengen bei der Operation hat keinen Einfluss auf
-das Endergebnis. <span class="math display">\[A \cap B = B \cap
-A\]</span> <span class="math display">\[A \cup B = B \cup A\]</span>
-<strong>Erklärung</strong>: Ob Du die gemeinsamen Kunden von Kaffee und
-Gebäck suchen oder von Gebäck und Kaffee, das Ergebnis bleibt
+vereinfachen oder logisch umformen? Dafür gibt es wichtige Mengengesetze
+– sie funktionieren ähnlich wie Rechenregeln in der Algebra, nur mit
+Mengen statt mit Zahlen. Sie helfen Dir dabei, Zusammenhänge besser zu
+verstehen und Aufgaben systematisch zu lösen.</em></p>
+<hr />
+<div id="section-kommutativgesetz" class="section level3">
+<h3>🟧 1. Kommutativgesetz</h3>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr>
+<th align="left"><strong>Formel</strong></th>
+<th align="left"><strong>Bedeutung</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><span class="math inline">\(A \cap B = B \cap
+A\)</span></td>
+<td align="left">Die Reihenfolge beim Schnitt spielt keine Rolle.</td>
+</tr>
+<tr>
+<td align="left"><span class="math inline">\(A \cup B = B \cup
+A\)</span></td>
+<td align="left">Die Reihenfolge bei der Vereinigung spielt keine
+Rolle.</td>
+</tr>
+</tbody>
+</table>
+<p><br> <strong>Beispiel:</strong><br />
+Eine Gruppe von Personen, die Kaffee trinken (<span
+class="math inline">\(A\)</span>) und eine Gruppe, die Tee trinken
+(<span class="math inline">\(B\)</span>).<br />
+- Die Menge der Personen, die <em>sowohl Kaffee als auch Tee</em>
+trinken (<span class="math inline">\(A \cap B\)</span>), ist genau
+dieselbe wie die Menge der Personen, die <em>sowohl Tee als auch
+Kaffee</em> trinken (<span class="math inline">\(B \cap
+A\)</span>).<br />
+- Die Reihenfolge der Aufzählung ist völlig egal – das Ergebnis bleibt
 identisch.</p>
+<hr />
 </div>
-<div id="section-das-assoziativgesetz" class="section level3">
-<h3>🟧 2. Das Assoziativgesetz</h3>
-<p>Bei Schnitt- oder reinen Vereinigungsoperationen ist Klammersetzung
-unwichtig. Wenn drei Mengen miteinander vereinigt oder geschnitten
-werden, spielt es keine Rolle, welche zwei Mengen Sie zuerst
-zusammenfassen.</p>
-<p><span class="math display">\[(A \cap B) \cap C = A \cap (B \cap C
-)\]</span> <span class="math display">\[(A \cup B) \cup C = A \cup (B
-\cup C)\]</span></p>
+<div id="section-assoziativgesetz" class="section level3">
+<h3>🟧 2. Assoziativgesetz</h3>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr>
+<th align="left"><strong>Formel</strong></th>
+<th align="left"><strong>Bedeutung</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><span class="math inline">\((A \cap B) \cap C = A \cap
+(B \cap C)\)</span></td>
+<td align="left">Beim Schnitt von drei Mengen ist die Klammerung
+egal.</td>
+</tr>
+<tr>
+<td align="left"><span class="math inline">\((A \cup B) \cup C = A \cup
+(B \cup C)\)</span></td>
+<td align="left">Bei der Vereinigung von drei Mengen ist die Klammerung
+egal.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Beispiel:</strong><br />
+Drei Gruppen: Kaffee-Trinker (<span class="math inline">\(A\)</span>),
+Tee-Trinker (<span class="math inline">\(B\)</span>) und Saft-Trinker
+(<span class="math inline">\(C\)</span>).<br />
+- Es ist egal, ob Du zuerst die Kaffee- und Tee-Trinker zusammennimmst
+und dann die Saft-Trinker hinzufügst – oder ob Du zuerst Tee- und
+Saft-Trinker zusammennimmst und dann Kaffee hinzufügst. Am Ende sind
+alle drei Gruppen vereinigt.</p>
+<hr />
 </div>
-<div id="section-das-distributivgesetz" class="section level3">
-<h3>🟧 3. Das Distributivgesetz</h3>
-<p>Das Gesetz funktioniert ähnlich wie in der Algebra: <span
-class="math inline">\(x \cdot (y + z) = (x \cdot y) + (x \cdot
-z)\)</span>, wobei das Schneiden mit <span
-class="math inline">\(C\)</span> in die Klammer hineingezogen wird.
-<span class="math display">\[(A \cup B) \cap C = (A \cap C) \cup (B \cap
-C)\]</span> <span class="math display">\[(A \cap B) \cup C = (A \cup C)
-\cap (B \cup C)\]</span></p>
+<div id="section-distributivgesetz" class="section level3">
+<h3>🟧 3. Distributivgesetz</h3>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr>
+<th align="left"><strong>Formel</strong></th>
+<th align="left"><strong>Bedeutung</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><span class="math inline">\((A \cup B) \cap C = (A \cap
+C) \cup (B \cap C)\)</span></td>
+<td align="left">Du kannst die Schnittmenge mit <span
+class="math inline">\(C\)</span> in die Klammer hineinziehen – wie beim
+Ausmultiplizieren in der Algebra.</td>
+</tr>
+<tr>
+<td align="left"><span class="math inline">\((A \cap B) \cup C = (A \cup
+C) \cap (B \cup C)\)</span></td>
+<td align="left">Die zweite Form: Die Vereinigung mit <span
+class="math inline">\(C\)</span> wird in die Klammer hineingezogen.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Beispiel (1. Formel):</strong><br />
+Eine Gruppe von Personen, die Kaffee oder Tee trinken (<span
+class="math inline">\(A \cup B\)</span>). Davon möchtest Du diejenigen,
+die auch Saft trinken (<span class="math inline">\(C\)</span>).<br />
+- Das ist dasselbe, als würdest Du zuerst die Kaffee-Trinker nehmen, die
+auch Saft trinken (<span class="math inline">\(A \cap C\)</span>), und
+dazu die Tee-Trinker, die auch Saft trinken (<span
+class="math inline">\(B \cap C\)</span>), und dann beides
+vereinigen.</p>
+<p><strong>Beispiel (2. Formel):</strong><br />
+- <span class="math inline">\((A \cap B) \cup C\)</span> bedeutet:
+<em>Entweder Kaffee und Tee (gleichzeitig) oder Saft.</em><br />
+- Das ist dasselbe wie: <em>Entweder Kaffee oder Saft</em> <span
+class="math inline">\((A \cup C)\)</span> <strong>und</strong>
+<em>entweder Tee oder Saft</em> <span class="math inline">\((B \cup
+C)\)</span>.</p>
+<hr />
 </div>
 <div id="section-de-morgansche-regeln" class="section level3">
-<h3>🟧 4. de Morgansche Regeln</h3>
-<p>Beschreiben, wie das Komplement (die Verneinung) auf Klammerausdrücke
-angewendet wird. <span class="math display">\[\overline {(A \cup B)} =
-\bar A \cap \bar B\]</span> <span class="math display">\[\overline {(A
-\cap B)} = \bar A \cup \bar B\]</span> <strong>Erklärung</strong>: Das
-Nicht-Eintreten von (A oder B) entspricht dem Nicht-Eintreten von A und
-dem Nicht-Eintreten von B</p>
+<h3>🟧 4. De Morgansche Regeln</h3>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr>
+<th align="left"><strong>Formel</strong></th>
+<th align="left"><strong>Bedeutung</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><span class="math inline">\(\overline{A \cup B} =
+\overline A \cap \overline B\)</span></td>
+<td align="left">Das <strong>Nicht</strong> von (A oder B) ist dasselbe
+wie: Nicht A <strong>und</strong> Nicht B.</td>
+</tr>
+<tr>
+<td align="left"><span class="math inline">\(\overline{A \cap B} =
+\overline A \cup \overline B\)</span></td>
+<td align="left">Das <strong>Nicht</strong> von (A und B) ist dasselbe
+wie: Nicht A <strong>oder</strong> Nicht B.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Beispiel (1. Regel):</strong><br />
+Du suchst Personen, die weder Kaffee noch Tee trinken (<span
+class="math inline">\(\overline{A \cup B}\)</span>).<br />
+- Das sind genau die Personen, die keinen Kaffee trinken (<span
+class="math inline">\(\overline A\)</span>) und gleichzeitig keinen Tee
+trinken (<span class="math inline">\(\overline B\)</span>).</p>
+<p><strong>Beispiel (2. Regel):</strong><br />
+Du suchst Personen, die nicht gleichzeitig Kaffee und Tee trinken (<span
+class="math inline">\(\overline{A \cap B}\)</span>).<br />
+- Das sind alle, die keinen Kaffee trinken (<span
+class="math inline">\(\overline A\)</span>) oderkeinen Tee trinken
+(<span class="math inline">\(\overline B\)</span>) – oder beides.</p>
+<hr />
 </div>
-<div id="section-das-gesetz-der-kontraposition" class="section level3">
-<h3>🟧 5. Das Gesetz der Kontraposition</h3>
-<p>Wenn eine Menge komplett in einer anderen liegt, dreht sich dieses
-Verhältnis bei den Komplementen genau um <span class="math display">\[A
-\subset B =&gt; \bar B \subset \bar A \]</span>
-<strong>Erklärung</strong>: Wenn die Menge aller Espresso-Trinker (<span
-class="math inline">\(A\)</span>) eine Teilmenge aller Kaffeetrinker
-(<span class="math inline">\(B\)</span>) ist, dann ist jeder, der keinen
-Kaffee trinkt (<span class="math inline">\(\bar B\)</span>),
-logischerweise auch kein Espresso-Trinker (<span
-class="math inline">\(\bar A\)</span>).</p>
+<div id="section-gesetz-der-kontraposition" class="section level3">
+<h3>🟧 5. Gesetz der Kontraposition</h3>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr>
+<th align="left"><strong>Formel</strong></th>
+<th align="left"><strong>Bedeutung</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><span class="math inline">\(A \subset B \implies
+\overline B \subset \overline A\)</span></td>
+<td align="left">Wenn <span class="math inline">\(A\)</span> eine
+Teilmenge von <span class="math inline">\(B\)</span> ist, dann ist das
+Komplement von <span class="math inline">\(B\)</span> eine Teilmenge des
+Komplements von <span class="math inline">\(A\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Beispiel:</strong><br />
+Stell Dir vor: Alle Espresso-Trinker (<span
+class="math inline">\(A\)</span>) sind auch Kaffeetrinker (<span
+class="math inline">\(B\)</span>) – also <span class="math inline">\(A
+\subset B\)</span>.<br />
+- Dann gilt: Jeder, der keinen Kaffee trinkt (<span
+class="math inline">\(\overline B\)</span>), trinkt logischerweise auch
+keinen Espresso (<span class="math inline">\(\overline
+A\)</span>).<br />
+- Das ist eine logische Umkehrung, die oft beim Beweisen hilft.</p>
+<hr />
 </div>
-<div id="section-die-schnittkomplement-regel" class="section level3">
-<h3>🟧 6. Die Schnittkomplement-Regel</h3>
-<p>Überführt eine Differenzmenge (Subtraktion) in eine Schnittmenge.
-<span class="math display">\[A \setminus B = A \cap \bar B\]</span>
-<strong>Erklärung</strong>: “A ohne B” ist exakt dasselbe wie: Elemente,
-die in <span class="math inline">\(A\)</span> liegen und gleichzeitig
-nicht in <span class="math inline">\(B\)</span> liegen.</p>
+<div id="section-schnittkomplement-regel-differenzmenge-umwandeln"
+class="section level3">
+<h3>🟧 6. Schnittkomplement-Regel – Differenzmenge umwandeln</h3>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr>
+<th align="left"><strong>Formel</strong></th>
+<th align="left"><strong>Bedeutung</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><span class="math inline">\(A \setminus B = A \cap
+\overline B\)</span></td>
+<td align="left">“A ohne B” ist dasselbe wie: Elemente, die in <span
+class="math inline">\(A\)</span> liegen <strong>und</strong> nicht in
+<span class="math inline">\(B\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Beispiel:</strong><br />
+Eine Gruppe von Kaffeetrinkern (<span class="math inline">\(A\)</span>)
+und eine Gruppe von Tee-Trinkern (<span
+class="math inline">\(B\)</span>).<br />
+- <span class="math inline">\(A \setminus B\)</span> sind die
+Kaffeetrinker, die keinen Tee trinken.<br />
+- Das ist genau dasselbe wie: Kaffeetrinker (<span
+class="math inline">\(A\)</span>) und keine Tee-Trinker (<span
+class="math inline">\(\overline B\)</span>).</p>
+<hr />
 </div>
 <div id="section-regeln-der-leermenge" class="section level3">
 <h3>🟧 7. Regeln der Leermenge</h3>
-<p>Definieren die Interaktion von Mengen mit der leeren Menge. Es gibt
-keine gemeinsamen Elemente mit einer leeren Menge (Schnitt ist <span
-class="math inline">\(\emptyset\)</span>). Die Vereinigung mit einer
-leeren Menge verändert die Ursprungsmenge nicht.</p>
-<p><span class="math display">\[A \cap \emptyset = \emptyset\]</span>
-<span class="math display">\[A \cup \emptyset = A\]</span></p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr>
+<th align="left"><strong>Formel</strong></th>
+<th align="left"><strong>Bedeutung</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><span class="math inline">\(A \cap \emptyset =
+\emptyset\)</span></td>
+<td align="left">Der Schnitt mit der leeren Menge ist immer leer – es
+gibt keine gemeinsamen Elemente.</td>
+</tr>
+<tr>
+<td align="left"><span class="math inline">\(A \cup \emptyset =
+A\)</span></td>
+<td align="left">Die Vereinigung mit der leeren Menge verändert die
+Menge nicht – sie bleibt wie sie ist.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Beispiel:</strong><br />
+- Eine Gruppe von Kaffeetrinkern (<span
+class="math inline">\(A\)</span>) und eine Gruppe von niemande* (<span
+class="math inline">\(\emptyset\)</span>).<br />
+- Die Personen, die sowohl Kaffee trinken als auch niemand sind (<span
+class="math inline">\(A \cap \emptyset\)</span>) – das gibt es nicht,
+also ist das Ergebnis leer.<br />
+- Die Personen, die Kaffee trinken oder niemand sind (<span
+class="math inline">\(A \cup \emptyset\)</span>) – das sind immer noch
+genau die Kaffeetrinker.</p>
+<hr />
+</div>
+<div id="section-zusammenfassung" class="section level3">
+<h3>🟧 8. Zusammenfassung</h3>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr>
+<th align="left"><strong>Gesetz</strong></th>
+<th align="left"><strong>Formel</strong></th>
+<th align="left"><strong>Kurz erklärt</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Kommutativ</strong></td>
+<td align="left"><span class="math inline">\(A \cap B = B \cap
+A\)</span></td>
+<td align="left">Reihenfolge egal</td>
+</tr>
+<tr>
+<td align="left"><strong>Assoziativ</strong></td>
+<td align="left"><span class="math inline">\((A \cap B) \cap C = A \cap
+(B \cap C)\)</span></td>
+<td align="left">Klammerung egal</td>
+</tr>
+<tr>
+<td align="left"><strong>Distributiv</strong></td>
+<td align="left"><span class="math inline">\((A \cup B) \cap C = (A \cap
+C) \cup (B \cap C)\)</span></td>
+<td align="left">Ausmultiplizieren</td>
+</tr>
+<tr>
+<td align="left"><strong>de Morgan 1</strong></td>
+<td align="left"><span class="math inline">\(\overline{A \cup B} =
+\overline A \cap \overline B\)</span></td>
+<td align="left">Nicht(A oder B) = Nicht A und Nicht B</td>
+</tr>
+<tr>
+<td align="left"><strong>de Morgan 2</strong></td>
+<td align="left"><span class="math inline">\(\overline{A \cap B} =
+\overline A \cup \overline B\)</span></td>
+<td align="left">Nicht(A und B) = Nicht A oder Nicht B</td>
+</tr>
+<tr>
+<td align="left"><strong>Kontraposition</strong></td>
+<td align="left"><span class="math inline">\(A \subset B \implies
+\overline B \subset \overline A\)</span></td>
+<td align="left">Umkehrung bei Teilmengen</td>
+</tr>
+<tr>
+<td align="left"><strong>Schnittkomplement</strong></td>
+<td align="left"><span class="math inline">\(A \setminus B = A \cap
+\overline B\)</span></td>
+<td align="left">Differenz = Schnitt mit Komplement</td>
+</tr>
+<tr>
+<td align="left"><strong>Leermenge</strong></td>
+<td align="left"><span class="math inline">\(A \cap \emptyset =
+\emptyset\)</span>, <span class="math inline">\(A \cup \emptyset =
+A\)</span></td>
+<td align="left"><span class="math inline">\(\emptyset\)</span> verhält
+sich wie die 0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="section-teste-dein-wissen-3" class="section level3">
+<h3>🟧 9. Teste Dein Wissen!</h3>
 <div class="panel-heading tutorial-quiz-title"><span data-i18n="text.quiz">Quiz</span></div>
 <div class="panel panel-default tutorial-question-container">
 <div data-label="quiz-kap3-1-1" class="tutorial-question panel-body">
@@ -964,21 +1270,23 @@ gering?</em> <br></p>
 <p>Die Kombinatorik ist ein Teilgebiet der Mathematik und Stochastik,
 die auf die Weise der Elementen zählen, anordnen, auswählen. Die
 Kombinatorik anwort die Frage: <strong>Wie viele Möglichkeiten gibt es
-eigentlich, um etwas zu machen?</strong> <br></p>
+eigentlich, um etwas zu machen?</strong>. Die Kombinatorik unterscheidet
+drei grundlegende Typen von Zählproblemen. Schau Dir die folgende
+Übersicht an, um den Unterschied zu verstehen: <br></p>
 <div class="tabbable">
-<ul class="nav nav-tabs" data-tabsetid="8769">
+<ul class="nav nav-tabs" data-tabsetid="2667">
 <li class="active">
-<a href="#tab-8769-1" data-toggle="tab" data-bs-toggle="tab" data-value="Permutation">Permutation</a>
+<a href="#tab-2667-1" data-toggle="tab" data-bs-toggle="tab" data-value="Permutation">Permutation</a>
 </li>
 <li>
-<a href="#tab-8769-2" data-toggle="tab" data-bs-toggle="tab" data-value="Variation">Variation</a>
+<a href="#tab-2667-2" data-toggle="tab" data-bs-toggle="tab" data-value="Variation">Variation</a>
 </li>
 <li>
-<a href="#tab-8769-3" data-toggle="tab" data-bs-toggle="tab" data-value="Kombination">Kombination</a>
+<a href="#tab-2667-3" data-toggle="tab" data-bs-toggle="tab" data-value="Kombination">Kombination</a>
 </li>
 </ul>
-<div class="tab-content" data-tabsetid="8769">
-<div class="tab-pane active" data-value="Permutation" id="tab-8769-1">
+<div class="tab-content" data-tabsetid="2667">
+<div class="tab-pane active" data-value="Permutation" id="tab-2667-1">
 <br/>
 <h2>Permutation</h2>
 <p>Die Permutation beschäftigt sich mit der Anordnung aller Elemente einer Menge. Bei Permutation unterscheidet man zwei Fälle:</p>
@@ -999,7 +1307,7 @@ eigentlich, um etwas zu machen?</strong> <br></p>
 <p>\(2! = 2 \cdot 1 = 2\)</p>
 <p>\(3! = 3 \cdot 2 \cdot 1  =6\)</p>
 <p>\(4!=4 \cdot 3 \cdot 2 \cdot 1 = 24\)</p>
-<h4>Beispiele:</h4>
+<h5>Beispiele:</h5>
 <ol>
 <li>
 <p>Du hast 5 verschiedene Bücher und möchtest wissen, wie viele Arten kannst Du diese in einem Regal anordnen:</p>
@@ -1036,13 +1344,13 @@ Wie viele Möglichkeiten gibt es, die Kugeln
 <p>$$\frac{n!}{k_1! \cdot k_2! \cdots k_m!}$$</p>
 <p>\(n\): Gesamtzahl der Objekte</p>
 <p>\(k\): Gesamtzahl der identischen Objekte</p>
-<h4>Beispiele:</h4>
+<h5>Beispiele:</h5>
 <ol>
 <li>
 <p>Ein Korb enthält 3 Äpfel und 2 Bananen, wie viele Möglichkeiten gibt es, diese Obst in einer Reihe anzuordnen?</p>
 <p>\(n=5\) (3 Äpfel + 2 Bananen)</p>
 <p>\(k_1 =3\) (Apfel)</p>
-<p>\(k_2 =2\) (Banene)</p>
+<p>\(k_2 =2\) (Banane)</p>
 <p>$$\frac{5!}{3! \cdot 2!} = 10 \text{ Möglichkeiten.}$$</p>
 </li>
 <li>
@@ -1055,7 +1363,7 @@ Wie viele Möglichkeiten gibt es, die Kugeln
 </li>
 </ol>
 </div>
-<div class="tab-pane" data-value="Variation" id="tab-8769-2">
+<div class="tab-pane" data-value="Variation" id="tab-2667-2">
 <br/>
 <h2>Variation</h2>
 <p>Die Variation beschäftigt sich mit der Auswahl und Anordnung von \(k\) Elementen aus einer Gesamtmenge von \(n\) Elementen, bei der die Reihenfolge eine Rolle spielt.</p>
@@ -1084,7 +1392,7 @@ Wie viele Möglichkeiten gibt es, die Kugeln
 <p>In einem Pferderennen hat 20 Pferde. 3 Pferde werden vorausgenommen, die als Erstes, Zweites und Drittes kommen.</p>
 <p>\(n=20, k=3 \implies \frac{20!}{(20-3)!} = 6.840\) Möglichkeiten.</p>
 </div>
-<div class="tab-pane" data-value="Kombination" id="tab-8769-3">
+<div class="tab-pane" data-value="Kombination" id="tab-2667-3">
 <br/>
 <h2>Kombination</h2>
 <p>
@@ -1118,14 +1426,17 @@ Die Kombination handelt sich um eine Auswahl von \(k\) Elementen, bei der die Re
 </div>
 <div id="section-praxisnahes-beispiel-2" class="section level3">
 <h3>🟧 2. Praxisnahes Beispiel</h3>
+<p>Bestell Du Dein Lieblingsgetränk und die Weise von Zählen – Wie viele
+verschiedene Möglichkeiten gibt es eigentlich, Dein Getränk
+zusammenzustellen? Simulation hilft Dir, alle möglichen Anordnungen,
+Auswahlen und Kombinationen zu durchschauen und zeigt Dir, wie viele
+Optionen Dir wirklich zur Verfügung stehen. <br></p>
+<div style="margin-top: 20px; padding: 18px;  border-radius: 6px; box-shadow: 0 4px 12px rgba(230, 92, 0, 0.08); max-width: 750px;">
 <div class="container-fluid">
-<div style="border-bottom: 1px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 20px;">
-<h3 style="font-weight: 700; color: #111827; margin: 0;">Kombinatorik-Simulator</h3>
-</div>
 <div class="row">
 <div class="col-sm-5">
 <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px; margin-bottom: 15px;">
-<p style="font-size: 12px; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em;">
+<p style="font-size: 12px; color: #4b5563; letter-spacing: 0.05em;">
 <strong>1. Verfügbare Produkte (Menge n)</strong>
 </p>
 <div id="pool_checkboxes" class="shiny-html-output"></div>
@@ -1137,7 +1448,7 @@ Ausgewählt:
 </div>
 </div>
 <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px; margin-bottom: 15px;">
-<p style="font-size: 12px; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em;">
+<p style="font-size: 12px; color: #4b5563; letter-spacing: 0.05em;">
 <strong>2. Kombinatorisches Modell</strong>
 </p>
 <div class="form-group shiny-input-container" style="width:100%;">
@@ -1173,11 +1484,12 @@ Anzahl:
 </div>
 </div>
 </div>
-<div id="section-zusammenfassung" class="section level3">
+</div>
+<div id="section-zusammenfassung-1" class="section level3">
 <h3>🟧 3. Zusammenfassung</h3>
 <img src="www/Kombinatorik.png" width="750" height="450"/>
 </div>
-<div id="section-teste-dein-wissen-3" class="section level3">
+<div id="section-teste-dein-wissen-4" class="section level3">
 <h3>🟧 4. Teste Dein Wissen!</h3>
 <div class="panel-heading tutorial-quiz-title"><span data-i18n="text.quiz">Quiz</span></div>
 <div class="panel panel-default tutorial-question-container">
@@ -1201,6 +1513,11 @@ Anzahl:
 <div id="section-kapitel-5-statistische-ereignisse"
 class="section level2">
 <h2>Kapitel 5: Statistische Ereignisse</h2>
+<p><em>Du beobachtest Deinen Coffee-Shop einen Tag lang. Es kommen viele
+verschiedene Kunden, jeder mit einer anderen Bestellung. Wie kannst Du
+diese vielen verschiedenen Möglichkeiten mathematisch beschreiben und
+strukturieren? Das ist die Frage, die wir in diesem Kapitel
+klären!</em></p>
 <div id="section-ergebnis-ergebnisraum" class="section level3">
 <h3>🟧 1. Ergebnis &amp; Ergebnisraum</h3>
 <p><strong>Zufallsexperiment</strong>: Versuche oder Experimente, die
@@ -1367,7 +1684,7 @@ class="math inline">\(A^c\)</span></strong>:</p>
 </div>
 </div>
 </div>
-<div id="section-zusammenfassung-1" class="section level3">
+<div id="section-zusammenfassung-2" class="section level3">
 <h3>🟧 4. Zusammenfassung</h3>
 <table>
 <thead>
@@ -1415,7 +1732,7 @@ class="math inline">\(A\)</span></td>
 </tbody>
 </table>
 </div>
-<div id="section-teste-dein-wissen-4" class="section level3">
+<div id="section-teste-dein-wissen-5" class="section level3">
 <h3>🟧 5. Teste Dein Wissen!</h3>
 <div class="panel-heading tutorial-quiz-title"><span data-i18n="text.quiz">Quiz</span></div>
 <div class="panel panel-default tutorial-question-container">
@@ -1489,19 +1806,19 @@ A)\)</span></td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">de Morgansche Regeln</td>
+<td align="left">de Morgan 1</td>
 <td align="center"><span class="math inline">\(P \overline {(A \cup B)}
 = P(\overline A \cap \overline B)\)</span></td>
 <td align="left">A und B treten nicht ein</td>
 </tr>
 <tr>
-<td align="left"></td>
+<td align="left">de Morgan 2</td>
 <td align="center"><span class="math inline">\(P \overline {(A \cap B)}
 = P (\overline A \cup \overline B)\)</span></td>
 <td align="left">A und B treten nicht gleichzeitig ein</td>
 </tr>
 <tr>
-<td align="left"></td>
+<td align="left">Differenzregel</td>
 <td align="center"><span class="math inline">\(P(A \setminus B) =
 P(A)-P(A \cap B)\)</span></td>
 <td align="left">A tritt ein, aber B nicht</td>
@@ -1533,7 +1850,7 @@ deswegen:</p>
 <div class="col-sm-6">$$P(\overline A) = 1- P(A)$$</div>
 </div>
 </div>
-<div id="section-teste-dein-wissen-5" class="section level3">
+<div id="section-teste-dein-wissen-6" class="section level3">
 <h3>🟧 4. Teste Dein Wissen!</h3>
 <div class="panel-heading tutorial-quiz-title"><span data-i18n="text.quiz">Quiz</span></div>
 <div class="panel panel-default tutorial-question-container">
@@ -1572,12 +1889,16 @@ deswegen:</p>
 </div>
 <div id="section-kapitel-7-baumdiagramm" class="section level2">
 <h2>Kapitel 7: Baumdiagramm</h2>
+<p><em>Du spielst ein Brettspiel, bei dem du zweimal hintereinander
+würfeln musst. Wie viele verschiedene Ergebnisse gibt es? Und wie kannst
+du alle Pfade übersichtlich darstellen, ohne den Überblick zu verlieren?
+Ein Baumdiagramm macht es leicht!</em></p>
+<div id="section-definition-4" class="section level3">
+<h3>🟧 1. Definition</h3>
 <p>Baumdiagramm darstellt die Beziehung zwischen Ereignissen. Ein
 Baumdiagramm ist ein Hilfsmittel, die Ergebnisse eines
 Zufallsexperiments übersichtlich aufzuzeichnen. Mit den Pfadregeln
 kannst Du dann ganz einfach die Wahrscheinlichkeiten ausrechnen.</p>
-<div id="section-definition-4" class="section level3">
-<h3>🟧 1. Definition</h3>
 <p><strong>Knoten</strong>: Die Punkte, an denen sich die Äste teilen.
 <br> <strong>Äste</strong>: eine Linie verbindet die Knoten, auf der die
 Wahrscheinlichkeit aufgeschrieben wurden müssen.<br>
@@ -1651,7 +1972,7 @@ Obst heraus ohne Zurücklegen</p>
 <p><br>
 <iframe src="www/kap7.html" width="100%" height="450px" style= "overflow: hidden;border: none;"></iframe></p>
 </div>
-<div id="section-teste-dein-wissen-6" class="section level3">
+<div id="section-teste-dein-wissen-7" class="section level3">
 <h3>🟧 5. Teste Dein Wissen!</h3>
 <div class="panel-heading tutorial-quiz-title"><span data-i18n="text.quiz">Quiz</span></div>
 <div class="panel panel-default tutorial-question-container">
@@ -1685,6 +2006,11 @@ class="section level2">
 <h2>Kapitel 8: Bedingte und unbedingte Wahrscheinlichkeit</h2>
 <div id="section-unbedingte-wahrscheinlichkeit" class="section level3">
 <h3>🟧 1. Unbedingte Wahrscheinlichkeit</h3>
+<p><em>Du gehst zum Arzt, weil du Husten hast. Der Arzt macht einen
+Test, der bei 90 % der Kranken anschlägt, aber auch bei 5 % der
+Gesunden. Wie hoch ist die Wahrscheinlichkeit, dass du wirklich krank
+bist, wenn der Test positiv ist? Das ist die berühmte bedingte
+Wahrscheinlichkeit!</em></p>
 <p>Die unbedingte Wahrscheinlichkeit ist die Wahrscheinlichkeit eines
 Ereignisses ohne zusätzliche Information oder Bedingungen <span
 class="math display">\[P(A)\]</span></p>
@@ -1926,7 +2252,7 @@ Wahrscheinlichkeit, dass diese Person männlich ist?</p>
 </div>
 </div>
 </div>
-<div id="section-teste-dein-wissen-7" class="section level3">
+<div id="section-teste-dein-wissen-8" class="section level3">
 <h3>🟧 5. Teste Dein Wissen!</h3>
 <div class="panel-heading tutorial-quiz-title"><span data-i18n="text.quiz">Quiz</span></div>
 <div class="panel panel-default tutorial-question-container">
@@ -1990,30 +2316,28 @@ class="math inline">\(P(A \cap B) = 0{,}10\)</span> <br> Die Werte soll
 id="section-kapitel-9-stochastische-unabhängigkeit-und-abhängigkeit"
 class="section level2">
 <h2>Kapitel 9: Stochastische Unabhängigkeit und Abhängigkeit</h2>
-<p><em>In Kapitel 7 hast Du gelernt, dass beim Ziehen mit Zurücklegen
-die Wahrscheinlichkeiten gleich bleiben, während sie sich beim Ziehen
-ohne Zurücklegen verändern. In Kapitel 8 hast Du die bedingte
-Wahrscheinlichkeit kennengelernt, die den Einfluss einer Bedingung auf
-eine Wahrscheinlichkeit beschreibt.</em></p>
-<p><em>Jetzt fragst du dich vielleicht: Wann genau hat eine Bedingung
-keinen Einfluss? Genau das ist der Kern dieses Kapitels! Wir werden
-untersuchen, wann Ereignisse unabhängig voneinander sind – und wann sie
-abhängig sind. Und das Beste: Du wirst sehen, dass das Ziehen mit
-Zurücklegen aus Kapitel 7 nichts anderes ist als ein perfektes Beispiel
-für stochastische Unabhängigkeit!</em></p>
+<p><em>Hängt die Lieblingsfarbe deiner Freunde mit ihrem Lieblingstier
+zusammen? Oder sind diese beiden Dinge völlig unabhängig? Genau das
+prüfst du mit der stochastischen Unabhängigkeit – ein Konzept, das in
+der Statistik ständig vorkommt.</em></p>
 <div id="section-wiederholung" class="section level3">
 <h3>🟧 1. Wiederholung</h3>
+<p><em>Bevor wir zur Abhängigkeit/Unabhängigkeit kommen, schauen wir
+kurz zurück – Kapitel 7 (mit/ohne Zurücklegen) und Kapitel 8 (die
+bedingte Wahrscheinlichkeit) liefern genau die Grundlagen, die wir jetzt
+brauchen, um den Unterschied zwischen abhängig und unabhängig
+mathematisch zu fassen.</em></p>
 <p>🔸Rückblick: Mit vs. Ohne Zurücklegen (Kapitel 7)</p>
 <p><iframe src="www/kap7.html" width="100%" height="450px" style= "overflow: hidden;border: none;"></iframe></p>
 <p>🔸Rückblick: Bedingte Wahrscheinlichkeit (Kapitel 8) <span
 class="math display">\[P(A|B)=\frac{P(A\cap B)}{P(B)}\]</span> Das
 bedeutet: Die Wahrscheinlichkeit von <span
 class="math inline">\(A\)</span>, unter der Bedingung, dass <span
-class="math inline">\(B\)</span> bereits eingetreten ist. - Wenn <span
-class="math inline">\(P(A|B) = P(A)\)</span> ist, hat die Bedingung
-<span class="math inline">\(B\)</span> keinen Einfluss. - Wenn <span
-class="math inline">\(P(A|B) \neq P(A)\)</span> ist,hat die Bedingung
-<span class="math inline">\(B\)</span> einen Einfluss.</p>
+class="math inline">\(B\)</span> bereits eingetreten ist. <br> - Wenn
+<span class="math inline">\(P(A|B) = P(A)\)</span> ist, hat die
+Bedingung <span class="math inline">\(B\)</span> keinen Einfluss. <br> -
+Wenn <span class="math inline">\(P(A|B) \neq P(A)\)</span> ist,hat die
+Bedingung <span class="math inline">\(B\)</span> einen Einfluss.<br></p>
 </div>
 <div id="section-stochastische-unabhängigkeit" class="section level3">
 <h3>🟧 2. Stochastische Unabhängigkeit</h3>
@@ -2042,7 +2366,7 @@ Wesentlichen bedeutet: <strong>Ziehe ohne Zurücklegen</strong></p>
 <p><span class="math display">\[ P(A \cap B) \neq P(A)\cdot P(B)
 \]</span></p>
 </div>
-<div id="section-teste-dein-wissen-8" class="section level3">
+<div id="section-teste-dein-wissen-9" class="section level3">
 <h3>🟧 4. Teste Dein Wissen!</h3>
 <div class="panel-heading tutorial-quiz-title"><span data-i18n="text.quiz">Quiz</span></div>
 <div class="panel panel-default tutorial-question-container">
@@ -2076,9 +2400,11 @@ id="section-kapitel-10-satz-von-bayes-bedingte-wahrscheinlichkeit-erweiterung"
 class="section level2">
 <h2>Kapitel 10: Satz von Bayes (bedingte Wahrscheinlichkeit
 Erweiterung)</h2>
-<p><em>Bevor Du tiefer in den Satz von Bayes eintauchst, solltest Du die
-Grundlagen der Zufallsexperimente und der bedingten Wahrscheinlichkeit
-bereits verstanden haben.</em></p>
+<p><em>Du bereitest dich auf eine schwere Klausur vor. Laut der
+Statistik bestehen 80 % der Studierenden, die viel lernen, die Prüfung.
+Aber wie hoch ist die Wahrscheinlichkeit, dass jemand viel gelernt hat,
+wenn er die Prüfung bestanden hat? Auch hier drehst du die Logik um –
+mit dem Satz von Bayes!</em></p>
 <div id="section-definition-5" class="section level3">
 <h3>🟧 1. Definition</h3>
 <p>Einfacher zu erklären, Satz von Bayes ist die Umgekehrform der
@@ -2197,7 +2523,7 @@ gesamten Shops normiert wird (Slider 3)</p>
 </div>
 </div>
 </div>
-<div id="section-teste-dein-wissen-9" class="section level3">
+<div id="section-teste-dein-wissen-10" class="section level3">
 <h3>🟧 4. Teste Dein Wissen!</h3>
 <div class="panel-heading tutorial-quiz-title"><span data-i18n="text.quiz">Quiz</span></div>
 <div class="panel panel-default tutorial-question-container">
@@ -2279,7 +2605,7 @@ session$onSessionEnded(function() {
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-# Phần xử lý logic (Server)
+
 output$dice_result_display <- renderUI({
   # press button
   input$roll_btn
@@ -2289,13 +2615,13 @@ output$dice_result_display <- renderUI({
 
   img_list <- c(
     "www/dice 1.png",
-    "www/dice 2.png", #2
+    "www/dice 2.png", 
     "www/dice 3.png",
     "www/dice 4.png",
     "www/dice 5.png",
     "www/dice 6.png")
   
-  # Danh sách câu giải thích
+  # explain list
   explanations <- c(
     "Dies ist der niedrigste Wert",
     "Nummer 2! Eine kleine gerade Zahl.",
@@ -2304,12 +2630,15 @@ output$dice_result_display <- renderUI({
     "Du hast die Zahl 5 gewürfelt!",
     "Super! Das ist der höchste Wert."
   )
+
   
   # return to UI
   tagList(
     tags$br(),
     tags$img(src = img_list[res], width = "150px", style = "margin: 20px 0; border: 1px solid #ddd; padding: 10px; border-radius: 10px; background: white;"),
-    tags$p(explanations[res], style = "font-style: italic; color: #555;")
+    tags$p(explanations[res], style = "font-style: italic; color: #555;"),
+    p(style = "font-size: 12px; color: #7A6B61; font-style: italic; margin-bottom: 0; line-height: 1.4;", 
+        "Hinweis: Egal, ob Du beim ersten Wurf eine 6 würfelst oder erst beim zehnten, bleibt die Wahrscheinlichkeit für jede Zahl bei jedem Wurf immer 1/6. Der Würfel hat kein Gedächtnis! Auch wenn Du neunmal hintereinander eine 4 gewürfelt hast, ist die Chance für die 4 beim nächsten Wurf immer noch genauso groß wie für jede andere Zahl")
   )
 })
 </script>
@@ -2354,14 +2683,14 @@ output$cate_result <- renderUI({
 
   div(style = "margin-top: 20px; padding: 18px; 
        border-radius: 6px; box-shadow: 0 4px 12px rgba(230, 92, 0, 0.08); max-width: 550px;",
-      
+      #header 
       p(style = "font-size: 18px; color: #E65C00; margin-bottom: 15px;", 
         "Gezogene Kategorie: ", strong(style = "color: #2E1A0F;", display_text)),
       
       div(style = "background-color: white; padding: 12px; border-radius: 4px; border: 1px solid #FFE4D3; margin-bottom: 10px;",
-          p(style = "margin: 8px 0 0 0; font-family: 'Courier New', monospace; font-size: 14px; color: #333;",
+          p(style = "margin: 8px 0 0 0;  font-size: 14px; color: #333;",
             paste0("Anzahl der Käufe (|A|): ", format(category_count, big.mark = "."), " mal")),
-          p(style = "margin: 4px 0 0 0; font-family: 'Courier New', monospace; font-size: 14px; color: #333;",
+          p(style = "margin: 4px 0 0 0;  font-size: 14px; color: #333;",
             paste0("Gesamttransaktionen (|Ω|): ", format(total, big.mark = "."), " Zeilen")),
           p(style = "margin: 8px 0 0 0; font-size: 15px; color: #E65C00",
             paste0("P(", selected_item, ") = ", category_count, " / ", total, " ≈ ", real_probability, "%"))
@@ -2376,13 +2705,13 @@ output$cate_result <- renderUI({
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-kap1-1", 
     question = structure("Wie lassen sich Wahrscheinlichkeiten darstellen?(Es können mehrere Antworten richtig sein)", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_367833a", 
+    "character")), answers = list(structure(list(id = "lnr_ans_b08732c", 
         option = "Prozentangabe", value = "Prozentangabe", label = structure("Prozentangabe", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a51729a", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_44d670e", 
         option = "Bruch", value = "Bruch", label = structure("Bruch", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_37ade62", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_1770161", 
         option = "Dezimalzahl", value = "Dezimalzahl", label = structure("Dezimalzahl", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -2393,7 +2722,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap1-1-answer", question = "quiz-kap1-1"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1950456267.59175, options = list()), class = c("learnr_checkbox", 
+    seed = 2072055917.53512, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")), session = session)
 </script>
 
@@ -2401,13 +2730,13 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap1-2", 
     question = structure("\\(P(A) = \\frac{|A|}{...}\\)", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_38aa4e8", 
+    "character")), answers = list(structure(list(id = "lnr_ans_218a44e", 
         option = "$A$", value = "$A$", label = structure("\\(A\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_bf9040a", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3381339", 
         option = "$\\omega$", value = "$\\omega$", label = structure("\\(\\omega\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a9bbe9e", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5d6376", 
         option = "$|\\Omega|$", value = "$|\\Omega|$", label = structure("\\(|\\Omega|\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -2418,24 +2747,24 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap1-2-answer", question = "quiz-kap1-2"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 651644578.196554, options = list()), class = c("learnr_radio", 
+    seed = 1458742252.32072, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap1-3", 
     question = structure("Was beschreibt die Striche im Nenner der Formel \\(|\\Omega|\\)", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_53f64aa", 
+    "character")), answers = list(structure(list(id = "lnr_ans_bd8508c", 
         option = "Ein absoluten Betrag, um negative Wahrscheinlichkeit zu vermeiden.", 
         value = "Ein absoluten Betrag, um negative Wahrscheinlichkeit zu vermeiden.", 
         label = structure("Ein absoluten Betrag, um negative Wahrscheinlichkeit zu vermeiden.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_fee8ef5", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b3187e7", 
         option = "Die absolute Anzahl aller Elemente, die im Graundraum enthalten sind.", 
         value = "Die absolute Anzahl aller Elemente, die im Graundraum enthalten sind.", 
         label = structure("Die absolute Anzahl aller Elemente, die im Graundraum enthalten sind.", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3c21d8e", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_fa7e022", 
         option = "Die Striche darstellen einen leeren Grundraum", 
         value = "Die Striche darstellen einen leeren Grundraum", 
         label = structure("Die Striche darstellen einen leeren Grundraum", html = TRUE, class = c("html", 
@@ -2448,7 +2777,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap1-3-answer", question = "quiz-kap1-3"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1591781966.75877, options = list()), class = c("learnr_radio", 
+    seed = 1652176658.73065, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
@@ -2456,15 +2785,15 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap1-4", 
     question = structure("Wie hoch ist die Wahrscheinlichkeit P, eine Zahl größer als 4 (5 oder 6) aufzutauchen", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_27d5cb0", 
+    "character")), answers = list(structure(list(id = "lnr_ans_5c7649d", 
         option = "$\\frac{1}{6}$", value = "$\\frac{1}{6}$", 
         label = structure("\\(\\frac{1}{6}\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_28b36d7", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3b39273", 
         option = "$\\frac{1}{3}$", value = "$\\frac{1}{3}$", 
         label = structure("\\(\\frac{1}{3}\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5927207", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_77f75b3", 
         option = "$\\frac{1}{2}$", value = "$\\frac{1}{2}$", 
         label = structure("\\(\\frac{1}{2}\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -2476,22 +2805,22 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap1-4-answer", question = "quiz-kap1-4"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 264998098.876601, options = list()), class = c("learnr_radio", 
+    seed = 1401932050.84717, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-kap1-5", 
     question = structure("Wie hoch ist die Wahrscheinlichkeit P, eine Zahl kleiner als Drei zu würfeln? (Es können mehrere Antworten richtig sein)", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_d06c46d", 
+    "character")), answers = list(structure(list(id = "lnr_ans_2361327", 
         option = "$\\frac{1}{3}$", value = "$\\frac{1}{3}$", 
         label = structure("\\(\\frac{1}{3}\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_8ff67ad", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_1d67ece", 
         option = "$\\frac{2}{6}$", value = "$\\frac{2}{6}$", 
         label = structure("\\(\\frac{2}{6}\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_eceabc2", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_8d4cfea", 
         option = "$\\frac{1}{2}$", value = "$\\frac{1}{2}$", 
         label = structure("\\(\\frac{1}{2}\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -2503,7 +2832,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap1-5-answer", question = "quiz-kap1-5"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1439471691.32969, options = list()), class = c("learnr_checkbox", 
+    seed = 250021808.383575, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")), session = session)
 </script>
 
@@ -2511,15 +2840,15 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap1-6", 
     question = structure("Wie hoch ist die Wahrscheinlichkeit P, keine Drei zu würfeln.", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_fd5438b", 
+    "character")), answers = list(structure(list(id = "lnr_ans_72299e2", 
         option = "$\\frac{5}{6}$", value = "$\\frac{5}{6}$", 
         label = structure("\\(\\frac{5}{6}\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a6c7d6b", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4989", 
         option = "$\\frac{1}{6}$", value = "$\\frac{1}{6}$", 
         label = structure("\\(\\frac{1}{6}\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d32fd2f", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5b14063", 
         option = "$\\frac{1}{3}$", value = "$\\frac{1}{3}$", 
         label = structure("\\(\\frac{1}{3}\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -2531,22 +2860,22 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap1-6-answer", question = "quiz-kap1-6"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1497240618.80279, options = list()), class = c("learnr_radio", 
+    seed = 878379007.590973, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap1-7", 
     question = structure("Wie hoch ist die Wahrscheinlichkeit P, eine gerade Zahl zu würfeln.", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_93863af", 
+    "character")), answers = list(structure(list(id = "lnr_ans_c3e03a9", 
         option = "$\\frac{1}{3}$", value = "$\\frac{1}{3}$", 
         label = structure("\\(\\frac{1}{3}\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_848f026", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_fb10bff", 
         option = "$\\frac{1}{2}$", value = "$\\frac{1}{2}$", 
         label = structure("\\(\\frac{1}{2}\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_30e9935", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_57271ac", 
         option = "$\\frac{1}{6}$", value = "$\\frac{1}{6}$", 
         label = structure("\\(\\frac{1}{6}\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -2558,7 +2887,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap1-7-answer", question = "quiz-kap1-7"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1666897634.22379, options = list()), class = c("learnr_radio", 
+    seed = 86348172.959791, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
@@ -2566,17 +2895,17 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap1-8", 
     question = structure("Welche Aussage ist korrekt?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_6d6397f", 
+    "character")), answers = list(structure(list(id = "lnr_ans_ff50cb2", 
         option = "Die Wahrscheinlichkeit können mehr 100% erreichen, wenn der Datensatz zu groß ist.", 
         value = "Die Wahrscheinlichkeit können mehr 100% erreichen, wenn der Datensatz zu groß ist.", 
         label = structure("Die Wahrscheinlichkeit können mehr 100% erreichen, wenn der Datensatz zu groß ist.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6bc4c51", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_44d52b3", 
         option = "In einem Laplace-Raum beträgt die Wahrscheinlichkeit gleiche Chance", 
         value = "In einem Laplace-Raum beträgt die Wahrscheinlichkeit gleiche Chance", 
         label = structure("In einem Laplace-Raum beträgt die Wahrscheinlichkeit gleiche Chance", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9809152", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_726a647", 
         option = "Je niedriger die Wahrscheinlichkeit ist, desto größer den Datensatz", 
         value = "Je niedriger die Wahrscheinlichkeit ist, desto größer den Datensatz", 
         label = structure("Je niedriger die Wahrscheinlichkeit ist, desto größer den Datensatz", html = TRUE, class = c("html", 
@@ -2589,23 +2918,23 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap1-8-answer", question = "quiz-kap1-8"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 305773812.857613, options = list()), class = c("learnr_radio", 
+    seed = 1877974936.1255, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap1-9", 
     question = structure("Angenommen, Dein Coffee-Shop hat heute 0 Bestellungen ($|\\Omega$|) = 0$, weil Feiertag ist, Wie wird die Wahrscheinlichkeit für den Verkauf eines Tee berechnet?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_d1234e4", 
+    "character")), answers = list(structure(list(id = "lnr_ans_6f1a9f7", 
         option = "Nicht definiert, weil man nicht durch $|\\Omega$| teilen kann", 
         value = "Nicht definiert, weil man nicht durch $|\\Omega$| teilen kann", 
         label = structure("Nicht definiert, weil man nicht durch \\(|\\Omega\\)| teilen kann", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_515dda8", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_95a8fab", 
         option = "$\\frac{1}{9}$", value = "$\\frac{1}{9}$", 
         label = structure("\\(\\frac{1}{9}\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3940d4b", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e5a5d5c", 
         option = "0%", value = "0%", label = structure("0%", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -2616,7 +2945,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap1-9-answer", question = "quiz-kap1-9"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1222616369.43067, options = list()), class = c("learnr_radio", 
+    seed = 29871540.48609, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
@@ -2624,17 +2953,17 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap1-10", 
     question = structure("Wie hoch ist die Wahrscheinlichkeit für den Kauf von Coffee am Wochenende?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_2813df6", 
+    "character")), answers = list(structure(list(id = "lnr_ans_e1f113f", 
         option = "$\\frac{1}{9}$, weil jede Bestellung unabhängig ist.", 
         value = "$\\frac{1}{9}$, weil jede Bestellung unabhängig ist.", 
         label = structure("\\(\\frac{1}{9}\\), weil jede Bestellung unabhängig ist.", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_dd07539", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4cd0a04", 
         option = "Höher als $\\frac{1}{9}$, weil Coffee am liebsten ist und am höchsten realen Wahrscheinlichkeit im Datensatz hat.", 
         value = "Höher als $\\frac{1}{9}$, weil Coffee am liebsten ist und am höchsten realen Wahrscheinlichkeit im Datensatz hat.", 
         label = structure("Höher als \\(\\frac{1}{9}\\), weil Coffee am liebsten ist und am höchsten realen Wahrscheinlichkeit im Datensatz hat.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_66362d3", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a59548", 
         option = "Extrem niedrig, weil tatsächlich man am Wochenende nicht arbeiten muss und man braucht nicht wach sein.", 
         value = "Extrem niedrig, weil tatsächlich man am Wochenende nicht arbeiten muss und man braucht nicht wach sein.", 
         label = structure("Extrem niedrig, weil tatsächlich man am Wochenende nicht arbeiten muss und man braucht nicht wach sein.", html = TRUE, class = c("html", 
@@ -2647,7 +2976,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap1-10-answer", question = "quiz-kap1-10"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1759717265.68057, options = list()), class = c("learnr_radio", 
+    seed = 1966733616.58417, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
@@ -2658,7 +2987,7 @@ output$coffee_plot <- renderPlot({
   true_prob <- 58416/149447 #Expected Value
   set.seed(42)
   
-  sim_buy <-rbinom(target_n, 1, true_prob) #thực hiện hành động "bốc ngẫu nhiên" xem khách hàng có mua cafe hay không 1 buy, 0 no
+  sim_buy <-rbinom(target_n, 1, true_prob) # random pick for buying coffee action: 1 buy, 0 no
   cum_sum <- cumsum(sim_buy) #Cộng dồn 
   trials <- 1:target_n
   rel_freq <- cum_sum / trials #Relative Häufigkeit
@@ -2695,17 +3024,17 @@ annotate(
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap2-1", 
     question = structure("Welche Aussage beschreibt das Wesen der subjektiven Wahrscheinlichkeit am besten?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_f34217d", 
+    "character")), answers = list(structure(list(id = "lnr_ans_566708a", 
         option = "Sie ist für alle Personen immer absolut identisch und objektiv messbar.", 
         value = "Sie ist für alle Personen immer absolut identisch und objektiv messbar.", 
         label = structure("Sie ist für alle Personen immer absolut identisch und objektiv messbar.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b862f5f", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_53a056c", 
         option = "Sie basiert auf persönlicher Einschätzung, Erfahrung, Wissen oder Intuition und nicht auf empirischen Messungen.", 
         value = "Sie basiert auf persönlicher Einschätzung, Erfahrung, Wissen oder Intuition und nicht auf empirischen Messungen.", 
         label = structure("Sie basiert auf persönlicher Einschätzung, Erfahrung, Wissen oder Intuition und nicht auf empirischen Messungen.", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_577598", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d3d8497", 
         option = "Sie wird durch die sehr häufige Wiederholung eines Experiments unter identischen Bedingungen ermittelt.", 
         value = "Sie wird durch die sehr häufige Wiederholung eines Experiments unter identischen Bedingungen ermittelt.", 
         label = structure("Sie wird durch die sehr häufige Wiederholung eines Experiments unter identischen Bedingungen ermittelt.", html = TRUE, class = c("html", 
@@ -2718,22 +3047,22 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap2-1-answer", question = "quiz-kap2-1"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1208709084.93715, options = list()), class = c("learnr_radio", 
+    seed = 1330680727.88035, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap2-2", 
     question = structure("Warum gestalten Casinos Gewinnrate nur geringfügig höher ist als den Spielers(z.B gewinnt das Casino 51%, der Spieler 49%) und verdienen trotzdem Millionen von Dollar?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_c53fe0d", 
+    "character")), answers = list(structure(list(id = "lnr_ans_80e5c32", 
         option = "Casinos verfügen über Tools, um sicherzustellen, dass die Gewinnquote der Spieler unter 49 % bleibt.", 
         value = "Casinos verfügen über Tools, um sicherzustellen, dass die Gewinnquote der Spieler unter 49 % bleibt.", 
         label = structure("Casinos verfügen über Tools, um sicherzustellen, dass die Gewinnquote der Spieler unter 49 % bleibt.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d209c09", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2ffadc0", 
         option = "", value = "", label = structure("", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c25ca3f", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ce63f58", 
         option = "Dank des Gesetzes der großen Zahlen nähert sich die Gewinnquote des Casinos zwangsläufig 51 %, wenn die Anzahl der Spiele (N) Millionen pro Jahr erreicht. Dadurch wird aus einem kleinen Vorteil eine riesige und stabile Einnahmequelle.", 
         value = "Dank des Gesetzes der großen Zahlen nähert sich die Gewinnquote des Casinos zwangsläufig 51 %, wenn die Anzahl der Spiele (N) Millionen pro Jahr erreicht. Dadurch wird aus einem kleinen Vorteil eine riesige und stabile Einnahmequelle.", 
         label = structure("Dank des Gesetzes der großen Zahlen nähert sich die Gewinnquote des Casinos zwangsläufig 51 %, wenn die Anzahl der Spiele (N) Millionen pro Jahr erreicht. Dadurch wird aus einem kleinen Vorteil eine riesige und stabile Einnahmequelle.", html = TRUE, class = c("html", 
@@ -2746,7 +3075,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap2-2-answer", question = "quiz-kap2-2"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1911919912.60969, options = list()), class = c("learnr_radio", 
+    seed = 868904925.095385, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
@@ -2754,13 +3083,13 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap3-1", 
     question = structure("\\(A=\\) {1,2,3,4,5,6,0}. Was ist die Mächtigkeit?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_945824e", 
+    "character")), answers = list(structure(list(id = "lnr_ans_5c04c9e", 
         option = "6", value = "6", label = structure("6", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_508560e", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c93ca01", 
         option = "7", value = "7", label = structure("7", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_47a721c", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e0ce00a", 
         option = "10,5", value = "10,5", label = structure("10,5", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -2771,22 +3100,22 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap3-1-answer", question = "quiz-kap3-1"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1695034090.71069, options = list()), class = c("learnr_radio", 
+    seed = 896103492.582719, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap3-2", 
-    question = structure("Eine Würfel: \\(W =\\) {Zahl, Wappen}. Was ist die Mächtigkeit?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_8ee6b9", 
-        option = "4", value = "4", label = structure("4", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_380e313", 
-        option = "1", value = "1", label = structure("1", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c588f0d", 
-        option = "2", value = "2", label = structure("2", html = TRUE, class = c("html", 
+    question = structure("\\(A=\\) {1,2,3,4,5,6,6}. Was ist die Mächtigkeit?", html = TRUE, class = c("html", 
+    "character")), answers = list(structure(list(id = "lnr_ans_27511b9", 
+        option = "6", value = "6", label = structure("6", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_33ad910", 
+        option = "7", value = "7", label = structure("7", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e56882a", 
+        option = "undefiniert", value = "undefiniert", label = structure("undefiniert", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
     "character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
@@ -2795,22 +3124,46 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap3-2-answer", question = "quiz-kap3-2"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 638898446.20249, options = list()), class = c("learnr_radio", 
+    seed = 495263974.769375, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap3-3", 
+    question = structure("Eine Würfel: \\(W =\\) {Zahl, Wappen}. Was ist die Mächtigkeit?", html = TRUE, class = c("html", 
+    "character")), answers = list(structure(list(id = "lnr_ans_a5d7e43", 
+        option = "4", value = "4", label = structure("4", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ef8df1e", 
+        option = "1", value = "1", label = structure("1", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9690025", 
+        option = "2", value = "2", label = structure("2", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+    "character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+    "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+    "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+    "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+    "character")), message = NULL, post_message = NULL), ids = list(
+        answer = "quiz-kap3-3-answer", question = "quiz-kap3-3"), 
+    loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
+    seed = 255028272.381243, options = list()), class = c("learnr_radio", 
+"tutorial_question")), session = session)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap3-4", 
     question = structure("Wie ist diese Menge genannt? <strong>$$A\\cap B$$<\u002fstrong>", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_cb54d25", 
+    "character")), answers = list(structure(list(id = "lnr_ans_825c2ed", 
         option = "Vereinigungsmenge", value = "Vereinigungsmenge", 
         label = structure("Vereinigungsmenge", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_28120d7", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_f47588d", 
         option = "Schnittmenge", value = "Schnittmenge", label = structure("Schnittmenge", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_1af9cf6", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6867a2", 
         option = "Differenzmenge", value = "Differenzmenge", 
         label = structure("Differenzmenge", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -2820,23 +3173,24 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), message = NULL, post_message = NULL), ids = list(
-        answer = "quiz-kap3-3-answer", question = "quiz-kap3-3"), 
+        answer = "quiz-kap3-4-answer", question = "quiz-kap3-4"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 153534940.928505, options = list()), class = c("learnr_radio", 
+    seed = 793722494.630394, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap3-4", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap3-5", 
     question = structure("In der HTW Mensa verkäuft Cola, Pepsi, Kuchen, Suppe, Mittagsessen. <br> \\(A\\)= {Suppe, Cola}. <br> \\(A^c\\) = ?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_9254ff", 
+    "character")), answers = list(structure(list(id = "lnr_ans_c7e9880", 
         option = "Alle", value = "Alle", label = structure("Alle", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e310ef6", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_cf0337d", 
         option = "Pepsi, Cola, Suppe", value = "Pepsi, Cola, Suppe", 
         label = structure("Pepsi, Cola, Suppe", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_da3e336", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_8247663", 
         option = "Pepsi, Kuchen, Mittagsessen", value = "Pepsi, Kuchen, Mittagsessen", 
         label = structure("Pepsi, Kuchen, Mittagsessen", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -2846,16 +3200,15 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
     "character")), message = NULL, post_message = NULL), ids = list(
-        answer = "quiz-kap3-4-answer", question = "quiz-kap3-4"), 
+        answer = "quiz-kap3-5-answer", question = "quiz-kap3-5"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1036855156.01718, options = list()), class = c("learnr_radio", 
+    seed = 968295958.049102, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "quiz-kap3-5", question = structure("Grundraum \\(\\Omega\\)= {1,2,3,4,5,6,7,8,9,10} <br> \\(A=\\){2,4,6,8,10} <br> \\(B=\\) {1,2,3,4,5}. <br> Bestimmen die Mengen \\(A \\cap B\\)", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_3db5fd9", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "quiz-kap3-6", question = structure("Grundraum \\(\\Omega\\)= {1,2,3,4,5,6,7,8,9,10} <br> \\(A=\\){2,4,6,8,10} <br> \\(B=\\) {1,2,3,4,5}. <br> Bestimmen die Mengen \\(A \\cap B\\)", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_fb23ed2", 
     option = "2,4", value = "2,4", label = structure("2,4", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -2864,29 +3217,79 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
 "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
-    answer = "quiz-kap3-5-answer", question = "quiz-kap3-5"), 
+    answer = "quiz-kap3-6-answer", question = "quiz-kap3-6"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 75380843.9648981, options = list()), class = c("learnr_text", 
+    seed = 1795257209.16402, options = list()), class = c("learnr_text", 
+"tutorial_question")), session = session)
+</script>
+
+
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap3-7", 
+    question = structure("Was bedeutet $$A  B$$", html = TRUE, class = c("html", 
+    "character")), answers = list(structure(list(id = "lnr_ans_b3f7abb", 
+        option = "A und B", value = "A und B", label = structure("A und B", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9cfd3e2", 
+        option = "A mit B", value = "A mit B", label = structure("A mit B", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b29f673", 
+        option = "A ohne B", value = "A ohne B", label = structure("A ohne B", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+    "character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+    "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+    "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+    "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+    "character")), message = NULL, post_message = NULL), ids = list(
+        answer = "quiz-kap3-7-answer", question = "quiz-kap3-7"), 
+    loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
+    seed = 1441435100.82878, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap3-8", 
+    question = structure("A={2,4}. Die Potenzmenge $$\\mathcal{P}(A) = ?$$", html = TRUE, class = c("html", 
+    "character")), answers = list(structure(list(id = "lnr_ans_9e468c", 
+        option = "4", value = "4", label = structure("4", html = TRUE, class = c("html", 
+        "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_53ca098", 
+        option = "2", value = "2", label = structure("2", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_f11e586", 
+        option = "2 und 4", value = "2 und 4", label = structure("2 und 4", html = TRUE, class = c("html", 
+        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+    "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+    "character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+    "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+    "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+    "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+    "character")), message = NULL, post_message = NULL), ids = list(
+        answer = "quiz-kap3-8-answer", question = "quiz-kap3-8"), 
+    loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
+    seed = 411964156.308164, options = list()), class = c("learnr_radio", 
+"tutorial_question")), session = session)
+</script>
+
+
+<script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap3-1-1", 
     question = structure("Welche Gleichung beschreibt das Kommutativgesetz für den Schnitt?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_cd060ab", 
+    "character")), answers = list(structure(list(id = "lnr_ans_e8d8c66", 
         option = "$A \\cap B = B \\cap A$", value = "$A \\cap B = B \\cap A$", 
         label = structure("\\(A \\cap B = B \\cap A\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4fd4957", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_dd2607d", 
         option = "$A \\cup B = B \\cup A$", value = "$A \\cup B = B \\cup A$", 
         label = structure("\\(A \\cup B = B \\cup A\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9e61d49", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_fb55bff", 
         option = "$(A \\cap B) \\cap C = A \\cap (B \\cap C)$", 
         value = "$(A \\cap B) \\cap C = A \\cap (B \\cap C)$", 
         label = structure("\\((A \\cap B) \\cap C = A \\cap (B \\cap C)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_dc36a9d", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_461bdfa", 
         option = "$A \\setminus B = A \\cap \\overline{B}$", 
         value = "$A \\setminus B = A \\cap \\overline{B}$", label = structure("\\(A \\setminus B = A \\cap \\overline{B}\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -2898,30 +3301,29 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap3-1-1-answer", question = "quiz-kap3-1-1"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1370327257.36189, options = list()), class = c("learnr_radio", 
+    seed = 1363845079.36491, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap3-1-2", 
     question = structure("Welche Aussage beschreibt das Assoziativgesetz für die Vereinigung?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_fe45810", 
+    "character")), answers = list(structure(list(id = "lnr_ans_6e1b326", 
         option = "$(A \\cup B) \\cup C = A \\cup (B \\cup C)$", 
         value = "$(A \\cup B) \\cup C = A \\cup (B \\cup C)$", 
         label = structure("\\((A \\cup B) \\cup C = A \\cup (B \\cup C)\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d658e5f", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_bf91431", 
         option = "$(A \\cap B) \\cap C = A \\cap (B \\cap C)$", 
         value = "$(A \\cap B) \\cap C = A \\cap (B \\cap C)$", 
         label = structure("\\((A \\cap B) \\cap C = A \\cap (B \\cap C)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_41d355e", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9bce799", 
         option = "$(A \\cup B) \\cap C = (A \\cap C) \\cup (B \\cap C)$", 
         value = "$(A \\cup B) \\cap C = (A \\cap C) \\cup (B \\cap C)$", 
         label = structure("\\((A \\cup B) \\cap C = (A \\cap C) \\cup (B \\cap C)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_75b78e5", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_14d2bbc", 
         option = "$A \\cup \\emptyset = A$", value = "$A \\cup \\emptyset = A$", 
         label = structure("\\(A \\cup \\emptyset = A\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -2933,29 +3335,30 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap3-1-2-answer", question = "quiz-kap3-1-2"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1863207721.13238, options = list()), class = c("learnr_radio", 
+    seed = 1335224341.37824, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap3-1-3", 
     question = structure("Welche Gleichung entspricht dem Distributivgesetz?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_cbe6cef", 
+    "character")), answers = list(structure(list(id = "lnr_ans_eac4727", 
         option = "$(A \\cup B) \\cap C = (A \\cap C) \\cup (B \\cap C)$", 
         value = "$(A \\cup B) \\cap C = (A \\cap C) \\cup (B \\cap C)$", 
         label = structure("\\((A \\cup B) \\cap C = (A \\cap C) \\cup (B \\cap C)\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_58817cd", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_619cffb", 
         option = "$(A \\cap B) \\cup C = (A \\cap C) \\cup (B \\cap C)$", 
         value = "$(A \\cap B) \\cup C = (A \\cap C) \\cup (B \\cap C)$", 
         label = structure("\\((A \\cap B) \\cup C = (A \\cap C) \\cup (B \\cap C)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d946c26", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_90ce8eb", 
         option = "$A \\cap (B \\cup C) = (A \\cup B) \\cap C$", 
         value = "$A \\cap (B \\cup C) = (A \\cup B) \\cap C$", 
         label = structure("\\(A \\cap (B \\cup C) = (A \\cup B) \\cap C\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_33ef33a", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_21c354b", 
         option = "$A \\cup (B \\cap C) = (A \\cap B) \\cup C$", 
         value = "$A \\cup (B \\cap C) = (A \\cap B) \\cup C$", 
         label = structure("\\(A \\cup (B \\cap C) = (A \\cap B) \\cup C\\)", html = TRUE, class = c("html", 
@@ -2968,30 +3371,29 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap3-1-3-answer", question = "quiz-kap3-1-3"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 101858935.452568, options = list()), class = c("learnr_radio", 
+    seed = 1339749253.87613, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap3-1-4", 
     question = structure("Wie lautet die zweite Form des Distributivgesetzes?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_7daa4fc", 
+    "character")), answers = list(structure(list(id = "lnr_ans_5896714", 
         option = "$(A \\cap B) \\cup C = (A \\cup C) \\cap (B \\cup C)$", 
         value = "$(A \\cap B) \\cup C = (A \\cup C) \\cap (B \\cup C)$", 
         label = structure("\\((A \\cap B) \\cup C = (A \\cup C) \\cap (B \\cup C)\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6f692b4", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b475c6d", 
         option = "$(A \\cup B) \\cap C = (A \\cup C) \\cap (B \\cup C)$", 
         value = "$(A \\cup B) \\cap C = (A \\cup C) \\cap (B \\cup C)$", 
         label = structure("\\((A \\cup B) \\cap C = (A \\cup C) \\cap (B \\cup C)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b796280", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9c2f2c3", 
         option = "$(A \\cap B) \\cap C = A \\cap (B \\cap C)$", 
         value = "$(A \\cap B) \\cap C = A \\cap (B \\cap C)$", 
         label = structure("\\((A \\cap B) \\cap C = A \\cap (B \\cap C)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e195548", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_1d0c466", 
         option = "$A \\cup \\emptyset = A$", value = "$A \\cup \\emptyset = A$", 
         label = structure("\\(A \\cup \\emptyset = A\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -3003,29 +3405,30 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap3-1-4-answer", question = "quiz-kap3-1-4"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 2057193815.04204, options = list()), class = c("learnr_radio", 
+    seed = 1591163933.75906, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap3-1-5", 
     question = structure("Welche Aussage entspricht der ersten de Morganschen Regel?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_184c53b", 
+    "character")), answers = list(structure(list(id = "lnr_ans_e5b24d2", 
         option = "$\\overline{A \\cup B}=\\overline{A}\\cap\\overline{B}$", 
         value = "$\\overline{A \\cup B}=\\overline{A}\\cap\\overline{B}$", 
         label = structure("\\(\\overline{A \\cup B}=\\overline{A}\\cap\\overline{B}\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_17eb2ab", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_61d0f21", 
         option = "$\\overline{A \\cup B}=\\overline{A}\\cup\\overline{B}$", 
         value = "$\\overline{A \\cup B}=\\overline{A}\\cup\\overline{B}$", 
         label = structure("\\(\\overline{A \\cup B}=\\overline{A}\\cup\\overline{B}\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_cd0722", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ea67b", 
         option = "$\\overline{A \\cap B}=\\overline{A}\\cap\\overline{B}$", 
         value = "$\\overline{A \\cap B}=\\overline{A}\\cap\\overline{B}$", 
         label = structure("\\(\\overline{A \\cap B}=\\overline{A}\\cap\\overline{B}\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d23811e", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c85d36b", 
         option = "$A\\setminus B=A\\cap\\overline{B}$", value = "$A\\setminus B=A\\cap\\overline{B}$", 
         label = structure("\\(A\\setminus B=A\\cap\\overline{B}\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -3037,27 +3440,26 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap3-1-5-answer", question = "quiz-kap3-1-5"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1570033623.2689, options = list()), class = c("learnr_radio", 
+    seed = 1962183352.08629, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap3-1-6", 
     question = structure("Wie lässt sich die Differenzmenge \\(A\\setminus B\\) schreiben?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_5a93c8", 
+    "character")), answers = list(structure(list(id = "lnr_ans_229199f", 
         option = "$A\\cap\\overline{B}$", value = "$A\\cap\\overline{B}$", 
         label = structure("\\(A\\cap\\overline{B}\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_1cc827b", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9f19543", 
         option = "$A\\cup\\overline{B}$", value = "$A\\cup\\overline{B}$", 
         label = structure("\\(A\\cup\\overline{B}\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5862945", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_88e49dd", 
         option = "$\\overline{A}\\cap B$", value = "$\\overline{A}\\cap B$", 
         label = structure("\\(\\overline{A}\\cap B\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_dcd1e1a", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d14cca9", 
         option = "$\\overline{A}\\cup B$", value = "$\\overline{A}\\cup B$", 
         label = structure("\\(\\overline{A}\\cup B\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -3069,26 +3471,27 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap3-1-6-answer", question = "quiz-kap3-1-6"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1186452796.44751, options = list()), class = c("learnr_radio", 
+    seed = 1553575202.77656, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap3-1-7", 
     question = structure("Welche Aussage ist FALSCH?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_18f2466", 
+    "character")), answers = list(structure(list(id = "lnr_ans_1d6c995", 
         option = "$A\\cap\\emptyset=\\emptyset$", value = "$A\\cap\\emptyset=\\emptyset$", 
         label = structure("\\(A\\cap\\emptyset=\\emptyset\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_378d526", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e478364", 
         option = "$A\\cup\\emptyset=A$", value = "$A\\cup\\emptyset=A$", 
         label = structure("\\(A\\cup\\emptyset=A\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a742677", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4c83c5", 
         option = "$A\\cup\\emptyset=\\emptyset$", value = "$A\\cup\\emptyset=\\emptyset$", 
         label = structure("\\(A\\cup\\emptyset=\\emptyset\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_119da09", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_39c79c7", 
         option = "Sind $A$ und $B$ disjunkt, dann gilt $A\\cap B=\\emptyset$", 
         value = "Sind $A$ und $B$ disjunkt, dann gilt $A\\cap B=\\emptyset$", 
         label = structure("Sind \\(A\\) und \\(B\\) disjunkt, dann gilt \\(A\\cap B=\\emptyset\\)", html = TRUE, class = c("html", 
@@ -3101,11 +3504,10 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap3-1-7-answer", question = "quiz-kap3-1-7"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1802019306.66087, options = list()), class = c("learnr_radio", 
+    seed = 774842634.139186, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 available_products <- unique(as.character(coffee_data$product_category))
 
@@ -3136,16 +3538,16 @@ output$dynamic_inputs_ui <- renderUI({
       )
     })
     div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px;",
-        p(strong("Häufigkeit pro Produkt (k_i)"), style = "font-size: 12px; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em;"),
+        p(strong("Häufigkeit pro Produkt (k_i)"), style = "font-size: 12px; color: #4b5563; text-transform: lowercase; letter-spacing: 0.05em;"),
         do.call(tagList, input_list)
     )
     
   } else {
-    # Slider for Variation and Kombination models
+    # Slider for k
     div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px;",
-        p(strong("3. Auswahlgröße (k)"), style = "font-size: 12px; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em;"),
+        p(strong("3. Auswahlgröße (k)"), style = "font-size: 12px; color: #4b5563; text-transform: lowercase; letter-spacing: 0.05em;"),
         sliderInput("slider_k", label = NULL, min = 1, max = max(n + 2, 5), value = min(3, max(n, 1)), step = 1, width = "100%"),
-        p("Bei Modellen ohne Wiederholung muss k ≤ n sein.", style = "font-size: 12px; color: #6b7280; margin-top: 5px;")
+        p("Bei Modellen ohne Wiederholung muss k ≤ n sein.", style = "font-size: 12px; color: #7A6B61; font-style: italic; margin-bottom: 0; line-height: 1.4;")
     )
   }
 })
@@ -3178,13 +3580,8 @@ output$formula_box <- renderUI({
     formula_text <- "(n + k - 1)! / (k! * (n - 1)!)"
   }
   
-  div(style = "background: #fff7ed; border: 1px solid #ffedd5; border-radius: 12px; padding: 15px; display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 15px;",
-      div(style = "flex: 1;",
-          span(badge, style = "font-size: 10px; font-weight: 700; text-transform: uppercase; color: #ea580c; background: #ffedd5; padding: 3px 8px; border-radius: 4px; display: inline-block;"),
-          h4(title, style = "font-size: 16px; font-weight: 700; margin: 5px 0 2px 0; color: #111827;"),
-          p(desc, style = "font-size: 13px; color: #4b5563; margin: 0;")
-      ),
-      div(formula_text, style = "background: white; border: 1px solid #ffedd5; border-radius: 8px; padding: 8px 15px; text-align: center; font-weight: 600; color: #ea580c; font-size: 16px; font-family: monospace; flex-shrink: 0;")
+  div(style = "background: #fff7ed; border: 1px solid #ffedd5; border-radius: 12px; padding: 15px; justify-content: space-between; gap: 10px; margin-bottom: 15px;",
+      div(formula_text, style = "text-align: center; font-weight: 600; color: #ea580c; font-size: 16px;")
   )
 })
 
@@ -3229,7 +3626,7 @@ output$outcomes_display <- renderUI({
   items <- input$selected_products
   n <- length(items)
   model <- input$model_select
-  
+  #user dont' choose anything
   if (n == 0) return(div("Bitte wählen Sie mindestens ein Produkt aus.", style = "text-align:center; color:#6b7280; padding:10px;"))
   
   outcomes_matrix <- matrix(nrow = 0, ncol = 0)
@@ -3283,25 +3680,26 @@ output$outcomes_display <- renderUI({
     )
   })
   
-  warning_element <- if (total_rows > 50) div("Hinweis: Es werden nur die ersten 50 Kombinationen angezeigt.", style = "font-size: 12px; color: #c2410c; font-weight: 500; margin-top: 10px;") else NULL
+  warning_element <- if (total_rows > 50) div("Hinweis: Es werden nur die ersten 50 Kombinationen angezeigt.", style = "font-size: 12px; color: #7A6B61; font-style: italic; margin-bottom: 0; line-height: 1.4;") else NULL
   div(div(style = "max-height: 350px; overflow-y: auto; padding-right: 5px;", list_items), warning_element)
 })
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap4-1", 
     question = structure("Was ist der Unterschied zwischen Variation und Permutation?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_c441f0e", 
+    "character")), answers = list(structure(list(id = "lnr_ans_b1c9dab", 
         option = "Bei der Variation geht es im Gegensatz zur Permutation nicht um eine Auswahl von Objekten, sondern um die Gesamtmenge.", 
         value = "Bei der Variation geht es im Gegensatz zur Permutation nicht um eine Auswahl von Objekten, sondern um die Gesamtmenge.", 
         label = structure("Bei der Variation geht es im Gegensatz zur Permutation nicht um eine Auswahl von Objekten, sondern um die Gesamtmenge.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3394feb", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_81806b5", 
         option = "Die Variation beschäftigt sich im Gegensatz zur Permutation mit den Wahrscheinlichkeiten der einzelnen Kombinationsmöglichkeiten.", 
         value = "Die Variation beschäftigt sich im Gegensatz zur Permutation mit den Wahrscheinlichkeiten der einzelnen Kombinationsmöglichkeiten.", 
         label = structure("Die Variation beschäftigt sich im Gegensatz zur Permutation mit den Wahrscheinlichkeiten der einzelnen Kombinationsmöglichkeiten.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_43613e4", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_8ab5edf", 
         option = "Bei der Permutation geht es im Gegensatz zur Variation nicht um eine Auswahl von Objekten, sondern um die Gesamtmenge.", 
         value = "Bei der Permutation geht es im Gegensatz zur Variation nicht um eine Auswahl von Objekten, sondern um die Gesamtmenge.", 
         label = structure("Bei der Permutation geht es im Gegensatz zur Variation nicht um eine Auswahl von Objekten, sondern um die Gesamtmenge.", html = TRUE, class = c("html", 
@@ -3314,22 +3712,21 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap4-1-answer", question = "quiz-kap4-1"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 510110874.262461, options = list()), class = c("learnr_radio", 
+    seed = 1583814687.76248, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap4-2", 
     question = structure("Wie lautet die Formel für die Berechnung der Variation ohne Wiederholung?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_b50f7c2", 
+    "character")), answers = list(structure(list(id = "lnr_ans_7e9f864", 
         option = "$n^k$", value = "$n^k$", label = structure("\\(n^k\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a814951", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_28e6b6e", 
         option = "$\\frac{n!}{(n-k)!}$", value = "$\\frac{n!}{(n-k)!}$", 
         label = structure("\\(\\frac{n!}{(n-k)!}\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c5f104d", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a1bd9d1", 
         option = "$\\binom{n}{k}$", value = "$\\binom{n}{k}$", 
         label = structure("\\(\\binom{n}{k}\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -3341,10 +3738,11 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap4-2-answer", question = "quiz-kap4-2"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 641554745.201253, options = list()), class = c("learnr_radio", 
+    seed = 2024577565.05723, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 pool_data <- reactiveVal(
   data.frame(
@@ -3638,21 +4036,20 @@ output$math_ac <- renderUI({
 
 })
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap5-1", 
     question = structure("Was beschreibt ein Ergebnis \\(\\omega\\) bei einem Zufallsexperiment?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_39cd04b", 
+    "character")), answers = list(structure(list(id = "lnr_ans_c66f308", 
         option = "Den einzelnen Ausgang eines Zufallsexperiments.", 
         value = "Den einzelnen Ausgang eines Zufallsexperiments.", 
         label = structure("Den einzelnen Ausgang eines Zufallsexperiments.", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ffcee74", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_cb0e8ee", 
         option = "Alle möglichen Ergebnisse zusammen.", value = "Alle möglichen Ergebnisse zusammen.", 
         label = structure("Alle möglichen Ergebnisse zusammen.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_320a0d", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_f58fd9", 
         option = "Eine Gruppe von mehreren Ergebnissen.", value = "Eine Gruppe von mehreren Ergebnissen.", 
         label = structure("Eine Gruppe von mehreren Ergebnissen.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -3664,23 +4061,24 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap5-1-answer", question = "quiz-kap5-1"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1386754131.85424, options = list()), class = c("learnr_radio", 
+    seed = 2008275914.56482, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap5-2", 
     question = structure("Was enthält der Ergebnisraum \\(\\Omega\\)?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_d4007a6", 
+    "character")), answers = list(structure(list(id = "lnr_ans_c144e32", 
         option = "Nur ein einzelnes Ergebnis.", value = "Nur ein einzelnes Ergebnis.", 
         label = structure("Nur ein einzelnes Ergebnis.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_65daf6c", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_851dd86", 
         option = "Alle möglichen Ergebnisse eines Zufallsexperiments.", 
         value = "Alle möglichen Ergebnisse eines Zufallsexperiments.", 
         label = structure("Alle möglichen Ergebnisse eines Zufallsexperiments.", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a7c9d77", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c1884dd", 
         option = "Keine Ergebnisse.", value = "Keine Ergebnisse.", 
         label = structure("Keine Ergebnisse.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -3692,23 +4090,22 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap5-2-answer", question = "quiz-kap5-2"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 56220042.4738205, options = list()), class = c("learnr_radio", 
+    seed = 1084608544.49494, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap5-3", 
     question = structure("Was ist ein Ereignis A in der Wahrscheinlichkeitsrechnung?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_ffd639f", 
+    "character")), answers = list(structure(list(id = "lnr_ans_44e7ef7", 
         option = "Immer nur ein einzelnes Ergebnis.", value = "Immer nur ein einzelnes Ergebnis.", 
         label = structure("Immer nur ein einzelnes Ergebnis.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ed0cad7", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_44c81cf", 
         option = "Der gesamte Ergebnisraum.", value = "Der gesamte Ergebnisraum.", 
         label = structure("Der gesamte Ergebnisraum.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_38381d0", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_75d4a52", 
         option = "Eine Menge von Ergebnissen mit einer bestimmten Bedingung.", 
         value = "Eine Menge von Ergebnissen mit einer bestimmten Bedingung.", 
         label = structure("Eine Menge von Ergebnissen mit einer bestimmten Bedingung.", html = TRUE, class = c("html", 
@@ -3721,20 +4118,21 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap5-3-answer", question = "quiz-kap5-3"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 48130329.4775876, options = list()), class = c("learnr_radio", 
+    seed = 710787348.169014, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap5-4", 
     question = structure("Welche Menge beschreibt ein unmögliches Ereignis?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_a44b742", 
+    "character")), answers = list(structure(list(id = "lnr_ans_f077de3", 
         option = "$\\Omega$", value = "$\\Omega$", label = structure("\\(\\Omega\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9d598b5", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_f7d2b04", 
         option = "$A$", value = "$A$", label = structure("\\(A\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a7473a8", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a6771da", 
         option = "$\\emptyset$", value = "$\\emptyset$", label = structure("\\(\\emptyset\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -3745,30 +4143,29 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap5-4-answer", question = "quiz-kap5-4"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1772145310.17478, options = list()), class = c("learnr_radio", 
+    seed = 120763901.943765, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap6-1", 
     question = structure("Warum kann man beim Additionssatz nicht einfach \\(P(A)+P(B)\\) rechnen?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_397d40c", 
+    "character")), answers = list(structure(list(id = "lnr_ans_85fe733", 
         option = "Weil die Schnittmenge $A\\cap B$ sonst doppelt gezählt wird.", 
         value = "Weil die Schnittmenge $A\\cap B$ sonst doppelt gezählt wird.", 
         label = structure("Weil die Schnittmenge \\(A\\cap B\\) sonst doppelt gezählt wird.", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a0ba21d", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ff0e5de", 
         option = "Weil Wahrscheinlichkeiten keine Zahlen sind.", 
         value = "Weil Wahrscheinlichkeiten keine Zahlen sind.", 
         label = structure("Weil Wahrscheinlichkeiten keine Zahlen sind.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d6f15e8", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d82f767", 
         option = "Weil zwei Ereignisse niemals gleichzeitig eintreten können.", 
         value = "Weil zwei Ereignisse niemals gleichzeitig eintreten können.", 
         label = structure("Weil zwei Ereignisse niemals gleichzeitig eintreten können.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b3ce878", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_8781869", 
         option = "Weil die Vereinigung immer kleiner als die Schnittmenge ist.", 
         value = "Weil die Vereinigung immer kleiner als die Schnittmenge ist.", 
         label = structure("Weil die Vereinigung immer kleiner als die Schnittmenge ist.", html = TRUE, class = c("html", 
@@ -3781,26 +4178,27 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap6-1-answer", question = "quiz-kap6-1"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1058333070.00718, options = list()), class = c("learnr_radio", 
+    seed = 307630495.856748, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap6-2", 
     question = structure("Welche Formel beschreibt den Additionssatz für zwei Ereignisse?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_6760ad6", 
+    "character")), answers = list(structure(list(id = "lnr_ans_a0fb7", 
         option = "$P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$", value = "$P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$", 
         label = structure("\\(P(A\\cup B)=P(A)+P(B)-P(A\\cap B)\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3f9b045", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e2c8d3c", 
         option = "$P(A\\cup B)=P(A)+P(B)+P(A\\cap B)$", value = "$P(A\\cup B)=P(A)+P(B)+P(A\\cap B)$", 
         label = structure("\\(P(A\\cup B)=P(A)+P(B)+P(A\\cap B)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_794f212", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_59a44c6", 
         option = "$P(A\\cup B)=P(A)\\cdot P(B)$", value = "$P(A\\cup B)=P(A)\\cdot P(B)$", 
         label = structure("\\(P(A\\cup B)=P(A)\\cdot P(B)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5374535", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_76dbbfb", 
         option = "$P(A\\cup B)=1-P(A)$", value = "$P(A\\cup B)=1-P(A)$", 
         label = structure("\\(P(A\\cup B)=1-P(A)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -3812,26 +4210,25 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap6-2-answer", question = "quiz-kap6-2"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 775624251.138822, options = list()), class = c("learnr_radio", 
+    seed = 1141943367.96824, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap6-3", 
     question = structure("Zwei Ereignisse A und B sind disjunkt. Welche Aussage ist richtig?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_a0174ba", 
+    "character")), answers = list(structure(list(id = "lnr_ans_c5d617b", 
         option = "$P(A\\cap B)=0$", value = "$P(A\\cap B)=0$", 
         label = structure("\\(P(A\\cap B)=0\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b3d2c3a", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_dd25f7d", 
         option = "$P(A\\cap B)=1$", value = "$P(A\\cap B)=1$", 
         label = structure("\\(P(A\\cap B)=1\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_596f075", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3fe896e", 
         option = "$P(A)=P(B)$", value = "$P(A)=P(B)$", label = structure("\\(P(A)=P(B)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ffbd9d0", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_da719a2", 
         option = "$P(A\\cup B)=0$", value = "$P(A\\cup B)=0$", 
         label = structure("\\(P(A\\cup B)=0\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -3843,26 +4240,27 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap6-3-answer", question = "quiz-kap6-3"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 313757717.353895, options = list()), class = c("learnr_radio", 
+    seed = 1705787776.20568, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap6-4", 
     question = structure("Welche Formel beschreibt die Komplementregel?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_9e3d5fa", 
+    "character")), answers = list(structure(list(id = "lnr_ans_fd3a447", 
         option = "$P(\\overline{A})=1-P(A)$", value = "$P(\\overline{A})=1-P(A)$", 
         label = structure("\\(P(\\overline{A})=1-P(A)\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_471a9c0", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_20a8e7e", 
         option = "$P(\\overline{A})=P(A)+1$", value = "$P(\\overline{A})=P(A)+1$", 
         label = structure("\\(P(\\overline{A})=P(A)+1\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_7557dfc", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4cbbd08", 
         option = "$P(\\overline{A})=P(A)$", value = "$P(\\overline{A})=P(A)$", 
         label = structure("\\(P(\\overline{A})=P(A)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_f5c1d6c", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_da73d50", 
         option = "$P(\\overline{A})=P(A\\cap B)$", value = "$P(\\overline{A})=P(A\\cap B)$", 
         label = structure("\\(P(\\overline{A})=P(A\\cap B)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -3874,25 +4272,24 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap6-4-answer", question = "quiz-kap6-4"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1320083543.38529, options = list()), class = c("learnr_radio", 
+    seed = 1131834011.97295, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap7-1", 
     question = structure("Was ist die Beziehung zwischen Baumdiagramm und Kombinatorik", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_1a22132", 
+    "character")), answers = list(structure(list(id = "lnr_ans_7177c47", 
         option = "Baumdiagramm ersetzt die Kombinatorik vollständig", 
         value = "Baumdiagramm ersetzt die Kombinatorik vollständig", 
         label = structure("Baumdiagramm ersetzt die Kombinatorik vollständig", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3e47a80", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ec05e26", 
         option = "Baumdiagramm hift dabei, die Ergebnisse in der Kombinatorik darzustellen", 
         value = "Baumdiagramm hift dabei, die Ergebnisse in der Kombinatorik darzustellen", 
         label = structure("Baumdiagramm hift dabei, die Ergebnisse in der Kombinatorik darzustellen", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a35ea04", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_1043e9c", 
         option = "Baumdiagramm und Kombinatorik sind eigenständig und gibt es keine Verbindung.", 
         value = "Baumdiagramm und Kombinatorik sind eigenständig und gibt es keine Verbindung.", 
         label = structure("Baumdiagramm und Kombinatorik sind eigenständig und gibt es keine Verbindung.", html = TRUE, class = c("html", 
@@ -3905,24 +4302,25 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap7-1-answer", question = "quiz-kap7-1"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1697478218.20955, options = list()), class = c("learnr_radio", 
+    seed = 917954321.572544, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap7-2", 
     question = structure("Wenn die Zieheanzahl und Objektanzahl zu groß sind, warum nutzt man KEINE Baumdiagramm", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_8e34cee", 
+    "character")), answers = list(structure(list(id = "lnr_ans_b7fe9ea", 
         option = "Da Baumdiagramm bei großen Datenmengen nicht mehr genau ist", 
         value = "Da Baumdiagramm bei großen Datenmengen nicht mehr genau ist", 
         label = structure("Da Baumdiagramm bei großen Datenmengen nicht mehr genau ist", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_cbae109", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_fd7d0e2", 
         option = "Da Baumdiagramm zu riesig und komplex wird. Es führt zur visuellen Überforderung", 
         value = "Da Baumdiagramm zu riesig und komplex wird. Es führt zur visuellen Überforderung", 
         label = structure("Da Baumdiagramm zu riesig und komplex wird. Es führt zur visuellen Überforderung", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_90934cb", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_dcfc03e", 
         option = "Da Produktregel nicht an Box mehr als 50 Objekte verwenden kann.", 
         value = "Da Produktregel nicht an Box mehr als 50 Objekte verwenden kann.", 
         label = structure("Da Produktregel nicht an Box mehr als 50 Objekte verwenden kann.", html = TRUE, class = c("html", 
@@ -3935,23 +4333,22 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap7-2-answer", question = "quiz-kap7-2"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 723095470.663282, options = list()), class = c("learnr_radio", 
+    seed = 1153512299.96285, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap7-3", 
     question = structure("Welche Kombinatorikmodell entspricht mit einem Baumdiagramm, auf der hat jede Etage gleichen Knoten, gleichen Äste und die Wahrscheinlichkeit jeder Ästen bleibt konstanz.", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_b32bff5", 
+    "character")), answers = list(structure(list(id = "lnr_ans_6dc594c", 
         option = "Kombination ohne Widerholung", value = "Kombination ohne Widerholung", 
         label = structure("Kombination ohne Widerholung", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_7dd9d2f", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_54af045", 
         option = "Permutation ohne Widerholung", value = "Permutation ohne Widerholung", 
         label = structure("Permutation ohne Widerholung", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_59e27ce", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_23a9e5d", 
         option = "Ein Urnemodell mit Zurücklegen", value = "Ein Urnemodell mit Zurücklegen", 
         label = structure("Ein Urnemodell mit Zurücklegen", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -3963,10 +4360,11 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap7-3-answer", question = "quiz-kap7-3"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1346699937.87289, options = list()), class = c("learnr_radio", 
+    seed = 1607398666.7515, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 ABS_DATA <- list(
   a_b = 16590,
@@ -4143,21 +4541,20 @@ output$contingency_table_ui <- renderUI({
   ))
 })
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-kap8-1", 
     question = structure("Was verstehst du unter der Summe aller Felder in einer Vierfeldertafel? (Es können mehrere Antworten richtig sein)", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_5665b50", 
+    "character")), answers = list(structure(list(id = "lnr_ans_f23543b", 
         option = "Die Gesamtzahl der relativen oder absoluten Häufigkeit von einzelnen Ereignissen", 
         value = "Die Gesamtzahl der relativen oder absoluten Häufigkeit von einzelnen Ereignissen", 
         label = structure("Die Gesamtzahl der relativen oder absoluten Häufigkeit von einzelnen Ereignissen", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_70b4c20", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ebb3754", 
         option = "Die Summe kann 101% erreichen", value = "Die Summe kann 101% erreichen", 
         label = structure("Die Summe kann 101% erreichen", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ea12746", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_78657b3", 
         option = "Sie beträgt immer 1 oder 100%", value = "Sie beträgt immer 1 oder 100%", 
         label = structure("Sie beträgt immer 1 oder 100%", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -4169,26 +4566,27 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap8-1-answer", question = "quiz-kap8-1"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 67285942.9686675, options = list()), class = c("learnr_checkbox", 
+    seed = 187991870.912459, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap8-2", 
     question = structure("Welche Bedingung muss erfüllt sein, damit die bedingte Wahrscheinlichkeit (P(A|B)) definiert werden kann?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_6b4e22e", 
+    "character")), answers = list(structure(list(id = "lnr_ans_fe34ff8", 
         option = "\\(P(B) > 0\\)", value = "\\(P(B) > 0\\)", 
         label = structure("(P(B) &gt; 0)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_1f67cfa", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b5e780b", 
         option = "\\(P(A) > 0\\)", value = "\\(P(A) > 0\\)", 
         label = structure("(P(A) &gt; 0)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b983b44", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_26f9ab6", 
         option = "\\(P(A \\cap B) > 0\\)", value = "\\(P(A \\cap B) > 0\\)", 
         label = structure("(P(A \\cap B) &gt; 0)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_7d4b1f", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_1b2a19f", 
         option = "\\(A\\) und \\(B\\) müssen disjunkt sein", 
         value = "\\(A\\) und \\(B\\) müssen disjunkt sein", 
         label = structure("(A) und (B) müssen disjunkt sein", html = TRUE, class = c("html", 
@@ -4201,30 +4599,29 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap8-2-answer", question = "quiz-kap8-2"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1977480986.57916, options = list()), class = c("learnr_radio", 
+    seed = 2022918147.55801, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-kap8-3", 
     question = structure("Welche Aussagen über eine korrekt aufgestellte Vierfeldertafel (relative Häufigkeiten) sind wahr? (Es können mehrere Antworten richtig sein)", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_b3209b1", 
+    "character")), answers = list(structure(list(id = "lnr_ans_89c2cf7", 
         option = "Die Summe der vier inneren Felder ergibt 1", 
         value = "Die Summe der vier inneren Felder ergibt 1", 
         label = structure("Die Summe der vier inneren Felder ergibt 1", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_980e123", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_de0ac29", 
         option = "Die Randsummen ergeben die unbedingten Wahrscheinlichkeiten \\(P(A)\\) und \\(P(B)\\)", 
         value = "Die Randsummen ergeben die unbedingten Wahrscheinlichkeiten \\(P(A)\\) und \\(P(B)\\)", 
         label = structure("Die Randsummen ergeben die unbedingten Wahrscheinlichkeiten (P(A)) und (P(B))", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5fd7bf1", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_cc556bc", 
         option = "Die Felder in der Tabelle sind stochastisch unabhängig", 
         value = "Die Felder in der Tabelle sind stochastisch unabhängig", 
         label = structure("Die Felder in der Tabelle sind stochastisch unabhängig", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_f7d1a80", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b090dc8", 
         option = "Die Diagonale der Tabelle ergibt immer die Summe der bedingten Wahrscheinlichkeiten", 
         value = "Die Diagonale der Tabelle ergibt immer die Summe der bedingten Wahrscheinlichkeiten", 
         label = structure("Die Diagonale der Tabelle ergibt immer die Summe der bedingten Wahrscheinlichkeiten", html = TRUE, class = c("html", 
@@ -4237,20 +4634,21 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap8-3-answer", question = "quiz-kap8-3"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 2001644176.56791, options = list()), class = c("learnr_checkbox", 
+    seed = 1979536976.07821, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "quiz-kap-8-1-1", 
     question = structure("a) Welchen Wert hat die Schnittwahrscheinlichkeit \\(P(\\overline{A} \\cap B)\\)?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_d6bf758", 
+    "character")), answers = list(structure(list(id = "lnr_ans_aabd0ff", 
         option = "0.3", value = "0.3", label = structure("0.3", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_92a701f", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c1b7372", 
         option = "0.30", value = "0.30", label = structure("0.30", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_77fcd2c", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_8d85a2a", 
         option = "0,30", value = "0,30", label = structure("0,30", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -4261,25 +4659,24 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap-8-1-1-answer", question = "quiz-kap-8-1-1"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1395546722.35015, options = list(placeholder = "z.B. 0.5", 
+    seed = 538401981.749287, options = list(placeholder = "z.B. 0.5", 
         trim = TRUE)), class = c("learnr_text", "tutorial_question"
 )), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "quiz-kap-8-1-2", 
     question = structure("b) Berechnen \\(P(A \\cup B)\\).", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_a29a32b", 
+    "character")), answers = list(structure(list(id = "lnr_ans_ee800af", 
         option = "0.25", value = "0.25", label = structure("0.25", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5ccff58", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d708c92", 
         option = "0.40", value = "0.40", label = structure("0.40", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_39e11af", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_62655ac", 
         option = "0.55", value = "0.55", label = structure("0.55", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5169a7b", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_eb11cda", 
         option = "0.75", value = "0.75", label = structure("0.75", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -4290,15 +4687,16 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap-8-1-2-answer", question = "quiz-kap-8-1-2"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1506777932.29835, options = list(placeholder = "z.B. 0.5", 
+    seed = 1129109337.97422, options = list(placeholder = "z.B. 0.5", 
         trim = TRUE)), class = c("learnr_text", "tutorial_question"
 )), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "quiz-kap-8-1-3", 
     question = structure("c) Welchen Wert hat \\(P(\\overline{A})\\)?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_c6c02c", 
+    "character")), answers = list(structure(list(id = "lnr_ans_acbf7de", 
         option = "0.75", value = "0.75", label = structure("0.75", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -4309,24 +4707,23 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap-8-1-3-answer", question = "quiz-kap-8-1-3"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1848482748.13923, options = list(placeholder = "z.B. 0.5", 
+    seed = 1255596086.91532, options = list(placeholder = "z.B. 0.5", 
         trim = TRUE)), class = c("learnr_text", "tutorial_question"
 )), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap9-1", 
     question = structure("Zwei Ereignisse A und B sind stochastisch unabhängig, wenn:", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_81e3670", 
+    "character")), answers = list(structure(list(id = "lnr_ans_f2a68ef", 
         option = "$(P(A \\cap B) = P(A) \\cdot P(B))$", value = "$(P(A \\cap B) = P(A) \\cdot P(B))$", 
         label = structure("\\((P(A \\cap B) = P(A) \\cdot P(B))\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d648854", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_57703c0", 
         option = "$(P(A\\vert{}B) = P(A)\\)$", value = "$(P(A\\vert{}B) = P(A)\\)$", 
         label = structure("\\((P(A\\vert{}B) = P(A)\\)\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_76d26d", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_38f9571", 
         option = "A und B disjunkt sind", value = "A und B disjunkt sind", 
         label = structure("A und B disjunkt sind", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -4338,22 +4735,23 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap9-1-answer", question = "quiz-kap9-1"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 249304138.883909, options = list()), class = c("learnr_radio", 
+    seed = 1024083935.02312, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap9-2", 
     question = structure("Beim Ziehen <strong>mit Zurücklegen<\u002fstrong> sind die einzelnen Ziehungen eines Zufallsexperiments stets…", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_9f2a4b", 
+    "character")), answers = list(structure(list(id = "lnr_ans_1a4ca70", 
         option = "stochastisch unabhängig", value = "stochastisch unabhängig", 
         label = structure("stochastisch unabhängig", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e205dd6", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a6f04e1", 
         option = "immer disjunkt", value = "immer disjunkt", 
         label = structure("immer disjunkt", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_828c587", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6058b6a", 
         option = "weder abhängig noch unabhängig", value = "weder abhängig noch unabhängig", 
         label = structure("weder abhängig noch unabhängig", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -4365,27 +4763,26 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap9-2-answer", question = "quiz-kap9-2"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 693525132.677052, options = list()), class = c("learnr_radio", 
+    seed = 2143386265.00191, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-kap9-3", 
     question = structure("Welche der folgenden Bedingungen müssen für zwei unabhängige Ereignisse A und B erfüllt sein? (Mehrere Antworten können richtig sein)", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_5ea4a9f", 
+    "character")), answers = list(structure(list(id = "lnr_ans_805f50d", 
         option = "$(P(A\\vert{}B) = P(A)$)", value = "$(P(A\\vert{}B) = P(A)$)", 
         label = structure("\\((P(A\\vert{}B) = P(A)\\))", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ee097b9", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4ea2e31", 
         option = "$(P(B\\vert{}A) = P(B)$)", value = "$(P(B\\vert{}A) = P(B)$)", 
         label = structure("\\((P(B\\vert{}A) = P(B)\\))", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_1598ef3", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e423de7", 
         option = "$(P(A \\cap B) = P(A) \\cdot P(B)$)", value = "$(P(A \\cap B) = P(A) \\cdot P(B)$)", 
         label = structure("\\((P(A \\cap B) = P(A) \\cdot P(B)\\))", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e6f5f49", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5baee2f", 
         option = "$(P(A \\cap B) = 0$)", value = "$(P(A \\cap B) = 0$)", 
         label = structure("\\((P(A \\cap B) = 0\\))", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -4397,10 +4794,11 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap9-3-answer", question = "quiz-kap9-3"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 2100491278.02188, options = list()), class = c("learnr_checkbox", 
+    seed = 1621110486.74511, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 # Khối phản hồi xử lý toán học cốt lõi (Bayes Engine)
 bayes_core <- reactive({
@@ -4454,21 +4852,20 @@ output$formula_path_ui <- renderUI({
   )
 })
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap10-1", 
     question = structure("Welche Wahrscheinlichkeit wird als ‘A-posteriori-Wahrscheinlichkeit’ bezeichnet?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_eae9a0b", 
+    "character")), answers = list(structure(list(id = "lnr_ans_7759674", 
         option = "$P(A)$", value = "$P(A)$", label = structure("\\(P(A)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_47ae0a5", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5a24f95", 
         option = "$P(B | A)$", value = "$P(B | A)$", label = structure("\\(P(B | A)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_139b781", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b910ff0", 
         option = "$P(A | B)$", value = "$P(A | B)$", label = structure("\\(P(A | B)\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_12a9941", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_903605e", 
         option = "$P(B)$", value = "$P(B)$", label = structure("\\(P(B)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -4479,27 +4876,28 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap10-1-answer", question = "quiz-kap10-1"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 670148073.187938, options = list()), class = c("learnr_radio", 
+    seed = 1631018649.2405, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap10-2", 
     question = structure("Wie lautet die mathematische Formel für den Satz von Bayes zur Berechnung von \\(P(A | B)\\)?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_196d796", 
+    "character")), answers = list(structure(list(id = "lnr_ans_6996147", 
         option = "$P(A | B) = \\frac{P(B | A) \\cdot P(A)}{P(B)}$", 
         value = "$P(A | B) = \\frac{P(B | A) \\cdot P(A)}{P(B)}$", 
         label = structure("\\(P(A | B) = \\frac{P(B | A) \\cdot P(A)}{P(B)}\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_7a19a43", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_44f05b8", 
         option = "$P(A | B) = P(A) \\cdot P(B)$", value = "$P(A | B) = P(A) \\cdot P(B)$", 
         label = structure("\\(P(A | B) = P(A) \\cdot P(B)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d5486c9", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_622a082", 
         option = "$P(A | B) = \\frac{P(B | A)}{P(A)}$", value = "$P(A | B) = \\frac{P(B | A)}{P(A)}$", 
         label = structure("\\(P(A | B) = \\frac{P(B | A)}{P(A)}\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6512031", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_eda5e5d", 
         option = "$P(A | B) = P(A \\cap B) \\cdot P(B)$", value = "$P(A | B) = P(A \\cap B) \\cdot P(B)$", 
         label = structure("\\(P(A | B) = P(A \\cap B) \\cdot P(B)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -4511,28 +4909,27 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap10-2-answer", question = "quiz-kap10-2"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1843842756.14139, options = list()), class = c("learnr_radio", 
+    seed = 1054913734.50877, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap10-3", 
     question = structure("Was steht im Nenner des Satzes von Bayes, wenn man die totale Wahrscheinlichkeit für \\(P(B)\\) einsetzt?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_d7debd2", 
+    "character")), answers = list(structure(list(id = "lnr_ans_bd4a06b", 
         option = "$P(B | A) \\cdot P(A)$", value = "$P(B | A) \\cdot P(A)$", 
         label = structure("\\(P(B | A) \\cdot P(A)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ded6ee0", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d6f3050", 
         option = "$P(B | A) \\cdot P(A) + P(B | \\neg A) \\cdot P(\\neg A)$", 
         value = "$P(B | A) \\cdot P(A) + P(B | \\neg A) \\cdot P(\\neg A)$", 
         label = structure("\\(P(B | A) \\cdot P(A) + P(B | \\neg A) \\cdot P(\\neg A)\\)", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5cad42e", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3404d19", 
         option = "$P(A | B) + P(A | \\neg B)$", value = "$P(A | B) + P(A | \\neg B)$", 
         label = structure("\\(P(A | B) + P(A | \\neg B)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c6ab134", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e16b7a1", 
         option = "$1 - P(B)$", value = "$1 - P(B)$", label = structure("\\(1 - P(B)\\)", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
     "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -4543,29 +4940,30 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap10-3-answer", question = "quiz-kap10-3"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1442088946.32847, options = list()), class = c("learnr_radio", 
+    seed = 2018567238.56003, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap10-4", 
     question = structure("Warum wird der Satz von Bayes oft auch als ‘Rückwärts-Logik’ bezeichnet?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_d47064c", 
+    "character")), answers = list(structure(list(id = "lnr_ans_2e1acd7", 
         option = "Weil er mathematisch von hinten nach vorne aufgeschrieben wird.", 
         value = "Weil er mathematisch von hinten nach vorne aufgeschrieben wird.", 
         label = structure("Weil er mathematisch von hinten nach vorne aufgeschrieben wird.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2b4334d", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b9a9968", 
         option = "Weil man von einer beobachteten Wirkung (B) rückwärts auf deren wahrscheinliche Ursache (A) schließt.", 
         value = "Weil man von einer beobachteten Wirkung (B) rückwärts auf deren wahrscheinliche Ursache (A) schließt.", 
         label = structure("Weil man von einer beobachteten Wirkung (B) rückwärts auf deren wahrscheinliche Ursache (A) schließt.", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e1d2312", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_dfee14a", 
         option = "Weil das Ergebnis immer kleiner als die Ausgangswahrscheinlichkeit sein muss.", 
         value = "Weil das Ergebnis immer kleiner als die Ausgangswahrscheinlichkeit sein muss.", 
         label = structure("Weil das Ergebnis immer kleiner als die Ausgangswahrscheinlichkeit sein muss.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5c7b58f", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3a0359a", 
         option = "Weil er nur für negative Korrelationen angewendet werden darf.", 
         value = "Weil er nur für negative Korrelationen angewendet werden darf.", 
         label = structure("Weil er nur für negative Korrelationen angewendet werden darf.", html = TRUE, class = c("html", 
@@ -4578,27 +4976,26 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap10-4-answer", question = "quiz-kap10-4"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1387481372.3539, options = list()), class = c("learnr_radio", 
+    seed = 620048867.211267, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
-
-
+ 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap10-5", 
     question = structure("Was passiert mit \\(P(A | B)\\), wenn die A-priori-Wahrscheinlichkeit \\(P(A)\\) bei gleichbleibenden Bedingungen steigt?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_f935ef5", 
+    "character")), answers = list(structure(list(id = "lnr_ans_39d6455", 
         option = "P(A | B) sinkt.", value = "P(A | B) sinkt.", 
         label = structure("P(A | B) sinkt.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a115811", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_eef10b3", 
         option = "P(A | B) bleibt exakt identisch.", value = "P(A | B) bleibt exakt identisch.", 
         label = structure("P(A | B) bleibt exakt identisch.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_7fd31ed", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_602e87e", 
         option = "P(A | B) steigt ebenfalls.", value = "P(A | B) steigt ebenfalls.", 
         label = structure("P(A | B) steigt ebenfalls.", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9e22cdd", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d95187", 
         option = "P(A | B) fällt sofort auf 0.", value = "P(A | B) fällt sofort auf 0.", 
         label = structure("P(A | B) fällt sofort auf 0.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -4610,27 +5007,28 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap10-5-answer", question = "quiz-kap10-5"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1779085928.67155, options = list()), class = c("learnr_radio", 
+    seed = 1320192185.88524, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
- 
+
+
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-kap10-6", 
     question = structure("Wenn \\(P(B | A)\\) exakt gleich \\(P(B | \\neg A)\\) ist, was lässt sich dann über \\(P(A | B)\\) sagen?", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_439217f", 
+    "character")), answers = list(structure(list(id = "lnr_ans_2e1f001", 
         option = "P(A | B) ist unendlich groß.", value = "P(A | B) ist unendlich groß.", 
         label = structure("P(A | B) ist unendlich groß.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3892cce", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3845945", 
         option = "P(A | B) ist genau gleich der A-priori-Wahrscheinlichkeit $P(A)$, da das Ereignis B keine neuen Informationen liefert.", 
         value = "P(A | B) ist genau gleich der A-priori-Wahrscheinlichkeit $P(A)$, da das Ereignis B keine neuen Informationen liefert.", 
         label = structure("P(A | B) ist genau gleich der A-priori-Wahrscheinlichkeit \\(P(A)\\), da das Ereignis B keine neuen Informationen liefert.", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_7e611f6", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_cfeb5cb", 
         option = "P(A | B) ist immer 0.", value = "P(A | B) ist immer 0.", 
         label = structure("P(A | B) ist immer 0.", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_dfbce9f", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_392261", 
         option = "Die Bayes-Formel ist in diesem Fall mathematisch nicht definiert.", 
         value = "Die Bayes-Formel ist in diesem Fall mathematisch nicht definiert.", 
         label = structure("Die Bayes-Formel ist in diesem Fall mathematisch nicht definiert.", html = TRUE, class = c("html", 
@@ -4643,7 +5041,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
     "character")), message = NULL, post_message = NULL), ids = list(
         answer = "quiz-kap10-6-answer", question = "quiz-kap10-6"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 669714091.18814, options = list()), class = c("learnr_radio", 
+    seed = 777166035.138104, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
 </p>

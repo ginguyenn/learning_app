@@ -76,19 +76,19 @@ Klicke auf "Nächste Seite", um mit Kapital 1 zu beginnen.
 
 ### 🟧 1. Definition
 
-Die Wahrscheinlichkeit gibt an, wie sehr etwas zutrifft. Die Wahrscheinlichkeit liegt zwischen 0 und 1. Dabei wird die Wahrscheinlichkeit, dass ein Ereignis mit Sicherheit zutrifft mit 1 (bzw. 100%), und dass ein Ereignis nicht eintritt mit 0 (bzw. 0%) bezeichnet. Die Summe der Eintrittswahrscheinlichkeiten aller möglichen Ereignisse ist stets 1 (bzw. 100%).
+Die Wahrscheinlichkeit gibt an, wie sehr etwas zutrifft. Die Wahrscheinlichkeit liegt immer von 0 (bzw. 0%) bis 1 (bzw. 100%). Die Summe der Eintrittswahrscheinlichkeiten aller möglichen Ereignisse eines Zufallsexperiments ist stets 1 (bzw. 100%).
 
 ### 🟧 2. Laplace-Wahrscheinlichkeit (Klassische Wahrscheinlichkeit)
 
-Laplace-Experiment ist ein Zufallsexperiment, unter Bedingung, dass alle Ergebnisse die gleiche Chance/Wahrscheinlichkeit haben. Die Laplacesche Wahrscheinlichkeitsdefinition nimmt an, dass alle möglichen Ergebnisse gleich wahrscheinlich sind. <br> Dadurch entsteht jedoch ein logisches Problem: Um die Wahrscheinlichkeit zu definieren, wird der Begriff „Wahrscheinlichkeit“ bereits vorausgesetzt. Die folgenden zwei Beispiele verdeutlichen den Unterschied zwischen der theoretischen Wahrscheinlichkeit (Laplace-Wahrscheinlichkeit) und der empirischen Wahrscheinlichkeit.
-
+Laplace-Experiment ist ein Zufallsexperiment, unter Bedingung, dass alle Ergebnisse die gleiche Chance/Wahrscheinlichkeit haben. Dadurch entsteht jedoch ein logisches Problem: Um die Wahrscheinlichkeit zu definieren, wird der Begriff „Wahrscheinlichkeit“ bereits vorausgesetzt.
 $$
 P(A) = \frac{\text{Anzahl der günstigen Ergebnisse}}{\text{Gesamtzahl der möglichen Ergebnisse}} = \frac{|A|}{|\Omega|}
 $$
-
 -   $P(A)$: die Wahrscheinlichkeit von $A$
 -   $|A|$: die Anzahl der günstigen Ergebnisse
 -   $|\Omega|$: der Grundraum (oder die Menge aller möglichen Ergebnisse)
+
+Die folgenden zwei Beispiele verdeutlichen den Unterschied zwischen der theoretischen Wahrscheinlichkeit (Laplace-Wahrscheinlichkeit) und der empirischen Wahrscheinlichkeit.
 
 
 ### 🟧 3. Einfaches Beispiel
@@ -98,7 +98,7 @@ $$\frac{1}{6} \approx 0,1667 \approx16,67\% $$
 
 *Drücke den Button, um Dein Glück zu versuchen!*
 
-```{r sim-ui-1, context="render", echo=FALSE}
+```{r sim-ui-kap1, context="render", echo=FALSE}
 actionButton("roll_btn", "würfeln!", icon = icon("dice"),
              style = "background-color: #E65C00; border-color:#CC5200; color:white; font-weight:bold;padding: 10px 20px; font-size:15px ")
 uiOutput("dice_result_display")
@@ -106,7 +106,7 @@ uiOutput("dice_result_display")
 ```
 
 ```{r sim-server-1, context="server", echo=FALSE}
-# Phần xử lý logic (Server)
+
 output$dice_result_display <- renderUI({
   # press button
   input$roll_btn
@@ -116,13 +116,13 @@ output$dice_result_display <- renderUI({
 
   img_list <- c(
     "www/dice 1.png",
-    "www/dice 2.png", #2
+    "www/dice 2.png", 
     "www/dice 3.png",
     "www/dice 4.png",
     "www/dice 5.png",
     "www/dice 6.png")
   
-  # Danh sách câu giải thích
+  # explain list
   explanations <- c(
     "Dies ist der niedrigste Wert",
     "Nummer 2! Eine kleine gerade Zahl.",
@@ -131,12 +131,15 @@ output$dice_result_display <- renderUI({
     "Du hast die Zahl 5 gewürfelt!",
     "Super! Das ist der höchste Wert."
   )
+
   
   # return to UI
   tagList(
     tags$br(),
     tags$img(src = img_list[res], width = "150px", style = "margin: 20px 0; border: 1px solid #ddd; padding: 10px; border-radius: 10px; background: white;"),
-    tags$p(explanations[res], style = "font-style: italic; color: #555;")
+    tags$p(explanations[res], style = "font-style: italic; color: #555;"),
+    p(style = "font-size: 12px; color: #7A6B61; font-style: italic; margin-bottom: 0; line-height: 1.4;", 
+        "Hinweis: Egal, ob Du beim ersten Wurf eine 6 würfelst oder erst beim zehnten, bleibt die Wahrscheinlichkeit für jede Zahl bei jedem Wurf immer 1/6. Der Würfel hat kein Gedächtnis! Auch wenn Du neunmal hintereinander eine 4 gewürfelt hast, ist die Chance für die 4 beim nächsten Wurf immer noch genauso groß wie für jede andere Zahl")
   )
 })
 ```
@@ -146,7 +149,7 @@ output$dice_result_display <- renderUI({
 Du hast einen Coffee-Shop eröffnet und möchtest herausfinden, welche Getränkekategorie deine Kundinnen und Kunden am häufigsten bestellen. Die folgenden Wahrscheinlichkeiten basieren auf einem realen Datensatz und beschreiben die tatsächliche Bestellhäufigkeit der einzelnen Kategorien. Im Gegensatz zur Laplace-Wahrscheinlichkeit stammen diese Werte nicht aus einer theoretischen Annahme, sondern aus beobachteten Daten.
 
 
-```{r sim-ui-1.1, context ="render", echo= FALSE}
+```{r sim-ui-kap1.1, context ="render", echo= FALSE}
 actionButton("cate_btn", "Kategorie ziehen!", 
              style = "background-color: #E65C00; border-color: #CC5200; color: white; font-weight: bold; padding: 10px 20px; font-size: 15px;")
 uiOutput("cate_result")
@@ -191,14 +194,14 @@ output$cate_result <- renderUI({
 
   div(style = "margin-top: 20px; padding: 18px; 
        border-radius: 6px; box-shadow: 0 4px 12px rgba(230, 92, 0, 0.08); max-width: 550px;",
-      
+      #header 
       p(style = "font-size: 18px; color: #E65C00; margin-bottom: 15px;", 
         "Gezogene Kategorie: ", strong(style = "color: #2E1A0F;", display_text)),
       
       div(style = "background-color: white; padding: 12px; border-radius: 4px; border: 1px solid #FFE4D3; margin-bottom: 10px;",
-          p(style = "margin: 8px 0 0 0; font-family: 'Courier New', monospace; font-size: 14px; color: #333;",
+          p(style = "margin: 8px 0 0 0;  font-size: 14px; color: #333;",
             paste0("Anzahl der Käufe (|A|): ", format(category_count, big.mark = "."), " mal")),
-          p(style = "margin: 4px 0 0 0; font-family: 'Courier New', monospace; font-size: 14px; color: #333;",
+          p(style = "margin: 4px 0 0 0;  font-size: 14px; color: #333;",
             paste0("Gesamttransaktionen (|Ω|): ", format(total, big.mark = "."), " Zeilen")),
           p(style = "margin: 8px 0 0 0; font-size: 15px; color: #E65C00",
             paste0("P(", selected_item, ") = ", category_count, " / ", total, " ≈ ", real_probability, "%"))
@@ -303,12 +306,12 @@ Die frequentistische Wahrscheinlichkeit basiert auf empirischen Daten und hat de
 
 ### 🟧 3. Praxisnahes Beispiel
 
-In einem Coffee-Shop Grundraum, jeder Kunde ist ein zufälliger Münzwurf. Für den Besitzer bedeutet das: Man kann nie vorhersagen, ob der nächste Kunde einen Kaffee bestellt oder gleich wieder geht. Die Wahrscheinlichkeit für den Kauf eines Kaffee liegt bei 39,1 % (Kapitel 1). Doch es geschieht ein kleines Wunder, wenn Coffee-Shop seinen 1.000 und dann 5.000 Kunden begrüßt. Die individuelle Wahrscheinlichkeit bleibt zwar gleich, aber das Gesetz der großen Zahlen hilft Ihnen, mit nahezu perfekter Genauigkeit vorherzusagen, welcher Prozentsatz der gesamten Kundschaft Kaffee bestellt. Versuchen, Slider zu bewegen, um zu sehen, wie die Macht der Big Data die chaotischen Schwankungen auswirkt.
+Jeder Kunde in Deinem Coffee-Shop entscheidet zufällig, ob er einen Kaffee kauft oder nicht, ähnlich wie ein Münzwurf. Die Wahrscheinlichkeit für einen Kaffeekauf liegt bei 39,1 % (das hast Du in Kapitel 1 gesehen). Bewege den Schieberegler, um zu sehen, wie die relative Häufigkeit mit wachsender Anzahl an Bestellungen immer genauer wird.
 
-
-```{r sim-ui-2, context="render", echo=FALSE}
-wellPanel( #Tạo một hộp bao bọc có màu nền xám nhạt và bo góc
-  fluidRow( #grid system
+```{r sim-ui-kap2, context="render", echo=FALSE}
+  div(
+  style = "margin-top: 20px; padding: 18px;  border-radius: 6px; box-shadow: 0 4px 12px rgba(230, 92, 0, 0.08); max-width: 750px;",
+  fluidRow( 
     column(4,
            sliderInput("coffee_input",
                        label = "Anzahl der Bestellungen (N)",
@@ -317,8 +320,11 @@ wellPanel( #Tạo một hộp bao bọc có màu nền xám nhạt và bo góc
                        value = 100,
                        step = 50)),
     column(8,
-           plotOutput("coffee_plot", height = "350px"))
+           plotOutput("coffee_plot", height = "450px"))
   ))
+  p(style = "font-size: 12px; color: #7A6B61; font-style: italic; margin-top: 10px; line-height: 1.4;", 
+    "Hinweis: Je mehr Bestellungen Du simulierst (N größer), desto mehr nähert sich die relative Häufigkeit dem theoretischen Wert von 39,1 % an –> das ist das Gesetz der großen Zahlen")
+
 ```
 
 ```{r , context="server", echo=FALSE}
@@ -328,7 +334,7 @@ output$coffee_plot <- renderPlot({
   true_prob <- 58416/149447 #Expected Value
   set.seed(42)
   
-  sim_buy <-rbinom(target_n, 1, true_prob) #thực hiện hành động "bốc ngẫu nhiên" xem khách hàng có mua cafe hay không 1 buy, 0 no
+  sim_buy <-rbinom(target_n, 1, true_prob) # random pick for buying coffee action: 1 buy, 0 no
   cum_sum <- cumsum(sim_buy) #Cộng dồn 
   trials <- 1:target_n
   rel_freq <- cum_sum / trials #Relative Häufigkeit
@@ -623,6 +629,12 @@ quiz(
     answer("10,5"),
     allow_retry = TRUE),
     
+    question("$A=$ {1,2,3,4,5,6,6}. Was ist die Mächtigkeit?",
+    answer("6", correct = TRUE),
+    answer("7"),
+    answer("undefiniert"),
+    allow_retry = TRUE),
+    
     question("Eine Würfel: $W =$ {Zahl, Wappen}. Was ist die Mächtigkeit?",
     answer("4"),
     answer("1"),
@@ -644,53 +656,145 @@ quiz(
     
     question("Grundraum $\\Omega$= {1,2,3,4,5,6,7,8,9,10} <br> $A=${2,4,6,8,10} <br> $B=$ {1,2,3,4,5}. <br> Bestimmen die Mengen $A \\cap B$",
     type = "learnr_text",
-    answer("2,4", correct = TRUE))
+    answer("2,4", correct = TRUE)),
+  question("Was bedeutet $$A \ B$$",
+           answer("A und B"),
+           answer("A mit B"),
+           answer("A ohne B", correct = TRUE),
+           allow_retry = TRUE),
+  question("A={2,4}. Die Potenzmenge $$\\mathcal{P}(A) = ?$$",
+           answer("4", correct = TRUE),
+           answer("2"),
+           answer("2 und 4"),
+           allow_retry = TRUE)
 )
 
 ```
 
 
-## Kapitel 3.1: Wichtige Gesetze für Mengen (Mengenlehrer Erweiterung)
-*Im vorherigen Kapitel hast Du die grundlegenden Mengenoperationen kennengelernt. Doch wie lassen sich komplexere Mengenausdrücke vereinfachen oder logisch umformen? Dafür gibt es wichtige Mengengesetze. Sie helfen Dir dabei, Zusammenhänge besser zu verstehen und Aufgaben systematisch zu lösen.*
+## Kapitel 3.1: Wichtige Gesetze für Mengen (Mengenlehre Erweiterung)
 
-### 🟧 1. Das Kommutativgesetz
-Die Reihenfolge der Mengen bei der Operation hat keinen Einfluss auf das Endergebnis.
-$$A \cap B = B \cap A$$
-$$A \cup B = B \cup A$$
-**Erklärung**: Ob Du die gemeinsamen Kunden von Kaffee und Gebäck suchen oder von Gebäck und Kaffee, das Ergebnis bleibt identisch.
+*Im vorherigen Kapitel hast Du die grundlegenden Mengenoperationen kennengelernt. Doch wie lassen sich komplexere Mengenausdrücke vereinfachen oder logisch umformen? Dafür gibt es wichtige Mengengesetze – sie funktionieren ähnlich wie Rechenregeln in der Algebra, nur mit Mengen statt mit Zahlen. Sie helfen Dir dabei, Zusammenhänge besser zu verstehen und Aufgaben systematisch zu lösen.*
 
-### 🟧 2. Das Assoziativgesetz
-Bei Schnitt- oder reinen Vereinigungsoperationen ist Klammersetzung unwichtig. Wenn drei Mengen miteinander vereinigt oder geschnitten werden, spielt es keine Rolle, welche zwei Mengen Sie zuerst zusammenfassen.
+---
 
-$$(A \cap B) \cap C = A \cap (B \cap C )$$
-$$(A \cup B) \cup C = A \cup (B \cup C)$$
+### 🟧 1. Kommutativgesetz 
 
-### 🟧 3. Das Distributivgesetz
-Das Gesetz funktioniert ähnlich wie in der Algebra: $x \cdot (y + z) = (x \cdot y) + (x \cdot z)$, wobei das Schneiden mit $C$ in die Klammer hineingezogen wird.
-$$(A \cup B) \cap C = (A \cap C) \cup (B \cap C)$$ 
-$$(A \cap B) \cup C = (A \cup C) \cap (B \cup C)$$
+| **Formel** | **Bedeutung** |
+| :--- | :--- |
+| \(A \cap B = B \cap A\) | Die Reihenfolge beim Schnitt spielt keine Rolle. |
+| \(A \cup B = B \cup A\) | Die Reihenfolge bei der Vereinigung spielt keine Rolle. |
+<br>
+**Beispiel:**  
+Eine Gruppe von Personen, die Kaffee trinken (\(A\)) und eine Gruppe, die Tee trinken (\(B\)).  
+- Die Menge der Personen, die *sowohl Kaffee als auch Tee* trinken (\(A \cap B\)), ist genau dieselbe wie die Menge der Personen, die *sowohl Tee als auch Kaffee* trinken (\(B \cap A\)).  
+- Die Reihenfolge der Aufzählung ist völlig egal – das Ergebnis bleibt identisch.
 
-### 🟧 4. de Morgansche Regeln
-Beschreiben, wie das Komplement (die Verneinung) auf Klammerausdrücke angewendet wird.
-$$\overline {(A \cup B)} = \bar A \cap \bar B$$
-$$\overline {(A \cap B)} = \bar A \cup \bar B$$
-**Erklärung**: Das Nicht-Eintreten von (A oder B) entspricht dem Nicht-Eintreten von A und dem Nicht-Eintreten von B
+---
 
-### 🟧 5. Das Gesetz der Kontraposition
-Wenn eine Menge komplett in einer anderen liegt, dreht sich dieses Verhältnis bei den Komplementen genau um
-$$A \subset B => \bar B \subset \bar A $$
-**Erklärung**: Wenn die Menge aller Espresso-Trinker ($A$) eine Teilmenge aller Kaffeetrinker ($B$) ist, dann ist jeder, der keinen Kaffee trinkt ($\bar B$), logischerweise auch kein Espresso-Trinker ($\bar A$).
+### 🟧 2. Assoziativgesetz 
 
-### 🟧 6. Die Schnittkomplement-Regel
-Überführt eine Differenzmenge (Subtraktion) in eine Schnittmenge.
-$$A \setminus B = A \cap \bar B$$
-**Erklärung**: "A ohne B" ist exakt dasselbe wie: Elemente, die in $A$ liegen und gleichzeitig nicht in $B$ liegen.
+| **Formel** | **Bedeutung** |
+| :--- | :--- |
+| \((A \cap B) \cap C = A \cap (B \cap C)\) | Beim Schnitt von drei Mengen ist die Klammerung egal. |
+| \((A \cup B) \cup C = A \cup (B \cup C)\) | Bei der Vereinigung von drei Mengen ist die Klammerung egal. |
+
+**Beispiel:**  
+Drei Gruppen: Kaffee-Trinker (\(A\)), Tee-Trinker (\(B\)) und Saft-Trinker (\(C\)).  
+- Es ist egal, ob Du zuerst die Kaffee- und Tee-Trinker zusammennimmst und dann die Saft-Trinker hinzufügst – oder ob Du zuerst Tee- und Saft-Trinker zusammennimmst und dann Kaffee hinzufügst. Am Ende sind alle drei Gruppen vereinigt.
+
+---
+
+### 🟧 3. Distributivgesetz
+
+| **Formel** | **Bedeutung** |
+| :--- | :--- |
+| \((A \cup B) \cap C = (A \cap C) \cup (B \cap C)\) | Du kannst die Schnittmenge mit \(C\) in die Klammer hineinziehen – wie beim Ausmultiplizieren in der Algebra. |
+| \((A \cap B) \cup C = (A \cup C) \cap (B \cup C)\) | Die zweite Form: Die Vereinigung mit \(C\) wird in die Klammer hineingezogen. |
+
+**Beispiel (1. Formel):**  
+Eine Gruppe von Personen, die Kaffee oder Tee trinken (\(A \cup B\)). Davon möchtest Du diejenigen, die auch Saft trinken (\(C\)).  
+- Das ist dasselbe, als würdest Du zuerst die Kaffee-Trinker nehmen, die auch Saft trinken (\(A \cap C\)), und dazu die Tee-Trinker, die auch Saft trinken (\(B \cap C\)), und dann beides vereinigen.
+
+**Beispiel (2. Formel):**  
+- \((A \cap B) \cup C\) bedeutet: *Entweder Kaffee und Tee (gleichzeitig) oder Saft.*  
+- Das ist dasselbe wie: *Entweder Kaffee oder Saft* \((A \cup C)\) **und** *entweder Tee oder Saft* \((B \cup C)\).
+
+---
+
+### 🟧 4. De Morgansche Regeln 
+
+| **Formel** | **Bedeutung** |
+| :--- | :--- |
+| \(\overline{A \cup B} = \overline A \cap \overline B\) | Das **Nicht** von (A oder B) ist dasselbe wie: Nicht A **und** Nicht B. |
+| \(\overline{A \cap B} = \overline A \cup \overline B\) | Das **Nicht** von (A und B) ist dasselbe wie: Nicht A **oder** Nicht B. |
+
+**Beispiel (1. Regel):**  
+Du suchst Personen, die weder Kaffee noch Tee trinken (\(\overline{A \cup B}\)).  
+- Das sind genau die Personen, die keinen Kaffee trinken (\(\overline A\)) und gleichzeitig keinen Tee trinken (\(\overline B\)).
+
+**Beispiel (2. Regel):**  
+Du suchst Personen, die nicht gleichzeitig Kaffee und Tee trinken (\(\overline{A \cap B}\)).  
+- Das sind alle, die keinen Kaffee trinken (\(\overline A\)) oderkeinen Tee trinken (\(\overline B\)) – oder beides.
+
+---
+
+### 🟧 5. Gesetz der Kontraposition 
+
+| **Formel** | **Bedeutung** |
+| :--- | :--- |
+| \(A \subset B \implies \overline B \subset \overline A\) | Wenn \(A\) eine Teilmenge von \(B\) ist, dann ist das Komplement von \(B\) eine Teilmenge des Komplements von \(A\). |
+
+**Beispiel:**  
+Stell Dir vor: Alle Espresso-Trinker (\(A\)) sind auch Kaffeetrinker (\(B\)) – also \(A \subset B\).  
+- Dann gilt: Jeder, der keinen Kaffee trinkt (\(\overline B\)), trinkt logischerweise auch keinen Espresso (\(\overline A\)).  
+- Das ist eine logische Umkehrung, die oft beim Beweisen hilft.
+
+---
+
+### 🟧 6. Schnittkomplement-Regel – Differenzmenge umwandeln
+
+| **Formel** | **Bedeutung** |
+| :--- | :--- |
+| \(A \setminus B = A \cap \overline B\) | "A ohne B" ist dasselbe wie: Elemente, die in \(A\) liegen **und** nicht in \(B\). |
+
+**Beispiel:**  
+Eine Gruppe von Kaffeetrinkern (\(A\)) und eine Gruppe von Tee-Trinkern (\(B\)).  
+- \(A \setminus B\) sind die Kaffeetrinker, die keinen Tee trinken.  
+- Das ist genau dasselbe wie: Kaffeetrinker (\(A\)) und keine Tee-Trinker (\(\overline B\)).
+
+---
 
 ### 🟧 7. Regeln der Leermenge
-Definieren die Interaktion von Mengen mit der leeren Menge. Es gibt keine gemeinsamen Elemente mit einer leeren Menge (Schnitt ist $\emptyset$). Die Vereinigung mit einer leeren Menge verändert die Ursprungsmenge nicht.
 
-$$A \cap \emptyset = \emptyset$$
-$$A \cup \emptyset = A$$
+| **Formel** | **Bedeutung** |
+| :--- | :--- |
+| \(A \cap \emptyset = \emptyset\) | Der Schnitt mit der leeren Menge ist immer leer – es gibt keine gemeinsamen Elemente. |
+| \(A \cup \emptyset = A\) | Die Vereinigung mit der leeren Menge verändert die Menge nicht – sie bleibt wie sie ist. |
+
+**Beispiel:**  
+- Eine Gruppe von Kaffeetrinkern (\(A\)) und eine Gruppe von niemande* (\(\emptyset\)).  
+- Die Personen, die sowohl Kaffee trinken als auch niemand sind (\(A \cap \emptyset\)) – das gibt es nicht, also ist das Ergebnis leer.  
+- Die Personen, die Kaffee trinken oder niemand sind (\(A \cup \emptyset\)) – das sind immer noch genau die Kaffeetrinker.
+
+---
+
+### 🟧 8. Zusammenfassung 
+
+| **Gesetz** | **Formel** | **Kurz erklärt** |
+| :--- | :--- | :--- |
+| **Kommutativ** | \(A \cap B = B \cap A\) | Reihenfolge egal |
+| **Assoziativ** | \((A \cap B) \cap C = A \cap (B \cap C)\) | Klammerung egal |
+| **Distributiv** | \((A \cup B) \cap C = (A \cap C) \cup (B \cap C)\) | Ausmultiplizieren |
+| **de Morgan 1** | \(\overline{A \cup B} = \overline A \cap \overline B\) | Nicht(A oder B) = Nicht A und Nicht B |
+| **de Morgan 2** | \(\overline{A \cap B} = \overline A \cup \overline B\) | Nicht(A und B) = Nicht A oder Nicht B |
+| **Kontraposition** | \(A \subset B \implies \overline B \subset \overline A\) | Umkehrung bei Teilmengen |
+| **Schnittkomplement** | \(A \setminus B = A \cap \overline B\) | Differenz = Schnitt mit Komplement |
+| **Leermenge** | \(A \cap \emptyset = \emptyset\), \(A \cup \emptyset = A\) | \(\emptyset\) verhält sich wie die 0 |
+
+---
+
+### 🟧 9. Teste Dein Wissen!
 
 ```{r quiz-kap3-1, echo=FALSE}
 quiz(
@@ -740,8 +844,6 @@ quiz(
     allow_retry = TRUE
   ),
 
-
-
   question(
     "Wie lässt sich die Differenzmenge $A\\setminus B$ schreiben?",
     answer("$A\\cap\\overline{B}$", correct = TRUE),
@@ -750,7 +852,6 @@ quiz(
     answer("$\\overline{A}\\cup B$"),
     allow_retry = TRUE
   ),
-
 
   question(
     "Welche Aussage ist FALSCH?",
@@ -770,7 +871,7 @@ quiz(
 
 ### 🟧 1. Definition
 
-Die Kombinatorik ist ein Teilgebiet der Mathematik und Stochastik, die auf die Weise der Elementen zählen, anordnen, auswählen. Die Kombinatorik anwort die Frage: **Wie viele Möglichkeiten gibt es eigentlich, um etwas zu machen?** <br>
+Die Kombinatorik ist ein Teilgebiet der Mathematik und Stochastik, die auf die Weise der Elementen zählen, anordnen, auswählen. Die Kombinatorik anwort die Frage: **Wie viele Möglichkeiten gibt es eigentlich, um etwas zu machen?**. Die Kombinatorik unterscheidet drei grundlegende Typen von Zählproblemen. Schau Dir die folgende Übersicht an, um den Unterschied zu verstehen: <br>
 
 
 ```{r, echo=FALSE}
@@ -794,7 +895,7 @@ shiny::tabsetPanel(
     shiny::p("\\(2! = 2 \\cdot 1 = 2\\)"),
     shiny::p("\\(3! = 3 \\cdot 2 \\cdot 1  =6\\)"),
     shiny::p("\\(4!=4 \\cdot 3 \\cdot 2 \\cdot 1 = 24\\)"),
-    shiny::h4("Beispiele:"),
+    shiny::h5("Beispiele:"),
     htmltools::tags$ol(
       htmltools::tags$li(
         shiny::p("Du hast 5 verschiedene Bücher und möchtest wissen, wie viele Arten kannst Du diese in einem Regal anordnen:"),
@@ -824,13 +925,13 @@ shiny::tabsetPanel(
     shiny::p("\\(n\\): Gesamtzahl der Objekte"),
     shiny::p("\\(k\\): Gesamtzahl der identischen Objekte"),
     
-    shiny::h4("Beispiele:"),
+    shiny::h5("Beispiele:"),
     htmltools::tags$ol(
       htmltools::tags$li(
         shiny::p("Ein Korb enthält 3 Äpfel und 2 Bananen, wie viele Möglichkeiten gibt es, diese Obst in einer Reihe anzuordnen?"),
         shiny::p("\\(n=5\\) (3 Äpfel + 2 Bananen)"),
         shiny::p("\\(k_1 =3\\) (Apfel)"),
-        shiny::p("\\(k_2 =2\\) (Banene)"),
+        shiny::p("\\(k_2 =2\\) (Banane)"),
         shiny::p("$$\\frac{5!}{3! \\cdot 2!} = 10 \\text{ Möglichkeiten.}$$")
       ),
       htmltools::tags$li(
@@ -905,23 +1006,21 @@ shiny::tabsetPanel(
 <br>
 
 ### 🟧 2. Praxisnahes Beispiel
-
+Bestell Du Dein Lieblingsgetränk und die Weise von Zählen – Wie viele verschiedene Möglichkeiten gibt es eigentlich, Dein Getränk zusammenzustellen? Simulation hilft Dir, alle möglichen Anordnungen, Auswahlen und Kombinationen zu durchschauen und zeigt Dir, wie viele Optionen Dir wirklich zur Verfügung stehen.
+<br>
 
 ```{r sim-ui-kap4, context = "render", echo = FALSE}
+div(
+style = "margin-top: 20px; padding: 18px;  border-radius: 6px; box-shadow: 0 4px 12px rgba(230, 92, 0, 0.08); max-width: 750px;",
 
 fluidPage(
   theme = NULL,
-  
-  div(style = "border-bottom: 1px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 20px;",
-      h3("Kombinatorik-Simulator", style = "font-weight: 700; color: #111827; margin: 0;")
-  ),
-  
   fluidRow(
-    # LEFT PANEL: Configuration
+    # LEFT PANEL
     column(5,
       # 1. Product selection
       div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px; margin-bottom: 15px;",
-          p(strong("1. Verfügbare Produkte (Menge n)"), style = "font-size: 12px; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em;"),
+          p(strong("1. Verfügbare Produkte (Menge n)"), style = "font-size: 12px; color: #4b5563; letter-spacing: 0.05em;"),
           uiOutput("pool_checkboxes"),
           div(style = "margin-top: 10px; font-size: 13px; color: #6b7280;",
               "Ausgewählt: ", strong(textOutput("pool_n_text", inline = TRUE), style = "color: #ea580c;")
@@ -930,7 +1029,7 @@ fluidPage(
       
       # 2. Model selection
       div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px; margin-bottom: 15px;",
-          p(strong("2. Kombinatorisches Modell"), style = "font-size: 12px; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em;"),
+          p(strong("2. Kombinatorisches Modell"), style = "font-size: 12px; color: #4b5563; letter-spacing: 0.05em;"),
           selectInput("model_select", label = NULL, 
                       choices = c("Permutation ohne Wiederholung" = "perm_ohne",
                                   "Permutation mit Wiederholung" = "perm_mit",
@@ -945,7 +1044,7 @@ fluidPage(
       uiOutput("dynamic_inputs_ui")
     ),
     
-    # RIGHT PANEL: Results
+    # RIGHT PANEL
     column(7,
       uiOutput("formula_box"),
       
@@ -959,7 +1058,7 @@ fluidPage(
       )
     )
   )
-)
+))
 ```
 
 ```{r ,context="server", echo=FALSE}
@@ -992,16 +1091,16 @@ output$dynamic_inputs_ui <- renderUI({
       )
     })
     div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px;",
-        p(strong("Häufigkeit pro Produkt (k_i)"), style = "font-size: 12px; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em;"),
+        p(strong("Häufigkeit pro Produkt (k_i)"), style = "font-size: 12px; color: #4b5563; text-transform: lowercase; letter-spacing: 0.05em;"),
         do.call(tagList, input_list)
     )
     
   } else {
-    # Slider for Variation and Kombination models
+    # Slider for k
     div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px;",
-        p(strong("3. Auswahlgröße (k)"), style = "font-size: 12px; color: #4b5563; text-transform: uppercase; letter-spacing: 0.05em;"),
+        p(strong("3. Auswahlgröße (k)"), style = "font-size: 12px; color: #4b5563; text-transform: lowercase; letter-spacing: 0.05em;"),
         sliderInput("slider_k", label = NULL, min = 1, max = max(n + 2, 5), value = min(3, max(n, 1)), step = 1, width = "100%"),
-        p("Bei Modellen ohne Wiederholung muss k ≤ n sein.", style = "font-size: 12px; color: #6b7280; margin-top: 5px;")
+        p("Bei Modellen ohne Wiederholung muss k ≤ n sein.", style = "font-size: 12px; color: #7A6B61; font-style: italic; margin-bottom: 0; line-height: 1.4;")
     )
   }
 })
@@ -1034,13 +1133,8 @@ output$formula_box <- renderUI({
     formula_text <- "(n + k - 1)! / (k! * (n - 1)!)"
   }
   
-  div(style = "background: #fff7ed; border: 1px solid #ffedd5; border-radius: 12px; padding: 15px; display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 15px;",
-      div(style = "flex: 1;",
-          span(badge, style = "font-size: 10px; font-weight: 700; text-transform: uppercase; color: #ea580c; background: #ffedd5; padding: 3px 8px; border-radius: 4px; display: inline-block;"),
-          h4(title, style = "font-size: 16px; font-weight: 700; margin: 5px 0 2px 0; color: #111827;"),
-          p(desc, style = "font-size: 13px; color: #4b5563; margin: 0;")
-      ),
-      div(formula_text, style = "background: white; border: 1px solid #ffedd5; border-radius: 8px; padding: 8px 15px; text-align: center; font-weight: 600; color: #ea580c; font-size: 16px; font-family: monospace; flex-shrink: 0;")
+  div(style = "background: #fff7ed; border: 1px solid #ffedd5; border-radius: 12px; padding: 15px; justify-content: space-between; gap: 10px; margin-bottom: 15px;",
+      div(formula_text, style = "text-align: center; font-weight: 600; color: #ea580c; font-size: 16px;")
   )
 })
 
@@ -1085,7 +1179,7 @@ output$outcomes_display <- renderUI({
   items <- input$selected_products
   n <- length(items)
   model <- input$model_select
-  
+  #user dont' choose anything
   if (n == 0) return(div("Bitte wählen Sie mindestens ein Produkt aus.", style = "text-align:center; color:#6b7280; padding:10px;"))
   
   outcomes_matrix <- matrix(nrow = 0, ncol = 0)
@@ -1139,7 +1233,7 @@ output$outcomes_display <- renderUI({
     )
   })
   
-  warning_element <- if (total_rows > 50) div("Hinweis: Es werden nur die ersten 50 Kombinationen angezeigt.", style = "font-size: 12px; color: #c2410c; font-weight: 500; margin-top: 10px;") else NULL
+  warning_element <- if (total_rows > 50) div("Hinweis: Es werden nur die ersten 50 Kombinationen angezeigt.", style = "font-size: 12px; color: #7A6B61; font-style: italic; margin-bottom: 0; line-height: 1.4;") else NULL
   div(div(style = "max-height: 350px; overflow-y: auto; padding-right: 5px;", list_items), warning_element)
 })
 ```
@@ -1621,9 +1715,9 @@ quiz(
 | Gesetz / Regel | Mathematische Formel | Erklärung |
 |:---|:---:|:---|
 |Das Kommutativgesetz|$P(A \cap B) = P(B \cap A)$ <br> $P(A \cup B) = P(B \cup A)$
-|de Morgansche Regeln|$P \overline {(A \cup B)} = P(\overline A \cap \overline B)$|A und B treten nicht ein|
-||$P \overline {(A \cap B)} = P (\overline A \cup \overline B)$ |A und B treten nicht gleichzeitig ein|
-||$P(A \setminus B) = P(A)-P(A \cap B)$|A tritt ein, aber B nicht|
+|de Morgan 1|$P \overline {(A \cup B)} = P(\overline A \cap \overline B)$|A und B treten nicht ein|
+|de Morgan 2|$P \overline {(A \cap B)} = P (\overline A \cup \overline B)$ |A und B treten nicht gleichzeitig ein|
+|Differenzregel|$P(A \setminus B) = P(A)-P(A \cap B)$|A tritt ein, aber B nicht|
 
 ### 🟧 2. Der Additionssatz
 
@@ -1940,14 +2034,14 @@ fluidPage(
       .cell-highlight { background-color: #fff7ed !important; border-color: #ea580c !important; color: #ea580c !important; }
       .result-box { background: #f6f6f4; border: 1px solid #e5e5e3; border-radius: 12px; padding: 0.75rem 1.25rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
       .result-box .label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #8a8a8a; }
-      .result-box .value { font-size: 1.1rem; font-weight: 700; color: #ea580c; font-family: 'Courier New', monospace; }
+      .result-box .value { font-size: 1.1rem; font-weight: 700; color: #ea580c;  }
       .toggle-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
       .custom-table th, .custom-table td { text-align: center; vertical-align: middle; }
-      .formula-text {font-size: 0.85rem; color: #ea580c; font-family: 'Courier New', monospace; font-weight: bold;}
+      .formula-text {font-size: 0.85rem; color: #ea580c;font-weight: bold;}
       .result-header { font-size: 0.8rem; font-weight: 800; color: #4338ca; text-transform: uppercase; margin-bottom: 5px; }
       .rechnung-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 15px; }
       .value-highlight { font-size: 1.4rem; font-weight: 800; color: #ea580c; }
-      .formula-text { font-size: 1rem; color: #666; font-family: 'Courier New', monospace; }
+      .formula-text { font-size: 1rem; color: #666; }
     "))
   ),
   
@@ -2255,15 +2349,18 @@ question_text("c) Welchen Wert hat $P(\\overline{A})$?",
 
 
 ### 🟧 1. Wiederholung
+
+*Bevor wir zur Abhängigkeit/Unabhängigkeit kommen, schauen wir kurz zurück – Kapitel 7 (mit/ohne Zurücklegen) und Kapitel 8 (die bedingte Wahrscheinlichkeit) liefern genau die Grundlagen, die wir jetzt brauchen, um den Unterschied zwischen abhängig und unabhängig mathematisch zu fassen.*
+
 🔸Rückblick: Mit vs. Ohne Zurücklegen (Kapitel 7)
 
  <iframe src="www/kap7.html" width="100%" height="450px" style= "overflow: hidden;border: none;"></iframe>
 
 🔸Rückblick: Bedingte Wahrscheinlichkeit (Kapitel 8)
 $$P(A|B)=\frac{P(A\cap B)}{P(B)}$$
-Das bedeutet: Die Wahrscheinlichkeit von $A$, unter der Bedingung, dass $B$ bereits eingetreten ist.
-- Wenn $P(A|B) = P(A)$ ist, hat die Bedingung $B$ keinen Einfluss.
-- Wenn $P(A|B) \neq P(A)$ ist,hat die Bedingung $B$ einen Einfluss.
+Das bedeutet: Die Wahrscheinlichkeit von $A$, unter der Bedingung, dass $B$ bereits eingetreten ist. <br>
+- Wenn $P(A|B) = P(A)$ ist, hat die Bedingung $B$ keinen Einfluss. <br>
+- Wenn $P(A|B) \neq P(A)$ ist,hat die Bedingung $B$ einen Einfluss.<br>
 
 ### 🟧 2. Stochastische Unabhängigkeit
 
