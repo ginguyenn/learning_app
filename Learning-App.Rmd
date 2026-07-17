@@ -58,16 +58,6 @@ coffee_data <- read.csv2("data/coffee.csv")
 
 *Starte Deine Reise und entdecke, wie Mathematik hilft, Zufälle zu verstehen und Daten sinnvoll zu interpretieren. Viel Spaß beim Lernen!*
 
-**Anleitung**
-
-Benutze das Menü auf der linken Seite, um zwischen den verschiedenen Modulen zu wechseln.<br>
-
-Jedes Modul enthält: <br>
-- eine kurze Erklärung der wichtigsten Grundlagen <br>
-- praktische Beispiele mit dem Coffee-Shop-Datensatz <br>
-- interaktive Übungen und Quizfragen, um Dein Wissen direkt zu überprüfen.<br>
-Versuche zuerst die Beispiele selbst zu verstehen und nutze anschließend die Quizfragen, um Deinen Lernfortschritt zu überprüfen.<br>
-
 Klicke auf "Nächste Seite", um mit Kapital 1 zu beginnen.
 
 ## Kapitel 1: Die Wahrscheinlichkeit
@@ -84,9 +74,9 @@ Laplace-Experiment ist ein Zufallsexperiment, unter Bedingung, dass alle Ergebni
 $$
 P(A) = \frac{\text{Anzahl der günstigen Ergebnisse}}{\text{Gesamtzahl der möglichen Ergebnisse}} = \frac{|A|}{|\Omega|}
 $$
--   $P(A)$: die Wahrscheinlichkeit von $A$
--   $|A|$: die Anzahl der günstigen Ergebnisse
--   $|\Omega|$: der Grundraum (oder die Menge aller möglichen Ergebnisse)
+-   $P(A)$: die Wahrscheinlichkeit von $A$ <br>
+-   $|A|$: die Anzahl der günstigen Ergebnisse <br>
+-   $|\Omega|$: der Grundraum (oder die Menge aller möglichen Ergebnisse) <br>
 
 Die folgenden zwei Beispiele verdeutlichen den Unterschied zwischen der theoretischen Wahrscheinlichkeit (Laplace-Wahrscheinlichkeit) und der empirischen Wahrscheinlichkeit.
 
@@ -613,7 +603,7 @@ $\Rightarrow |\text{Tier}| = 4$
 🔸 Mächtigkeit der Potenzmenge
 Die Mächtigkeit einer Potenzmenge $\mathcal{P}(A)$ lässt sich mithilfe der folgenden mathematischen Formel berechnen:
 $$|\mathcal{P}(A)|= 2^{|A|}$$
-🔸 **Beispiel:**
+**Beispiel:**
 Gegeben die Menge $A = \{1,2,3\}$ <br>
 $\rightarrow |A| = 3$ <br>
 Die Anzahl der Elemente in der Potenzmenge beträgt:
@@ -676,7 +666,7 @@ quiz(
 
 *Im vorherigen Kapitel hast Du die grundlegenden Mengenoperationen kennengelernt. Doch wie lassen sich komplexere Mengenausdrücke vereinfachen oder logisch umformen? Dafür gibt es wichtige Mengengesetze – sie funktionieren ähnlich wie Rechenregeln in der Algebra, nur mit Mengen statt mit Zahlen. Sie helfen Dir dabei, Zusammenhänge besser zu verstehen und Aufgaben systematisch zu lösen.*
 
----
+
 
 ### 🟧 1. Kommutativgesetz 
 
@@ -690,7 +680,7 @@ Eine Gruppe von Personen, die Kaffee trinken (\(A\)) und eine Gruppe, die Tee tr
 - Die Menge der Personen, die *sowohl Kaffee als auch Tee* trinken (\(A \cap B\)), ist genau dieselbe wie die Menge der Personen, die *sowohl Tee als auch Kaffee* trinken (\(B \cap A\)).  
 - Die Reihenfolge der Aufzählung ist völlig egal – das Ergebnis bleibt identisch.
 
----
+
 
 ### 🟧 2. Assoziativgesetz 
 
@@ -703,7 +693,7 @@ Eine Gruppe von Personen, die Kaffee trinken (\(A\)) und eine Gruppe, die Tee tr
 Drei Gruppen: Kaffee-Trinker (\(A\)), Tee-Trinker (\(B\)) und Saft-Trinker (\(C\)).  
 - Es ist egal, ob Du zuerst die Kaffee- und Tee-Trinker zusammennimmst und dann die Saft-Trinker hinzufügst – oder ob Du zuerst Tee- und Saft-Trinker zusammennimmst und dann Kaffee hinzufügst. Am Ende sind alle drei Gruppen vereinigt.
 
----
+
 
 ### 🟧 3. Distributivgesetz
 
@@ -720,7 +710,7 @@ Eine Gruppe von Personen, die Kaffee oder Tee trinken (\(A \cup B\)). Davon möc
 - \((A \cap B) \cup C\) bedeutet: *Entweder Kaffee und Tee (gleichzeitig) oder Saft.*  
 - Das ist dasselbe wie: *Entweder Kaffee oder Saft* \((A \cup C)\) **und** *entweder Tee oder Saft* \((B \cup C)\).
 
----
+
 
 ### 🟧 4. De Morgansche Regeln 
 
@@ -737,7 +727,7 @@ Du suchst Personen, die weder Kaffee noch Tee trinken (\(\overline{A \cup B}\)).
 Du suchst Personen, die nicht gleichzeitig Kaffee und Tee trinken (\(\overline{A \cap B}\)).  
 - Das sind alle, die keinen Kaffee trinken (\(\overline A\)) oderkeinen Tee trinken (\(\overline B\)) – oder beides.
 
----
+
 
 ### 🟧 5. Gesetz der Kontraposition 
 
@@ -750,7 +740,7 @@ Stell Dir vor: Alle Espresso-Trinker (\(A\)) sind auch Kaffeetrinker (\(B\)) –
 - Dann gilt: Jeder, der keinen Kaffee trinkt (\(\overline B\)), trinkt logischerweise auch keinen Espresso (\(\overline A\)).  
 - Das ist eine logische Umkehrung, die oft beim Beweisen hilft.
 
----
+
 
 ### 🟧 6. Schnittkomplement-Regel – Differenzmenge umwandeln
 
@@ -763,7 +753,7 @@ Eine Gruppe von Kaffeetrinkern (\(A\)) und eine Gruppe von Tee-Trinkern (\(B\)).
 - \(A \setminus B\) sind die Kaffeetrinker, die keinen Tee trinken.  
 - Das ist genau dasselbe wie: Kaffeetrinker (\(A\)) und keine Tee-Trinker (\(\overline B\)).
 
----
+
 
 ### 🟧 7. Regeln der Leermenge
 
@@ -777,7 +767,7 @@ Eine Gruppe von Kaffeetrinkern (\(A\)) und eine Gruppe von Tee-Trinkern (\(B\)).
 - Die Personen, die sowohl Kaffee trinken als auch niemand sind (\(A \cap \emptyset\)) – das gibt es nicht, also ist das Ergebnis leer.  
 - Die Personen, die Kaffee trinken oder niemand sind (\(A \cup \emptyset\)) – das sind immer noch genau die Kaffeetrinker.
 
----
+
 
 ### 🟧 8. Zusammenfassung 
 
@@ -792,7 +782,7 @@ Eine Gruppe von Kaffeetrinkern (\(A\)) und eine Gruppe von Tee-Trinkern (\(B\)).
 | **Schnittkomplement** | \(A \setminus B = A \cap \overline B\) | Differenz = Schnitt mit Komplement |
 | **Leermenge** | \(A \cap \emptyset = \emptyset\), \(A \cup \emptyset = A\) | \(\emptyset\) verhält sich wie die 0 |
 
----
+
 
 ### 🟧 9. Teste Dein Wissen!
 
@@ -1098,7 +1088,7 @@ output$dynamic_inputs_ui <- renderUI({
   } else {
     # Slider for k
     div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px;",
-        p(strong("3. Auswahlgröße (k)"), style = "font-size: 12px; color: #4b5563; text-transform: lowercase; letter-spacing: 0.05em;"),
+        p(strong("3. Auswahlgröße (k)"), style = "font-size: 12px; color: #4b5563; letter-spacing: 0.05em;"),
         sliderInput("slider_k", label = NULL, min = 1, max = max(n + 2, 5), value = min(3, max(n, 1)), step = 1, width = "100%"),
         p("Bei Modellen ohne Wiederholung muss k ≤ n sein.", style = "font-size: 12px; color: #7A6B61; font-style: italic; margin-bottom: 0; line-height: 1.4;")
     )
@@ -1259,7 +1249,21 @@ question("Wie lautet die Formel für die Berechnung der Variation ohne Wiederhol
 answer("$n^k$"),
 answer("$\\frac{n!}{(n-k)!}$", correct = TRUE),
 answer("$\\binom{n}{k}$"),
-allow_retry = TRUE)
+allow_retry = TRUE),
+  question(
+    "Was bedeutet n! (n Fakultät)?",
+    answer("Das Produkt aller natürlichen Zahlen von 1 bis \\(n\\): n . (n-1) ... 1", correct = TRUE),
+    answer("Die Summe aller natürlichen Zahlen von 1 bis \\(n\\)"),
+    answer("Die Anzahl der Kombinationen von \\(n\\) Elementen"),
+    allow_retry = TRUE
+  ),
+  question(
+    "Worin unterscheidet sich die Variation von der Kombination?",
+    answer("Bei der Kombination spielt die Reihenfolge eine Rolle, bei der Variation nicht."),
+    answer("Die Variation verwendet immer Wiederholungen, die Kombination nicht."),
+    answer("Bei der Variation spielt die Reihenfolge eine Rolle, bei der Kombination nicht.", correct = TRUE),
+    allow_retry = TRUE
+  )
 )
 
 ```
@@ -1706,38 +1710,70 @@ quiz(
 
 
 
-## Kapitel 6: Wahrscheinlichkeiten von mehreren Ereignissen
+## Kapitel 6: Grundlegende Rechenregeln der Wahrscheinlichkeit
+*Im Alltag sind wir oft daran interessiert, wie wahrscheinlich es ist, dass mehrere Dinge gleichzeitig oder nacheinander passieren. Dieses Kapitel stellt die grundlegenden Rechenregeln vor, mit denen du Wahrscheinlichkeiten von Ereigniskombinationen berechnen kannst.*
 
-*Erinnerst Du dich noch an die Rechenregeln für Mengen aus Kapitel 3.1? Die Kommutativ-, Assoziativ- und Distributivgesetze sowie de Morganschen Regeln haben uns gezeigt, wie logische Mengen miteinander interagieren. Wir erwecken diese trockenen Mengenformeln zum Leben! In diesem Kapitel betrachten wir Mengen nicht mehr nur als rein mathematische Objekte, sondern als Zufallsereignisse. Wir packen das Maß der Wahrscheinlichkeit $P(...)$ um unsere bekannten Mengenstrukturen herum.*
+### 🟧 1. Die Axiome von Kolmogorov
 
-### 🟧 1. Die Wahrscheinlichkeit der Mengenlehre
+Die drei Axiome von Kolmogorov sind das Fundament der modernen Wahrscheinlichkeitsrechnung. Sie legen fest, welche Eigenschaften jede Wahrscheinlichkeitsverteilung erfüllen muss und zwar unabhängig davon, ob es sich um einen Münzwurf, einen Würfelwurf oder eine komplexe Wettervorhersage handelt. <br>
+🔸Nichtnegativität: Für jedes Ereignis $A$ gilt $P(A) \ge 0$. <br>
+🔸Normierung: Die Wahrscheinlichkeit des sicheren Ereignisses ist $P(\Omega) = 1$. <br>
+🔸Additivität: Für disjunkte Ereignisse ($A \cap B = \emptyset$) gilt $P(A \cup B) = P(A) + P(B)$. <br>
 
-| Gesetz / Regel | Mathematische Formel | Erklärung |
-|:---|:---:|:---|
-|Das Kommutativgesetz|$P(A \cap B) = P(B \cap A)$ <br> $P(A \cup B) = P(B \cup A)$
-|de Morgan 1|$P \overline {(A \cup B)} = P(\overline A \cap \overline B)$|A und B treten nicht ein|
-|de Morgan 2|$P \overline {(A \cap B)} = P (\overline A \cup \overline B)$ |A und B treten nicht gleichzeitig ein|
-|Differenzregel|$P(A \setminus B) = P(A)-P(A \cap B)$|A tritt ein, aber B nicht|
+*Aus diesen drei einfachen Grundregeln lassen sich alle weiteren Rechenregeln der Wahrscheinlichkeitsrechnung ableiten, vom Additionssatz über die bedingte Wahrscheinlichkeit bis hin zum Satz von Bayes.*
 
-### 🟧 2. Der Additionssatz
+### 🟧 2. Grundlegende Rechenregeln
+
+#### 🔸 Kommutativgesetz
+Das Kommutativgesetz besagt, dass die Reihenfolge der Ereignisse bei der Berechnung von Wahrscheinlichkeiten keine Rolle spielt. Ob Du die Wahrscheinlichkeit für $A$ vereinigt mit $B$ oder für $B$ vereinigt mit $A$ berechnest, das Ergebnis ist immer dasselbe.
+
+```{r echo=FALSE}
+shiny::fluidRow(
+  shiny::column(
+    width = 6,
+    htmltools::img(src ="www/kap6_Kommutativgesetz.png", width ="100%", style ="max-width: 500px")
+  ),
+  shiny::column(
+    width =6,          
+    htmltools::HTML("$$P(A \\cup B) = P(B \\cup A)$$"),
+    htmltools::HTML("$$P(A \\cap B) = P(B \\cap A)$$")
+  )
+)
+```
+
+#### 🔸 Der Additionssatz
 
 Du möchtest $P(A \cup B)$ berechnen. Wenn Du $P(A) + P(B)$ nimmst, dann wird die Schnittmenge doppelt gezählt. Wir berechnen deswegen:
 
 ```{r echo=FALSE}
 shiny::fluidRow(
   shiny::column(
-    width = 6,
+    width = 7,
     htmltools::img(src ="www/Schnittmenge.png", width ="100%", style ="max-width: 500px")
   ),
   shiny::column(
-    width =6,          
+    width =5,          
     htmltools::HTML("$$P(A \\cup B) = P(A) + P(B)- P(A \\cap B)$$")
   )
 )
 ```
 
+#### 🔸 Der Additionssatz für drei Ereignisse
+Der Additionssatz für drei Ereignisse erweitert den bekannten Additionssatz für zwei Ereignisse um die Berücksichtigung der dreifachen Schnittmenge. Man addiert alle Einzelwahrscheinlichkeiten, subtrahiert alle paarweisen Schnittmengen und addiert schließlich die dreifache Schnittmenge wieder hinzu.
+```{r echo=FALSE}
+shiny::fluidRow(
+  shiny::column(
+    width = 5,
+    htmltools::img(src ="www/kap6_3.png", width ="100%", style ="max-width: 650px")
+  ),
+  shiny::column(
+    width =7,          
+    htmltools::HTML("$$P(A \\cup B \\cup C) = P(A) + P(B) P(C)- P(A \\cap B) -P(A \\cap C) - P(P \\cap C) + P(A \\cap B \\cap C)$$")
+  )
+)
+```
 
-### 🟧 3. Die Komplementregel
+#### 🔸 Die Komplementärregel
 Wenn das Ereignis A nicht eintritt, tritt automatisch sein Komplement $\overline A$ ein
 ```{r echo=FALSE}
 shiny::fluidRow(
@@ -1748,6 +1784,22 @@ shiny::fluidRow(
   shiny::column(
     width =6,          
     htmltools::HTML("$$P(\\overline A) = 1- P(A)$$")
+  )
+)
+```
+
+#### 🔸 Differenzregel
+
+Die Wahrscheinlichkeit, dass $A$ eintritt, aber $B$ nicht ($A \setminus B$), berechnet sich durch:
+```{r ,echo=FALSE}
+shiny::fluidRow(
+  shiny::column(
+    width = 6,
+    htmltools::img(src="www/kap6_Differenzregel.png", width ="100%", style ="max-width: 500px")
+  ),
+  shiny::column(
+    width = 6,
+    htmltools::HTML("$$P(A \\setminus B) = P(A) - P(A \\cap B).$$")
   )
 )
 ```
@@ -1804,20 +1856,70 @@ quiz(
 ### 🟧 1. Definition
 Baumdiagramm darstellt die Beziehung zwischen Ereignissen. Ein Baumdiagramm ist ein Hilfsmittel, die Ergebnisse eines Zufallsexperiments übersichtlich aufzuzeichnen. Mit den Pfadregeln kannst Du dann ganz einfach die Wahrscheinlichkeiten ausrechnen.
 
-**Knoten**: Die Punkte, an denen sich die Äste teilen. <br>
-**Äste**: eine Linie verbindet die Knoten, auf der die Wahrscheinlichkeit aufgeschrieben wurden müssen.<br>
-**Pfad**:  Ein durchgehender Weg von der Wurzel bis zu einem Endpunkt.<br>
-**Mit Zurücklegen**: „Mit Zurücklegen“ eines Zufallsexperiments bedeutet, die Probe zurückzugeben, nachdem sie entnommen wurde.<br>
-**Ohne Zurücklegen**: „Ohne Zurücklegen“ bedeutet, dass die Probe nach der Entnahme nicht zurückgegeben wird. Deswegen wird die Gesamtzahl weniger reduziert. Es führt dazu der Veringerung der Wahrscheinlichkeit. 
+```{r ,echo=FALSE}
+shiny::fluidRow(
+  shiny::column(
+    width= 7,
+    htmltools::img(src="www/kap7_coin_interpre.png", width="100%", style ="max-width: 500px")
+  ),
+  shiny::column(
+    width =5,
+    htmltools::p(shiny::strong("Wurzel (Startknoten)"),": Der Ausgangspunkt des Baumdiagramms"),
+    htmltools::p(shiny::strong("Knoten"),": Die Punkte, an denen sich die Äste teilen."),
+    htmltools::p(shiny::strong("Äste"), ": eine Linie verbindet die Knoten, auf der die Wahrscheinlichkeit aufgeschrieben wurden müssen."),
+    htmltools::p(shiny::strong("Pfad"),":  Ein durchgehender Weg von der Wurzel bis zu einem Endpunkt.")
+  )
+)
+```
 
-### 🟧 2. Pfadregeln
-**Produktregel**: Das Produkt der Wahrscheinlichkeit entlang eines Pfades von links nach rechts, wenn Du ein bestimmtes Ergebnis wissen willst (z.B "erst rot **UND** dann blau") <br>
-**Summenregel**: Die Summe der Wahrscheinlichkeit durch mehrere verschiedene Pfade, wenn dessen Ereignisse auf dem Baum erfüllt werden können. (z.B "2 Kugeln mit unterschiedlichen Farben": Rot-Blau **ODER** Blau-Rot") <br>
 
-### 🟧 3. Zufallsexperiment „Mit Zurücklegen“
+### 🟧 2. Baumdiagramm erstellen
+Du möchtest ein Baumdiagramm zu einem Zufallsexperiment zeichnen? Das Wichtigste zuerst: Du musst dir klar machen, wie viele Stufen dein Baum haben wird. <br>
 
-In einer Obstschale befinden sich 7 Äpfel und 3 Birnen. Du nimmst 2 Obst heraus mit Zurücklegen
+**Beispiel**: Du wirfst eine Münze zweimal hintereinander. Das ist ein zweistufiger Zufallsversuch. Dein Baumdiagramm hat zwei Stufen:<br>
+- Stufe 1: Ergebnis des ersten Wurfs <br>
+- Stufe 2: Ergebnis des zweiten Wurfs <br>
 
+Dann baust Du den Baum Schritt für Schritt auf:
+
+```{r ,echo=FALSE}
+shiny::fluidRow(
+  shiny::column(
+    width= 7,
+    htmltools::img(src="www/kap7_coin.png", width="100%", style ="max-width: 500px")
+  ),
+  shiny::column(
+    width =5,
+    htmltools::p("1) Startpunkt: Du beginnst von links mit einem Startpunkt (der Wurzel)."),
+    htmltools::p("2) Stufe 1 (erster Wurf): Vom Startpunkt zeichnest Du zwei Äste: einen für Kopf und einen für Zahl. Das sind die beiden möglichen Ergebnisse des ersten Wurfs."),
+    htmltools::p("3) Stufe 2 (zweiter Wurf): An jedem Ast aus Stufe 1 zeichnest Du erneut zwei Äste, wieder für Kopf und Zahl. Denn egal, ob beim ersten Wurf Kopf oder Zahl kam, beim zweiten Wurf hast Du wieder beide Möglichkeiten.")
+  )
+)
+```
+
+
+### 🟧 3. Pfadregeln
+Für die Berechnung von Wahrscheinlichkeiten in Baumdiagrammen gelten zwei zentrale Pfadregeln:
+
+```{r ,echo=FALSE}
+shiny::fluidRow(
+  shiny::column(
+    width= 7,
+    htmltools::img(src="www/kap7_pfad.png", width="100%", style ="max-width: 500px")
+  ),
+  shiny::column(
+    width =5,
+    htmltools::p("🔸 Produktregel: Das Produkt der Wahrscheinlichkeit entlang eines Pfades von links nach rechts, wenn Du ein bestimmtes Ergebnis wissen willst (z.B. erst Kopf **UND** dann Kopf)"),
+    htmltools::p("🔸 Summenregel: Die Summe der Wahrscheinlichkeit durch mehrere verschiedene Pfade (oben nach unten), wenn dessen Ereignisse auf dem Baum erfüllt werden können. (z.B. 2 Kugeln mit unterschiedlichen Farben: Kopf-Zahl **ODER** Zahl-Kopf)")
+  )
+)
+```
+
+### 🟧 4. Baumdiagramm mit Zurücklegen
+
+"Mit Zurücklegen" eines Zufallsexperiments bedeutet, die Probe zurückzugeben, nachdem sie entnommen wurde. Bei einem mehrstufigen Zufallsexperiment mit Zurücklegen bleibt die Ausgangssituation in jeder Stufe unverändert. Daher ändern sich die Wahrscheinlichkeiten der verschiedenen Äste nicht. <br>
+
+**Beispiel**: In einer Obstschale befinden sich 7 Äpfel und 3 Birnen. Du nimmst 2 Obst heraus mit Zurücklegen:
 
 ```{r echo=FALSE}
 shiny::fluidRow(
@@ -1839,27 +1941,27 @@ shiny::fluidRow(
 )
 
 ```
+<br>
 
-**Gesucht sei die Wahrscheinlichkeit für 2 Äpfel**
+🔸 **Was ist die Wahrscheinlichkeit für 2 Äpfel $P(Apfel, Apfel)$?**
 
 ```{r , echo = FALSE}
 shiny::fluidRow(
   shiny::column(
     width = 6,
-    htmltools::img(src="www/kap7_mit2.png", width ="100%", style = "max-width: 500px")
+    htmltools::img(src="www/kap7_mit1.png", width ="100%", style = "max-width: 500px")
   ),
   shiny::column(
     width = 6,
-    htmltools::tags$p("Für die gesuchte Wahrscheinlichkeit, müsst Du die Wahrscheinlichkeiten entlang des Pfades multiplizieren. Die Wahrscheinlichkeit 2 Äpfel:"),
-    htmltools::tags$p(htmltools::HTML("$$ P(Apfel,Apfel) = P(Apfel) \\cdot P(Apfel) = 0.49 = 49\\% $$"))
+    htmltools::tags$p("Für die gesuchte Wahrscheinlichkeit, müsst Du die Wahrscheinlichkeiten entlang des Pfades multiplizieren."),
+    htmltools::tags$p(htmltools::HTML("$$ P(Apfel,Apfel) = P(Apfel) \\cdot P(Apfel) = 0.7 \\cdot 0.7 = 0.49 = 49\\% $$"))
   )
 )
 
 ```
+<br>
 
-
-
-**Gesucht die Wahrscheinlichkeit für 1 Apfel und 1 Birne**
+🔸 **Was ist die Wahrscheinlichkeit für 1 Apfel und 1 Birne $P(Apfel, Birne)$?**
 
 ```{r , echo=FALSE}
 shiny::fluidRow(
@@ -1870,7 +1972,7 @@ shiny::fluidRow(
   
   shiny::column(
     width = 6,
-    htmltools::tags$p("Die gesamte Wahrscheinlichkeit, 1 Apfel und 1 Birne zu ziehen, wird dann mit der Summenregel verwendet"),
+    htmltools::tags$p("Die gesamte Wahrscheinlichkeit, 1 Apfel und 1 Birne zu ziehen, wird erst mit der Produktregel und dann Summenregel verwendet"),
     htmltools::tags$p(htmltools::HTML("$$P(Apfel,Birne) + P(Birne, Apfel) = 0.7 . 0.3 + 0.3 . 0.7 = 0.42 = 42\\% $$"))
   )
 )
@@ -1879,10 +1981,10 @@ shiny::fluidRow(
 
 
 
-### 🟧 4. Zufallsexperiment „Ohne Zurücklegen“
+### 🟧 5. Baumdiagramm ohne Zurücklegen
 
 
-In einer Obstschale befinden sich 7 Äpfel und 3 Birnen. Du nimmst 2 Obst heraus ohne Zurücklegen
+"Ohne Zurücklegen" eines Zufallsexperiments bedeutet, dass die Probe nach der Entnahme nicht zurückgegeben wird. Deswegen wird die Gesamtzahl weniger reduziert. Es führt dazu der Veringerung der Wahrscheinlichkeit. Bei einem mehrstufigen Zufallsexperiment ohne Zurücklegen ist die Ausgangssituation in jeder Stufe davon abhängig, was bereits gezogen wurde. Da sich die Zusammensetzung stetig ändert, variieren auch die Wahrscheinlichkeiten an den Ästen des Baumdiagramms. 
 
 ```{r, echo=FALSE}
 shiny::fluidRow(
@@ -1897,59 +1999,72 @@ shiny::fluidRow(
 )
 ```
 
+🔸 **Was ist die Wahrscheinlichkeit für 2 Birnen $P(Birne, Birne)$?**
 
-<br>
-<iframe src="www/kap7.html" width="100%" height="450px" style= "overflow: hidden;border: none;"></iframe>
-
-
-### 🟧 5. Teste Dein Wissen!
-
-```{r quiz-kap7, echo=FALSE}
-quiz(
-  question("Was ist die Beziehung zwischen Baumdiagramm und Kombinatorik",
-           answer("Baumdiagramm ersetzt die Kombinatorik vollständig"),
-           answer("Baumdiagramm hift dabei, die Ergebnisse in der Kombinatorik darzustellen", correct = TRUE),
-           answer("Baumdiagramm und Kombinatorik sind eigenständig und gibt es keine Verbindung."),
-           allow_retry = TRUE),
-  question("Wenn die Zieheanzahl und Objektanzahl zu groß sind, warum nutzt man KEINE Baumdiagramm",
-           answer("Da Baumdiagramm bei großen Datenmengen nicht mehr genau ist"),
-           answer("Da Baumdiagramm zu riesig und komplex wird. Es führt zur visuellen Überforderung", correct = TRUE),
-           answer("Da Produktregel nicht an Box mehr als 50 Objekte verwenden kann."),
-           allow_retry = TRUE),
-  question("Welche Kombinatorikmodell entspricht mit einem Baumdiagramm, auf der hat jede Etage gleichen Knoten, gleichen Äste und die Wahrscheinlichkeit jeder Ästen bleibt konstanz.",
-           answer("Kombination ohne Widerholung"),
-           answer("Permutation ohne Widerholung"),
-           answer("Ein Urnemodell mit Zurücklegen", correct = TRUE),
-           allow_retry = TRUE)
-)
-```
-
-
-## Kapitel 8: Bedingte und unbedingte Wahrscheinlichkeit
-
-### 🟧 1. Unbedingte Wahrscheinlichkeit
-*Du gehst zum Arzt, weil du Husten hast. Der Arzt macht einen Test, der bei 90 % der Kranken anschlägt, aber auch bei 5 % der Gesunden. Wie hoch ist die Wahrscheinlichkeit, dass du wirklich krank bist, wenn der Test positiv ist? Das ist die berühmte bedingte Wahrscheinlichkeit!*
-
-Die unbedingte Wahrscheinlichkeit ist die Wahrscheinlichkeit eines Ereignisses ohne zusätzliche Information oder Bedingungen
-$$P(A)$$
-
-### 🟧 2. Bedingte Wahrscheinlichkeit
-Die Wahrscheinlichkeit eines Ereignisses $A$, unter der Bedingung, dass ein anderes Ereignis $B$ bereits eingetreten ist.
-
-```{r, echo=FALSE}
-shiny::div(
-  style = "display: flex; align-items: center; gap: 15px; padding: 10px 0;",
-  shiny::div(
-    htmltools::HTML("$$P(A|B) = \\frac{P(A \\cap B)}{P(B)}$$")
+```{r , echo = FALSE}
+shiny::fluidRow(
+  shiny::column(
+    width = 6,
+    htmltools::img(src="www/kap7_ohne1.png", width ="100%", style = "max-width: 500px")
   ),
-  shiny::div(
-    style = "color: #555555; font-style: italic;",
-    "➔ die bedingte Wahrscheinlichkeit von A unter der Bedingung B"
+  shiny::column(
+    width = 6,
+    htmltools::tags$p("Für die gesuchte Wahrscheinlichkeit, müsst Du die Wahrscheinlichkeiten entlang des Pfades multiplizieren."),
+    htmltools::tags$p(htmltools::HTML("$$ P(Birne,Birne) = P(Birne) \\cdot P(Birne) = \\frac{3}{10} \\cdot \\frac{2}{9} = \\frac{1}{15} \\approx 6.67\\% $$"))
+  )
+)
+
+```
+<br>
+
+🔸 **Was ist die Wahrscheinlichkeit für 1 Apfel und 1 Birne $P(Apfel, Birne)$?**
+
+```{r , echo=FALSE}
+shiny::fluidRow(
+  shiny::column(
+    width = 6,
+    htmltools::img(src="www/kap7_ohne2.png", width ="100%", style ="max-width: 500px")
+  ),
+  
+  shiny::column(
+    width = 6,
+    htmltools::tags$p("Die gesamte Wahrscheinlichkeit, 1 Apfel und 1 Birne zu ziehen, wird erst mit der Produktregel und dann Summenregel verwendet"),
+htmltools::tags$p(htmltools::HTML("$$P(Apfel,Birne) + P(Birne, Apfel) = (\\frac{7}{10}) \\cdot \\frac{3}{9}) + (\\frac{3}{10}) \\cdot \\frac{7}{9}=\\frac{7}{15} \\approx 46.67\\% $$"))
   )
 )
 ```
+<br>
 
-Zum Beispiel: Es gibt eine Gruppe von Studierenden, die R lernen und einige, die Python lernen. Wie hoch die Wahrscheinlichkeit ist, dass jemand R lernt, wenn er bereits Python beherrscht hat. Mit Hilfe von Venn-Diagramm darstellt die Beziehung zwischen Ereignisse am besten
+### 🟧 6. Praxisnahes Beispiel
+Mach Du die Änderung der Anzahlen und dem Checkbox, um zu sehen, wie sich die Wahrscheinlichkeit ändert.<br>
+
+
+<iframe src="www/kap7.html" 
+width="100%" 
+height="750px" 
+style="border: none; overflow: hidden;"></iframe>
+<br>
+
+## Kapitel 8: Bedingte und unbedingte Wahrscheinlichkeit
+*Du gehst zum Arzt, weil du Husten hast. Der Arzt macht einen Test, der bei 90 % der Kranken anschlägt, aber auch bei 5 % der Gesunden. Wie hoch ist die Wahrscheinlichkeit, dass du wirklich krank bist, wenn der Test positiv ist? Das ist die berühmte bedingte Wahrscheinlichkeit!*
+
+### 🟧 1. Unbedingte Wahrscheinlichkeit
+Die unbedingte Wahrscheinlichkeit ist die Wahrscheinlichkeit eines Ereignisses ohne zusätzliche Information oder Bedingungen. Sie ist der “normale” Fall, den Du bereits aus Kapitel 1 kennst.
+$$P(A)$$
+**Beispiel aus dem Coffee-Shop:**
+Wie groß ist die Wahrscheinlichkeit, dass ein zufälliger Kunde Kaffee bestellt?
+$P(Coffee)= \frac{58.416}{149.116}≈39,17%$
+
+Das ist die **unbedingte** Wahrscheinlichkeit, sie gilt für alle Kunden, ohne weitere Bedingungen.
+
+### 🟧 2. Bedingte Wahrscheinlichkeit
+Die bedingte Wahrscheinlichkeit $P(A|B)$ ist die Wahrscheinlichkeit, dass die Wahrscheinlichkeit eines Ereignisses $A$, unter der Bedingung, dass ein anderes Ereignis $B$ bereits eingetreten ist.
+
+$$P(A|B)= \frac{P(A \cap B)}{P(B)}$$
+➔ die bedingte Wahrscheinlichkeit von A unter der Bedingung B
+
+**Einfaches Beispiel** <br>
+Es gibt eine Gruppe von Studierenden, die R lernen und einige, die Python lernen. Wie hoch die Wahrscheinlichkeit ist, dass jemand R lernt, wenn er bereits Python beherrscht hat. Mit Hilfe von Venn-Diagramm darstellt die Beziehung zwischen Ereignisse am besten
 
 ```{r ,echo=FALSE}
 shiny::fluidRow(
@@ -1967,7 +2082,11 @@ shiny::fluidRow(
 
 ### 🟧 3. Vierfeldertafel
 
-Neben Baumdiagramm, die Vierfeldertafel ist auch ein Hilfsmittel in der Stochastik, die beim Rechnen von 2 Ereignissen unterstützen. Die Randsumme zeigen die Wahrscheinlichkeit der einzelnen Ereignisse.
+Neben Baumdiagramm, die Vierfeldertafel ist ein praktisches Hilfsmittel, um zwei Ereignisse $A$ und $B$ und ihre Kombinationen übersichtlich darzustellen. Sie hilft Dir, bedingte Wahrscheinlichkeiten schnell zu berechnen und den Zusammenhang zwischen den Ereignissen zu erkennen.
+
+#### 🔸 Der Aufbau einer Vierfeldertafel
+Eine Vierfeldertafel hat 4 innere Felder, die alle Kombinationen von $A$, $\overline A$, $B$, $\overline B$ zeigen. Die Randsummen zeigen die unbedingten Wahrscheinlichkeiten der einzelnen Ereignisse.
+
 
 ```{r, echo=FALSE}
     htmltools::img(src="www/kap8_vierfelder.png", max= "100%", style ="max-width: 500px")
@@ -1978,48 +2097,41 @@ $P(\overline A \cap B)$: Wenn A nicht eintritt, aber B <br>
 $P(A \cap \overline B)$: wenn B nicht eintritt, aber A <br>
 $P(\overline A \cap \overline B)$: Wenn beide A und B nicht eintreten.
 
-#### 🔸 Einfaches Beispiel <br>
+#### 🔸 Einfaches Beispiel – Schritt für Schritt <br>
 Von $100$ befragten Personen besitzen insgesamt $32$ Personen eine Katze. Es ist bekannt, dass insgesamt $60$ Frauen an der Umfrage teilgenommen haben. Zudem gaben $32$ Männer an, keine Katze zu besitzen. Wie viele der befragten Personen sind weiblich und besitzen eine Katze?
 
-$K$: Katze <br>
-$\overline K$: keine Katze <br>
-$F$: Frauen/weiblich <br>
-$\overline K$: Männer/männlich
+Gegeben: <br>
+- 32 Personen besitzen eine Katze → \(P(K) = 0,32\) <br>
+- 60 Personen sind weiblich → \(P(F) = 0,60\) <br>
+- 32 Männer besitzen keine Katze → \(P(\overline F \cap \overline K) = 0,32\) <br>
 
+**Schritt 1: Die Vierfeldertafel aufstellen (absolute Häufigkeiten)**
 
-|                 | \(K\) (Katze) | \(\overline K\) (keine Katze) | **Summe** |
-| :-------------- | :-----------: | :---------------------------: | :-------: |
-| \(F\) (Frau)    |      ?        |               ?               |    60     |
-| \(\overline F\) (Mann) |      ?        |               32              |     ?     |
-| **Summe**       |      32       |               ?               |    100    |
+```{r ,echo=FALSE}
+shiny::img(src="www/kap8_auf.png", width ="100%", style="max-width: 500px")
+```
+<br>
+**Schritt 2: Die fehlenden Werte berechnen**
 
+1. Männer insgesamt: \(100 - 60 = 40\) → \(\overline F = 40\) <br>
+2. Männer mit Katze: \(40 - 32 = 8\) → \(\overline F \cap K = 8\) <br>
+3. Frauen mit Katze: \(32 - 8 = 24\) → \(F \cap K = 24\) <br>
+4. Frauen ohne Katze: \(60 - 24 = 36\) → \(F \cap \overline K = 36\)  <br>
+5. Personen ohne Katze insgesamt: \(36 + 32 = 68\) → \(\overline K = 68\) <br>
 
-**Absolute Häufigkeit**
+**Schritt 3: Die fertige Vierfeldertafel (absolute Häufigkeiten)**
 
-|                 | \(K\) (Katze) | \(\overline K\) (keine Katze) | **Summe** |
-| :-------------- | :-----------: | :---------------------------: | :-------: |
-| \(F\) (Frau)    |      **24**   |              **36**           |    60     |
-| \(\overline F\) (Mann) |     **8**     |              **32**           |    40     |
-| **Summe**       |      32       |              68               |    100    |
+```{r ,echo=FALSE}
+shiny::img(src="www/kap8_lösung_abs.png", width="100%", style ="max-width:500px")
+```
+<br>
+**Schritt 4: Relative Häufigkeiten**
 
-**Relative Häufigkeit**
+```{r ,echo=FALSE}
+shiny::img(src="www/kap8_lösung_rel.png", width="100%", style ="max-width:500px")
+```
 
-|                 | \(K\) | \(\overline K\) | **Summe** |
-| :-------------- | :-----------: |  :---------------------------:  | :-------: |
-| \(F\)           | 0,24  |      0,36       |   0,60    |
-| \(\overline F\) | 0,08  |      0,32       |   0,40    |
-| **Summe**       | 0,32  |      0,68       |   1,00    |
-
-### 🟧 3.1 Vierfeldertafel-Bedingte Wahrscheinlichkeit
-
-Mit Hilfe der Werte der Vierfeldertafel kannst Du bedingte Wahrscheinlichkeit berechnen, aber nur mit relativen Häufigkeit. <br>
-Wenn die gewählte Person weiblich ist, wie hoch ist die Wahrscheinlichkeit, dass sie eine Katze besitzt?
-
-$$P(K|F) = \frac {P(K \cap F)}{P(F)} = \frac{0,24}{0,6} = 0,4 = 40\%$$
-
-Wenn eine Person besitzt eine Katze, wie hoch ist die Wahrscheinlichkeit, dass diese Person männlich ist?
-
-$$P(\overline F |K) = \frac{P(\overline F \cap K)}{P(K)} = \frac{0,08}{0,32} = 0,25 =25\%$$
+<br>
 
 ### 🟧 4. Praxisnahes Beispiel 
 
@@ -2350,7 +2462,7 @@ question_text("c) Welchen Wert hat $P(\\overline{A})$?",
 
 ### 🟧 1. Wiederholung
 
-*Bevor wir zur Abhängigkeit/Unabhängigkeit kommen, schauen wir kurz zurück – Kapitel 7 (mit/ohne Zurücklegen) und Kapitel 8 (die bedingte Wahrscheinlichkeit) liefern genau die Grundlagen, die wir jetzt brauchen, um den Unterschied zwischen abhängig und unabhängig mathematisch zu fassen.*
+*Bevor wir Du Abhängigkeit/Unabhängigkeit kommst, schaust Du kurz zurück Kapitel 7 (mit/ohne Zurücklegen mit Baumdiagramm) und Kapitel 8 (die bedingte Wahrscheinlichkeit), die die Grundlagen liefern, die Du jetzt brauchst, um den Unterschied zwischen abhängig und unabhängig mathematisch zu fassen.*
 
 🔸Rückblick: Mit vs. Ohne Zurücklegen (Kapitel 7)
 
@@ -2365,9 +2477,29 @@ Das bedeutet: Die Wahrscheinlichkeit von $A$, unter der Bedingung, dass $B$ bere
 ### 🟧 2. Stochastische Unabhängigkeit
 
 Zwei Ereignisse $A$ und $B$ heißen stochastisch unabhängig, wenn das Eintreten von $B$ die Wahrscheinlichkeit von $A$ nicht verändert. Zum Beispiel hängt die Wahrscheinlichkeit, dass jemand rothaarig ist, nicht mit der Wahrscheinlichkeit zusammen, dass diese Person die Klausur besteht. Im Wesentlichen bedeutet: **Ziehen mit Zurücklegen**
-$$P(A|B) = P(A)$$
-Wenn du die Formel für bedingte Wahrscheinlichkeit umstellst, erhältst du die Produktformel für unabhängige Ereignisse. Das bedeutet: Wenn zwei Ereignisse unabhängig sind, ist die Wahrscheinlichkeit, dass beide eintreten, einfach das Produkt ihrer Einzelwahrscheinlichkeiten:
+$$P(A|B) = \frac{P(A \cap B)}{P(B)} = P(A)$$
+Wenn Du die Formel für bedingte Wahrscheinlichkeit umstellst, erhältst du die Produktformel für unabhängige Ereignisse. Das bedeutet: Wenn zwei Ereignisse unabhängig sind, ist die Wahrscheinlichkeit, dass beide eintreten, einfach das Produkt ihrer Einzelwahrscheinlichkeiten:
 $$P(A \cap B) = P(A) \cdot P(B)$$
+
+
+<details style="border: 2px solid #E65C00; padding: 15px; border-radius: 8px; margin-top: 10px; background-color: #FFF0E8;">
+  <summary style="font-weight: bold; cursor: pointer; color: #F58B51;">
+    🔍 Klick Du hier für die Umformung & Beweis
+  </summary>
+  <p style="margin-top: 10px;">
+      $P(A \cap B) \cdot [1 - P(B)] = P(A \cap B^C) \cdot P(B)$<br>
+      $P(A \cap B) - P(B) \cdot P(A \cap B) = P(A \cap B^C) \cdot P(B)$<br>
+      $P(A \cap B) = P(B) \cdot [P(A \cap B) + P(A \cap B^C)]$ <br>
+      $P(A \cap B) = P(B) \cdot P(A)$
+  </p>
+</details>
+<br>
+**Beispiel**:
+*Ein Vater von 4 Jungen glaubt, dass das 5. Kind ein Mädchen sein wird. Er denkt, die Wahrscheinlichkeit, nacheinander 5 Jungen zu
+haben, ist sehr klein: $(\frac{1}{2})^5 = \frac{1}{32}$*. <br>
+In der Realität bleibt die Wahrscheinlichkeit jedoch konstant bei $\frac{1}{2}$ (50%), da das Geschlecht jedes Kindes ein unabhängiges Ereignis ist. Die vorangegangenen Geburten haben keinen Einfluss auf das nächste Kind.
+$$P(\text{5. Kind ist Junge} \mid \text{4 Jungen zuvor}) = \frac{P(\text{5 Jungen})}{P(\text{4 Jungen zuvor})} = \frac{(1/2)^5}{(1/2)^4} = \frac{1}{2}$$
+
 
 ### 🟧 3. Stochastische Abhängigkeit
 
@@ -2379,8 +2511,8 @@ $$ P(A \cap B) \neq P(A)\cdot P(B) $$
 ```{r quiz-kap9, echo=FALSE}
 quiz(
   question("Zwei Ereignisse A und B sind stochastisch unabhängig, wenn:",
-           answer("$(P(A \\cap B) = P(A) \\cdot P(B))$"),
-           answer("$(P(A\\vert{}B) = P(A)\\)$", correct = TRUE),
+           answer("$P(A \\cap B) = P(A) \\cdot P(B)$"),
+           answer("$P(A\\vert{}B) = P(A)$", correct = TRUE),
            answer("A und B disjunkt sind"),
            allow_retry = TRUE),
   
@@ -2486,8 +2618,8 @@ column(5,
                
                # result box after A posteriori
                div(style = "background: #f6f6f4; border: 1px solid #e5e5e3; border-radius: 12px; padding: 25px; text-align: center;",
-                   div("P(Coffee | Bakery)", style = "font-size: 12px; font-family: monospace; font-weight: bold; color: #6b7280; margin-bottom: 8px;"),
-                   div(textOutput("result_box_val"), style = "font-size: 36px; font-weight: 700; color: #ea580c; font-family: monospace; tracking-tight;"),
+                   div("P(Coffee | Bakery)", style = "font-size: 12px; font-weight: bold; color: #6b7280; margin-bottom: 8px;"),
+                   div(textOutput("result_box_val"), style = "font-size: 36px; font-weight: 700; color: #ea580c; tracking-tight;"),
                    p("Die aktualisierte Wahrscheinlichkeit, dass der Kunde Kaffee bestellte, nachdem wir bereits wissen, dass er ein Gebäck gekauft hat.", 
                      style = "font-size: 11px; color: #6b7280; max-w: 320px; margin: 8px auto 0 auto; font-weight: 500; line-height: 1.4;")
                ),
@@ -2506,7 +2638,7 @@ column(5,
 ```
 
 ```{r ,context="server",echo=FALSE}
-# Khối phản hồi xử lý toán học cốt lõi (Bayes Engine)
+# bayes core
 bayes_core <- reactive({
   # Quy đổi giá trị phần trăm từ Slider sang hệ số thập phân
   p_A <- input$slider_prior / 100
