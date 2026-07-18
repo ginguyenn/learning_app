@@ -2036,14 +2036,49 @@ htmltools::tags$p(htmltools::HTML("$$P(Apfel,Birne) + P(Birne, Apfel) = (\\frac{
 <br>
 
 ### 🟧 6. Praxisnahes Beispiel
-Mach Du die Änderung der Anzahlen und dem Checkbox, um zu sehen, wie sich die Wahrscheinlichkeit ändert.<br>
-
+Mach Du die Änderung bei den Anzahlen und gib Deine gewünschte Anzahl der Stufen ein. Du kannst auch zwischen Mit và Ohne Zurücklegen wechseln, um direkt zu sehen, wie sich die Wahrscheinlichkeiten am Baum verändern. Wenn Du auf die einzelnen Kästchen im Diagramm klickst, wird Dir der genaue Pfad und das Endergebnis unten in der orangenen Box ausgerechnet. <br>
 
 <iframe src="www/kap7.html" 
 width="100%" 
-height="750px" 
+height="600px" 
 style="border: none; overflow: hidden;"></iframe>
 <br>
+
+### 🟧 7. Teste Dein Wissen!
+
+```{r quiz-kap7, echo=FALSE}
+
+quiz(
+  
+  question("Was ist die Beziehung zwischen Baumdiagramm und Kombinatorik?",
+    answer("Baumdiagramm ersetzt die Kombinatorik vollständig"),
+    answer("Baumdiagramm hilft dabei, die Ergebnisse in der Kombinatorik darzustellen", correct = TRUE),
+    answer("Baumdiagramm und Kombinatorik sind eigenständig und es gibt keine Verbindung."),
+    allow_retry = TRUE
+  ),
+  
+  question("Wenn die Ziehanzahl und Objektanzahl zu groß sind, warum nutzt man KEIN Baumdiagramm?",
+    answer("Da Baumdiagramm bei großen Datenmengen nicht mehr genau ist"),
+    answer("Da Baumdiagramm zu riesig und komplex wird. Es führt zur visuellen Überforderung", correct = TRUE),
+    answer("Da die Produktregel an Boxen mit mehr als 50 Objekten nicht verwendet werden kann."),
+    allow_retry = TRUE
+  ),
+  
+  question("Welchem Kombinatorikmodell entspricht ein Baumdiagramm, bei dem jede Etage die gleichen Knoten, die gleichen Äste hat und die Wahrscheinlichkeit jedes Astes konstant bleibt?",
+    answer("Kombination ohne Wiederholung"),
+    answer("Permutation ohne Wiederholung"),
+    answer("Ein Urnenmodell mit Zurücklegen", correct = TRUE),
+    allow_retry = TRUE
+  ),
+  
+  question("Eine Urne: 4 rote, 6 blaue Kugeln. Zwei Züge ohne Zurücklegen. Wie groß ist $P(\\text{rot}, \\text{blau})$?",
+    answer("$\\frac{4}{10} \\cdot \\frac{6}{9} = \\frac{24}{90} = \\frac{4}{15} = \\approx 26.7\\%$", correct = TRUE),
+    answer("$0.24$"),
+    answer("$\\frac{4}{10} + \\frac{6}{9}= \\frac{16}{15}$"),
+    allow_retry = TRUE
+  )
+)
+```
 
 ## Kapitel 8: Bedingte und unbedingte Wahrscheinlichkeit
 *Du gehst zum Arzt, weil du Husten hast. Der Arzt macht einen Test, der bei 90 % der Kranken anschlägt, aber auch bei 5 % der Gesunden. Wie hoch ist die Wahrscheinlichkeit, dass du wirklich krank bist, wenn der Test positiv ist? Das ist die berühmte bedingte Wahrscheinlichkeit!*
@@ -2138,25 +2173,6 @@ shiny::img(src="www/kap8_lösung_rel.png", width="100%", style ="max-width:500px
 ```{r sim-ui-kap8, context="render", echo=FALSE}
 fluidPage(
   theme = NULL,
-  
-  # Thêm CSS tùy biến để đồng bộ với giao diện và hỗ trợ hiệu ứng highlight khi click
-  tags$head(
-    tags$style(HTML("
-      body { font-family: 'Inter', sans-serif; background: #fafaf8; color: #1e1e1e; }
-      .cell-highlight { background-color: #fff7ed !important; border-color: #ea580c !important; color: #ea580c !important; }
-      .result-box { background: #f6f6f4; border: 1px solid #e5e5e3; border-radius: 12px; padding: 0.75rem 1.25rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
-      .result-box .label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #8a8a8a; }
-      .result-box .value { font-size: 1.1rem; font-weight: 700; color: #ea580c;  }
-      .toggle-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-      .custom-table th, .custom-table td { text-align: center; vertical-align: middle; }
-      .formula-text {font-size: 0.85rem; color: #ea580c;font-weight: bold;}
-      .result-header { font-size: 0.8rem; font-weight: 800; color: #4338ca; text-transform: uppercase; margin-bottom: 5px; }
-      .rechnung-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 15px; }
-      .value-highlight { font-size: 1.4rem; font-weight: 800; color: #ea580c; }
-      .formula-text { font-size: 1rem; color: #666; }
-    "))
-  ),
-  
   # Header chương
   div(style = "border-bottom: 1px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 20px;",
       h3("Wahrscheinlichkeit – Coffee-Shop", style = "font-weight: 700; color: #111827; margin: 0;"),
@@ -2169,7 +2185,7 @@ fluidPage(
     column(7,
            div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px;",
                div(class = "toggle-container",
-                   span("Vierfeldertafel", style = "font-size: 10px; font-weight: bold; color: #9ca3af; text-transform: uppercase; tracking-wider;"),
+                   span("Vierfeldertafel", style = "font-size: 10px; font-weight: bold; color: #9ca3af; tracking-wider;"),
                    # Sử dụng radioGroupButtons hoặc chọn lựa đơn giản để toggle View mẫu
                    radioButtons("view_toggle", label = NULL, 
                                 choices = c("Absolut" = "abs", "Relativ" = "rel"), 
@@ -2178,16 +2194,11 @@ fluidPage(
                
                # Khung bảng Vierfeldertafel tương tác trực tiếp
                uiOutput("contingency_table_ui")
-           )
-    ),
-    
-    # RIGHT PANEL: Bộ chọn điều kiện toán học & Hiển thị kết quả Real-time
-    column(5,
-           div(style = "display: flex; flex-direction: column; gap: 15px;",
-               
+           ),
+                          
                # Condition Select
                div(style = "background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 15px;",
-                   span("Bedingung wählen", style = "block; font-size: 10px; font-weight: bold; color: #9ca3af; text-transform: uppercase; tracking-wider; display: block; margin-bottom: 8px;"),
+                   span("Bedingung wählen", style = "block; font-size: 10px; font-weight: bold; color: #9ca3af; tracking-wider; display: block; margin-bottom: 8px;"),
                    selectInput("cond_select", label = NULL,
                                choices = c("P(A | B) — Coffee unter der Bedingung Large" = "p-a-b",
                                            "P(B | A) — Large unter der Bedingung Coffee" = "p-b-a",
@@ -2198,20 +2209,31 @@ fluidPage(
                                selected = "p-a-b", width = "100%")
                ),
                
+    ),
+    
+    # RIGHT PANEL: Bộ chọn điều kiện toán học & Hiển thị kết quả Real-time
+    column(5,
+           div(style = "display: flex; flex-direction: column; gap: 15px;",
                # Result Box
-               div(style = "background: #fff7ed; border: 1px solid #ffedd5; border-radius: 12px; padding: 15px; display: flex; flex-direction: column; gap: 10px;",
-              div(class = "result-header", "Bedingte Wahrscheinlichkeit"),
-                  div(class = "rechnung-row",
-                      uiOutput("cond_formula", inline = TRUE) 
-                  ),
-              div(class = "result-header", "Unbedingte Wahrscheinlichkeit"),
-                  div(class = "rechnung-row",
-                      uiOutput("uncond_formula", inline = TRUE) 
-                  ),
-                   #Explain text
-                   div(style = "font-size: 12px; color: #6b7280; margin-top: 4px; line-height: 1.4;",
+div(style = "background: #E65C00; border: 1px solid #FFB790; border-radius: 12px; padding: 15px; display: flex; flex-direction: column; gap: 8px; color: #FFFFFF; box-shadow: 0 2px 8px rgba(230, 92, 0, 0.2);",
+    div(class = "result-header", 
+        style = "color: #FFE2D2; font-weight: 600; font-size: 14px; letter-spacing: 0.3px;", 
+        "Bedingte Wahrscheinlichkeit"
+    ),
+    div(class = "rechnung-row",
+        uiOutput("cond_formula", inline = TRUE) 
+    ),
+    div(class = "result-header", 
+        style = "color: #FFE2D2; font-weight: 600; font-size: 14px; letter-spacing: 0.3px; margin-top: 8px;", 
+        "Unbedingte Wahrscheinlichkeit"
+    ),
+    div(class = "rechnung-row",
+        uiOutput("uncond_formula", inline = TRUE) 
+    )
+),
+        #Explain text
+                   div(style = "font-size: 12px; color: #7A6B61; font-style: italic; margin-bottom: 0; line-height: 1.4;",
                        htmlOutput("interpretation_text")                  )
-               )
            )
     )
   )
@@ -2394,6 +2416,7 @@ output$contingency_table_ui <- renderUI({
   ))
 })
 ```
+
 
 ### 🟧 5. Teste Dein Wissen!
 
